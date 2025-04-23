@@ -1,4 +1,3 @@
-import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { buttonVariants } from '@/components/ui/button';
 import Image from 'next/image';
 import React from 'react';
@@ -96,9 +95,11 @@ const BlogList = () => {
             key={index}
             className='shadow hover:shadow-xl transition-shadow duration-300 overflow-hidden'
           >
-            <img
-              src={blog.imageUrl}
+            <Image
+              src={blog.imageUrl || ''}
               alt={blog.title}
+              width={800}
+              height={256}
               className='w-full h-64 object-cover'
             />
             <div className='p-4'>
