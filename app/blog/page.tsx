@@ -1,6 +1,7 @@
+'use client';
 import { buttonVariants } from '@/components/ui/button';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
 export const runtime = 'edge';
 
@@ -86,11 +87,32 @@ const blogs: BlogType[] = [
 ];
 
 const BlogList = () => {
+  const [search, setSearch] = useState('');
+
+  const filteredBlogs = blogs.filter(
+    (blog) =>
+      blog.title.toLowerCase().includes(search.toLowerCase()) ||
+      blog.description.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-      <h2 className='text-3xl font-bold mb-8 text-center'>Latest Blogs</h2>
+      <h2 className='text-3xl font-bold mb-8'>Learn About Testing</h2>
+      <p className='mb-8'>
+        Explore our collection of blogs that cover various aspects of fullstack
+        development, testing, and more.
+      </p>
+      <div className='mb-8'>
+        <input
+          type='text'
+          placeholder='Search articles...'
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className='w-full md:w-1/2 px-4 py-2 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 transition'
+        />
+      </div>
       <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
-        {blogs.map((blog: BlogType, index: number) => (
+        {filteredBlogs.map((blog: BlogType, index: number) => (
           <div
             key={index}
             className='shadow hover:shadow-xl transition-shadow duration-300 overflow-hidden'
