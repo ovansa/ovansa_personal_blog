@@ -7,8 +7,10 @@ import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
 import matter from 'gray-matter';
 import { Metadata } from 'next';
+import fs from 'fs';
 
-export const runtime = 'edge';
+// Remove edge runtime since we're using Node.js filesystem
+// export const runtime = 'edge';
 
 type Props = {
   params: Promise<{
@@ -24,22 +26,22 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 async function getPostContent(slug: string) {
-  const fileUrl = `${getBaseUrl()}/contents/${slug}.md`;
-  const res = await fetch(fileUrl);
+  // Define path to markdown files
+  // const postsDirectory = path.join(process.cwd(), 'contents');
+  // const filePath = path.join(postsDirectory, `${slug}.md`);
+  const filePath = `contents/${slug}.md`;
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch post');
+  try {
+    return await fs.readFileSync(filePath, 'utf8');
+  } catch (error) {
+    console.error('Error reading file:', error);
+    throw new Error('Failed to read post');
   }
-
-  return await res.text();
 }
 
 export default async function BlogPost(props: Props) {
   const params = await props.params;
   const { slug } = params;
-
-  console.log('Base URL:', getBaseUrl());
-  console.log('Fetching from:', `${getBaseUrl()}/contents/${slug}.md`);
 
   const processor = unified()
     .use(remarkParse)
@@ -62,40 +64,15 @@ export default async function BlogPost(props: Props) {
       </MaxWidthWrapper>
     );
   } catch (error) {
-    console.error('Error fetching or processing markdown file:', error);
+    console.error('Error processing markdown file:', error);
     return (
       <MaxWidthWrapper>
         <h1 className='text-2xl font-bold text-red-600'>
-          {error instanceof Error && error.message.includes('Failed to fetch')
+          {error instanceof Error && error.message.includes('Failed to read')
             ? '404 - Article Not Found'
             : '500 - Server Error'}
         </h1>
       </MaxWidthWrapper>
     );
   }
-}
-
-// function getBaseUrl() {
-//   if (typeof window !== 'undefined') return '';
-//   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-//   return process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-// }
-
-// Use Vercel's automatic URL detection
-function getBaseUrl() {
-  if (typeof window !== 'undefined') return '';
-
-  // Use Vercel's system environment variables
-  const vercelEnv = process.env.VERCEL_ENV; // "production", "preview", "development"
-
-  if (vercelEnv === 'production') {
-    return `https://${
-      process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL
-    }`;
-  }
-
-  // For preview deployments and development
-  return process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'http://localhost:3000';
 }
