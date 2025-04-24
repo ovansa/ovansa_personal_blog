@@ -7,7 +7,6 @@ import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
 import matter from 'gray-matter';
 import { Metadata } from 'next';
-import fs from 'fs';
 
 // Remove edge runtime since we're using Node.js filesystem
 // export const runtime = 'edge';
@@ -26,17 +25,13 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 async function getPostContent(slug: string) {
-  // Define path to markdown files
-  // const postsDirectory = path.join(process.cwd(), 'contents');
-  // const filePath = path.join(postsDirectory, `${slug}.md`);
-  const filePath = `contents/${slug}.md`;
-
-  try {
-    return await fs.readFileSync(filePath, 'utf8');
-  } catch (error) {
-    console.error('Error reading file:', error);
-    throw new Error('Failed to read post');
-  }
+  // On Vercel: fetch from /public
+  const baseUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000';
+  const res = await fetch(`${baseUrl}/contents/${slug}.md`);
+  if (!res.ok) throw new Error('Post not found');
+  return res.text();
 }
 
 export default async function BlogPost(props: Props) {
