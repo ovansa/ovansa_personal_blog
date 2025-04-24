@@ -1,4 +1,3 @@
-'use server';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -7,18 +6,36 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
 import matter from 'gray-matter';
+import { Metadata } from 'next';
 
-export const runtime = 'edge';
-
-interface BlogPostProps {
-  params: {
+type Props = {
+  params: Promise<{
     slug: string;
+  }>;
+};
+
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
+  return {
+    title: `Post - ${params.slug}`,
   };
-  searchParams?: Record<string, string | string[] | undefined>;
 }
 
-export default async function BlogPost(props: BlogPostProps) {
-  const { params } = props;
+async function getPostContent(slug: string) {
+  const fileUrl = `${getBaseUrl()}/contents/${slug}.md`;
+  const res = await fetch(fileUrl);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch post');
+  }
+
+  return await res.text();
+}
+
+export default async function BlogPost(props: Props) {
+  const params = await props.params;
+  const { slug } = params;
+
   const processor = unified()
     .use(remarkParse)
     .use(remarkFrontmatter)
@@ -26,22 +43,8 @@ export default async function BlogPost(props: BlogPostProps) {
     .use(rehypeHighlight)
     .use(rehypeStringify);
 
-  const fileUrl = `${getBaseUrl()}/contents/${params.slug}.md`;
-
   try {
-    const res = await fetch(fileUrl);
-
-    if (!res.ok) {
-      return (
-        <MaxWidthWrapper>
-          <h1 className='text-2xl font-bold text-red-600'>
-            404 - Article Not Found
-          </h1>
-        </MaxWidthWrapper>
-      );
-    }
-
-    const fileContent = await res.text();
+    const fileContent = await getPostContent(slug);
     const { data, content } = matter(fileContent);
     const htmlContent = (
       await processor.process(content || data.content)
@@ -57,7 +60,11 @@ export default async function BlogPost(props: BlogPostProps) {
     console.error('Error fetching or processing markdown file:', error);
     return (
       <MaxWidthWrapper>
-        <h1 className='text-2xl font-bold text-red-600'>500 - Server Error</h1>
+        <h1 className='text-2xl font-bold text-red-600'>
+          {error instanceof Error && error.message.includes('Failed to fetch')
+            ? '404 - Article Not Found'
+            : '500 - Server Error'}
+        </h1>
       </MaxWidthWrapper>
     );
   }
