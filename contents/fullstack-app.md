@@ -47,7 +47,7 @@ app.listen(3000, () => {
 
 ### Frontend Snippet (React + TypeScript)
 
-```
+```ts
 import React from 'react';
 
 const HealthCheck = () => {
@@ -68,5 +68,3 @@ export default HealthCheck;
 ### Final Thoughts
 
 A well-structured fullstack app follows **clear separation of concerns**, implements **modular components**, and is backed by a **strong CI/CD pipeline**. Whether you're building a side project or a production-grade platform, start simple, stay consistent, and iterate with purpose.
-
-## \_Happy hacking! 🚀

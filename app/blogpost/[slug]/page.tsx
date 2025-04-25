@@ -8,6 +8,10 @@ import rehypeHighlight from 'rehype-highlight';
 import matter from 'gray-matter';
 import path from 'path';
 import { promises as fs } from 'fs';
+import OnThisPage from '@/components/OnThisPage';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import { rehypePrettyCode } from 'rehype-pretty-code';
 
 type Props = {
   params: Promise<{
@@ -35,8 +39,13 @@ export default async function BlogPost(props: Props) {
     .use(remarkParse)
     .use(remarkFrontmatter)
     .use(remarkRehype)
+    .use(rehypePrettyCode, {
+      theme: 'material-theme-ocean',
+    })
     .use(rehypeHighlight)
-    .use(rehypeStringify);
+    .use(rehypeStringify)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings);
 
   try {
     const markdownDir = path.join(process.cwd(), 'contents');
@@ -50,8 +59,16 @@ export default async function BlogPost(props: Props) {
 
     return (
       <MaxWidthWrapper className='prose dark:prose-invert'>
-        <h1>{data.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        <div className='flex'>
+          <div className='px-16'>
+            <h1>{data.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          </div>
+          <OnThisPage
+            className='text-sm w-[20%]'
+            htmlContent={htmlContent}
+          />
+        </div>
       </MaxWidthWrapper>
     );
   } catch (error) {
