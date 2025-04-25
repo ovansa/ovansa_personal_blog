@@ -29,6 +29,7 @@ async function getPostContent(slug: string) {
   const baseUrl = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
     : 'http://localhost:3000';
+  console.log('Base URL:', baseUrl);
   const res = await fetch(`${baseUrl}/contents/${slug}.md`);
   if (!res.ok) throw new Error('Post not found');
   return res.text();
@@ -47,6 +48,7 @@ export default async function BlogPost(props: Props) {
 
   try {
     const fileContent = await getPostContent(slug);
+    console.log('File content:', fileContent);
     const { data, content } = matter(fileContent);
     const htmlContent = (
       await processor.process(content || data.content)
