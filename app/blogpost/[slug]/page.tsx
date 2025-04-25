@@ -6,10 +6,8 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
 import matter from 'gray-matter';
-import { Metadata } from 'next';
-
-// Remove edge runtime since we're using Node.js filesystem
-// export const runtime = 'edge';
+import path from 'path';
+import { promises as fs } from 'fs';
 
 type Props = {
   params: Promise<{
@@ -17,22 +15,16 @@ type Props = {
   }>;
 };
 
-export async function generateMetadata(props: Props): Promise<Metadata> {
-  const params = await props.params;
-  return {
-    title: `Post - ${params.slug}`,
-  };
+export async function generateStaticParams() {
+  // Optional: You can scan your contents folder to generate static params
+  return []; // fill this in later if needed
 }
 
-async function getPostContent(slug: string) {
-  // On Vercel: fetch from /public
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'http://localhost:3000';
-  console.log('Base URL:', baseUrl);
-  const res = await fetch(`${baseUrl}/contents/${slug}.md`);
-  if (!res.ok) throw new Error('Post not found');
-  return res.text();
+export async function generateMetadata(props: Props) {
+  const params = await props.params;
+  return {
+    title: params.slug,
+  };
 }
 
 export default async function BlogPost(props: Props) {
@@ -47,8 +39,10 @@ export default async function BlogPost(props: Props) {
     .use(rehypeStringify);
 
   try {
-    const fileContent = await getPostContent(slug);
-    console.log('File content:', fileContent);
+    const markdownDir = path.join(process.cwd(), 'contents');
+    const filePath = path.join(markdownDir, `${slug}.md`);
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+
     const { data, content } = matter(fileContent);
     const htmlContent = (
       await processor.process(content || data.content)
@@ -65,9 +59,7 @@ export default async function BlogPost(props: Props) {
     return (
       <MaxWidthWrapper>
         <h1 className='text-2xl font-bold text-red-600'>
-          {error instanceof Error && error.message.includes('Failed to read')
-            ? '404 - Article Not Found'
-            : '500 - Server Error'}
+          404 - Article Not Found
         </h1>
       </MaxWidthWrapper>
     );
