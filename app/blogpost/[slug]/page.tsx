@@ -12,6 +12,7 @@ import OnThisPage from '@/components/OnThisPage';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { rehypePrettyCode } from 'rehype-pretty-code';
+import { transformerCopyButton } from '@rehype-pretty/transformers';
 
 type Props = {
   params: Promise<{
@@ -41,6 +42,12 @@ export default async function BlogPost(props: Props) {
     .use(remarkRehype)
     .use(rehypePrettyCode, {
       theme: 'material-theme-ocean',
+      transformers: [
+        transformerCopyButton({
+          visibility: 'always',
+          feedbackDuration: 3_000,
+        }),
+      ],
     })
     .use(rehypeHighlight)
     .use(rehypeStringify)
