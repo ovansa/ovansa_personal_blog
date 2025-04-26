@@ -38,28 +38,13 @@ const blogs: BlogType[] = [
       `,
   },
   {
-    slug: 'tailwind-future',
-    title: 'Tailwind CSS: The Future of Styling in React',
-    description: 'A deep dive into utility-first CSS and why it’s taking over.',
+    slug: 'postman-tutorial',
+    title: 'Mastering Postman - A Complete Guide to API Testing',
+    description:
+      'Learn how to use Postman for API development, testing, and automation.',
     imageUrl:
       'https://images.unsplash.com/photo-1642367340318-96fdbc5d30f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3',
-    content: `
-  ### Why Tailwind?
-  
-  Tailwind offers utility-first classes that eliminate the need for custom CSS in many cases.
-  
-  ### Benefits
-  
-  - Rapid prototyping
-  - Consistency
-  - Smaller CSS bundles
-  
-  > "Tailwind changed how I write CSS forever."
-  
-  ### Conclusion
-  
-  Tailwind is here to stay and is only getting better.
-      `,
+    content: '',
   },
   {
     slug: 'react-server-components',

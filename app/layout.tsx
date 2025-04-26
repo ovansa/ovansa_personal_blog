@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import SiteConfig from '@/config/site';
 import NavBar from '@/components/NavBar';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import Footer from '@/components/Footer';
 
 const fontSans = FontSans({
   variable: '--font-sans',
@@ -41,6 +42,7 @@ export default function RootLayout({
         >
           <NavBar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

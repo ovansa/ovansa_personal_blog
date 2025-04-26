@@ -20,7 +20,7 @@ const OnThisPage = ({
     const temp = document.createElement('div');
     temp.innerHTML = htmlContent;
 
-    const headings = temp.querySelectorAll('h2, h3, h4, h5, h6');
+    const headings = temp.querySelectorAll('h2');
 
     const generatedLinks: LinkType[] = [];
 

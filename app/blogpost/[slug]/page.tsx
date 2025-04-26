@@ -72,7 +72,7 @@ export default async function BlogPost(props: Props) {
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
           </div>
           <OnThisPage
-            className='text-sm w-[20%]'
+            className='text-sm w-[40%]'
             htmlContent={htmlContent}
           />
         </div>

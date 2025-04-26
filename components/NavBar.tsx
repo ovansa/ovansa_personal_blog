@@ -15,7 +15,9 @@ import {
 const NavBar = () => {
   return (
     <nav className='h-16 bg-background/50 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between'>
-      <div className='text-lg font-bold md:text-xl'>Ovansa</div>
+      <div className='text-lg font-bold md:text-xl'>
+        <Link href={'/'}>Ovansa</Link>
+      </div>
       <ul className='hidden md:flex w-full justify-end space-x-6 items-center'>
         <li>
           <Link href={'/'}>Home</Link>
