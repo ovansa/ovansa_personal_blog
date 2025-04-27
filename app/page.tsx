@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { buttonVariants } from '@/components/ui/button';
-import { ModeToggle } from '@/components/ThemeToggle';
-import Footer from '@/components/Footer';
 
 export const runtime = 'edge';
 
