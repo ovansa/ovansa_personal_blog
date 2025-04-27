@@ -17,7 +17,9 @@ const Footer = () => {
           Blog
         </Link>
       </div> */}
-      <p className='mt-4'>&copy; {new Date().getFullYear()} Ovansa</p>
+      <p className='mt-4 font-semibold text-black'>
+        &copy; {new Date().getFullYear()} - Ovansa
+      </p>
     </footer>
   );
 };
