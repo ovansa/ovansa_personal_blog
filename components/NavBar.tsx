@@ -1,8 +1,3 @@
-import Link from 'next/link';
-import React from 'react';
-import { buttonVariants } from './ui/button';
-import { ModeToggle } from './ThemeToggle';
-import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import {
   Sheet,
   SheetContent,
@@ -12,13 +7,19 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+import Link from 'next/link';
+import { ModeToggle } from './ThemeToggle';
+import React from 'react';
+import { buttonVariants } from './ui/button';
+
 const NavBar = () => {
   return (
     <nav className='h-16 bg-background/50 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between'>
       <div className='text-lg font-bold md:text-xl'>
         <Link href={'/'}>Ovansa</Link>
       </div>
-      <ul className='hidden md:flex w-full justify-end space-x-6 items-center'>
+      <ul className='hidden md:flex w-full justify-end space-x-6 items-center font-medium'>
         <li>
           <Link href={'/'}>Home</Link>
         </li>

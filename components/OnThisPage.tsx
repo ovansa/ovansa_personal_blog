@@ -1,6 +1,8 @@
 'use client';
-import { cn } from '@/lib/utils';
+
 import React, { useEffect, useState } from 'react';
+
+import { cn } from '@/lib/utils';
 
 interface LinkType {
   id: string;
@@ -20,7 +22,7 @@ const OnThisPage = ({
     const temp = document.createElement('div');
     temp.innerHTML = htmlContent;
 
-    const headings = temp.querySelectorAll('h2');
+    const headings = temp.querySelectorAll('h2, h3, h4, h5');
 
     const generatedLinks: LinkType[] = [];
 
@@ -42,10 +44,7 @@ const OnThisPage = ({
         <h2>On this Page</h2>
         <ul className='not-prose'>
           {links?.map((link) => (
-            <li
-              className='pt-2'
-              key={link.id}
-            >
+            <li className='pt-2' key={link.id}>
               <a href={`#${link.id}`}>{link.text}</a>
             </li>
           ))}

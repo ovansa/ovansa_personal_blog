@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className='bg-background text-foreground'>
       {/* Hero */}
-      <section className='pt-20 pb-16 px-16'>
+      <section className='pt-20 px-16'>
         <MaxWidthWrapper>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
             <div className='space-y-6'>
@@ -44,7 +44,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className='py-20'>
+      <section className='py-5'>
         <MaxWidthWrapper>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-16'>
             {/* Workshops */}
@@ -163,10 +163,7 @@ export default function Home() {
             </form>
             <p className='text-xs text-gray-500'>
               Unsubscribe anytime. Read our{' '}
-              <Link
-                href='/privacy-policy'
-                className='underline'
-              >
+              <Link href='/privacy-policy' className='underline'>
                 privacy policy
               </Link>
               .
