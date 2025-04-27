@@ -13,9 +13,9 @@ export default function Home() {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
             <div className='space-y-6'>
               <h1 className='text-5xl font-extrabold leading-tight xl:text-6xl rotate-1'>
-                Teaching testers about web development,
+                Teaching testers to use tools that improve testing,
                 <br />
-                and developers about testing.
+                and promoting a test-driven mindset to developers.
               </h1>
               <p className='text-lg md:text-xl'>
                 I’m <strong>Muhammed Ibrahim</strong>, a Software Test Engineer
@@ -44,7 +44,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className='py-5'>
+      <section className='py-5 px-16'>
         <MaxWidthWrapper>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-16'>
             {/* Workshops */}
@@ -163,7 +163,10 @@ export default function Home() {
             </form>
             <p className='text-xs text-gray-500'>
               Unsubscribe anytime. Read our{' '}
-              <Link href='/privacy-policy' className='underline'>
+              <Link
+                href='/privacy-policy'
+                className='underline'
+              >
                 privacy policy
               </Link>
               .

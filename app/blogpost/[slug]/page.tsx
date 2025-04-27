@@ -66,8 +66,8 @@ export default async function BlogPost(props: Props) {
 
     return (
       <MaxWidthWrapper className='prose dark:prose-invert'>
-        <div className='flex'>
-          <div className='px-16'>
+        <div className='flex px-16'>
+          <div className='pr-16'>
             <h1>{data.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
           </div>
