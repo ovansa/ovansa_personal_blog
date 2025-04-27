@@ -6,7 +6,7 @@ export const runtime = 'edge';
 
 export default function About() {
   return (
-    <main className='pt-20 pb-16 bg-background text-foreground'>
+    <main className='px-16 pt-20 pb-16 bg-background text-foreground'>
       <MaxWidthWrapper>
         {/* Hero Section */}
         <section className='pb-12'>
