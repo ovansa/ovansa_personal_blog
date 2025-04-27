@@ -16,51 +16,53 @@ import { buttonVariants } from './ui/button';
 const NavBar = () => {
   return (
     <nav className='h-16 bg-background/50 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between z-50'>
-      <div className='text-lg font-bold md:text-xl'>
-        <Link href={'/'}>Ovansa</Link>
-      </div>
-      <ul className='hidden md:flex w-full justify-end space-x-6 items-center font-medium'>
-        <li>
-          <Link href={'/'}>Home</Link>
-        </li>
-        <li>
-          <Link href={'/blog'}>Blog</Link>
-        </li>
-        <li>
-          <Link href={'/about'}>About</Link>
-        </li>
-        <li className='buttons px-4 space-x-2'>
-          <Link
-            className={buttonVariants({ variant: 'outline' })}
-            href={'/login'}
-          >
-            Login
-          </Link>
+      <div className='max-w-[1400px] mx-auto w-full flex items-center justify-between'>
+        <div className='text-lg font-bold md:text-xl'>
+          <Link href={'/'}>Ovansa</Link>
+        </div>
+        <ul className='hidden md:flex w-full justify-end space-x-6 items-center font-medium'>
+          <li>
+            <Link href={'/'}>Home</Link>
+          </li>
+          <li>
+            <Link href={'/blog'}>Blog</Link>
+          </li>
+          <li>
+            <Link href={'/about'}>About</Link>
+          </li>
+          <li className='buttons px-4 space-x-2'>
+            <Link
+              className={buttonVariants({ variant: 'outline' })}
+              href={'/login'}
+            >
+              Login
+            </Link>
 
-          <Link
-            className={buttonVariants({ variant: 'outline' })}
-            href={'/register'}
-          >
-            Register
-          </Link>
-        </li>
-      </ul>
-      <div className='flex gap-2 items-center'>
-        <ModeToggle />
-        <Sheet>
-          <SheetTrigger>
-            <HamburgerMenuIcon className='size-6 md:hidden' />
-          </SheetTrigger>
-          <SheetContent>
-            <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
+            <Link
+              className={buttonVariants({ variant: 'outline' })}
+              href={'/register'}
+            >
+              Register
+            </Link>
+          </li>
+        </ul>
+        <div className='flex gap-2 items-center'>
+          <ModeToggle />
+          <Sheet>
+            <SheetTrigger>
+              <HamburgerMenuIcon className='size-6 md:hidden' />
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Are you absolutely sure?</SheetTitle>
+                <SheetDescription>
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers.
+                </SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );

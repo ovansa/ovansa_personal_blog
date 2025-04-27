@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className='bg-background text-foreground'>
       {/* Hero */}
-      <section className='pt-20 px-16'>
+      <section className='pt-20 px-14'>
         <MaxWidthWrapper>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
             <div className='space-y-6'>

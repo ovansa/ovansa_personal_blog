@@ -69,6 +69,52 @@ const blogs: BlogType[] = [
   RSCs will likely become a key part of all Next.js apps in the future.
       `,
   },
+  {
+    slug: 'react-server-components',
+    title: 'Understanding React Server Components',
+    description:
+      'Everything you need to know about RSCs and how they change the game.',
+    imageUrl:
+      'https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3',
+    content: `
+  ### What Are RSCs?
+  
+  React Server Components allow developers to offload rendering to the server without sending extra JS to the client.
+  
+  ### Use Cases
+  
+  - Rendering large datasets
+  - Keeping bundle size small
+  - Improved performance
+  
+  ### Summary
+  
+  RSCs will likely become a key part of all Next.js apps in the future.
+      `,
+  },
+  {
+    slug: 'react-server-components',
+    title: 'Understanding React Server Components',
+    description:
+      'Everything you need to know about RSCs and how they change the game.',
+    imageUrl:
+      'https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3',
+    content: `
+  ### What Are RSCs?
+  
+  React Server Components allow developers to offload rendering to the server without sending extra JS to the client.
+  
+  ### Use Cases
+  
+  - Rendering large datasets
+  - Keeping bundle size small
+  - Improved performance
+  
+  ### Summary
+  
+  RSCs will likely become a key part of all Next.js apps in the future.
+      `,
+  },
 ];
 
 const BlogList = () => {
@@ -81,7 +127,7 @@ const BlogList = () => {
   );
 
   return (
-    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+    <div className='max-w-[1400px] mx-auto px-8 py-12'>
       <h2 className='text-3xl font-bold mb-8'>Learn About Testing</h2>
       <p className='mb-8'>
         Explore our collection of blogs that cover various aspects of fullstack
