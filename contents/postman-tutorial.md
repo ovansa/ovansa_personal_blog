@@ -1,7 +1,7 @@
 ---
-title: Mastering Postman: A Complete Guide to API Testing
-slug: postman-tutorial
-description: Learn how to use Postman for API development, testing, and automation.
+title: "Mastering Postman: A Complete Guide to API Testing"
+slug: "postman-tutorial"
+description: "Learn how to use Postman for API development, testing, and automation."
 ---
 
 ## Introduction
