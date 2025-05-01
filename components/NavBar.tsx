@@ -28,9 +28,15 @@ const NavBar = () => {
             <Link href='/blog'>Blog</Link>
           </li>
           <li>
+            <Link href='/consulting'>Consulting</Link>
+          </li>
+          <li>
             <Link href='/about'>About</Link>
           </li>
-          <li className='buttons px-4 space-x-2'>
+          <li>
+            <Link href='/contact'>Contact</Link>
+          </li>
+          {/* <li className='buttons px-4 space-x-2'>
             <Link
               className={buttonVariants({ variant: 'outline' })}
               href='/login'
@@ -44,7 +50,7 @@ const NavBar = () => {
             >
               Register
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         {/* Mobile Nav */}
