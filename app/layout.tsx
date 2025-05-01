@@ -15,8 +15,57 @@ const fontSans = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: SiteConfig.title,
+  metadataBase: new URL(SiteConfig.siteUrl),
+  title: {
+    default: SiteConfig.title,
+    template: SiteConfig.titleTemplate,
+  },
   description: SiteConfig.description,
+  keywords: SiteConfig.keywords,
+  authors: [
+    {
+      name: SiteConfig.author.name,
+      url: SiteConfig.author.url,
+    },
+  ],
+  creator: SiteConfig.author.name,
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: SiteConfig.siteUrl,
+    title: SiteConfig.title,
+    description: SiteConfig.description,
+    siteName: SiteConfig.siteName,
+    images: [
+      {
+        url: `${SiteConfig.siteUrl}${SiteConfig.ogImage}`,
+        width: 1200,
+        height: 630,
+        alt: `${SiteConfig.author.name} - Software Test Engineer`,
+      },
+    ],
+  },
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   title: SiteConfig.title,
+  //   description: SiteConfig.description,
+  //   images: [`${SiteConfig.siteUrl}${SiteConfig.ogImage}`],
+  //   creator: SiteConfig.author.twitter,
+  // },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: SiteConfig.siteUrl,
+  },
 };
 
 export default function RootLayout({
