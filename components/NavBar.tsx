@@ -1,9 +1,7 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 
@@ -20,46 +18,80 @@ const NavBar = () => {
         <div className='text-lg font-bold md:text-xl'>
           <Link href={'/'}>Ovansa</Link>
         </div>
+
+        {/* Desktop Nav */}
         <ul className='hidden md:flex w-full justify-end space-x-6 items-center font-medium'>
           <li>
-            <Link href={'/'}>Home</Link>
+            <Link href='/'>Home</Link>
           </li>
           <li>
-            <Link href={'/blog'}>Blog</Link>
+            <Link href='/blog'>Blog</Link>
           </li>
           <li>
-            <Link href={'/about'}>About</Link>
+            <Link href='/about'>About</Link>
           </li>
           <li className='buttons px-4 space-x-2'>
             <Link
               className={buttonVariants({ variant: 'outline' })}
-              href={'/login'}
+              href='/login'
             >
               Login
             </Link>
 
             <Link
               className={buttonVariants({ variant: 'outline' })}
-              href={'/register'}
+              href='/register'
             >
               Register
             </Link>
           </li>
         </ul>
-        <div className='flex gap-2 items-center'>
+
+        {/* Mobile Nav */}
+        <div className='flex gap-2 items-center md:hidden'>
           <ModeToggle />
           <Sheet>
             <SheetTrigger>
-              <HamburgerMenuIcon className='size-6 md:hidden' />
+              <HamburgerMenuIcon className='size-6' />
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent side='right' className='w-64 p-6'>
               <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
-                <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
-                </SheetDescription>
+                <div className='text-lg font-semibold'>Menu</div>
               </SheetHeader>
+              <nav className='mt-6 flex flex-col space-y-4 text-base font-medium'>
+                <Link
+                  href='/'
+                  className='text-muted-foreground hover:text-foreground transition-colors'
+                >
+                  Home
+                </Link>
+                <Link
+                  href='/blog'
+                  className='text-muted-foreground hover:text-foreground transition-colors'
+                >
+                  Blog
+                </Link>
+                <Link
+                  href='/about'
+                  className='text-muted-foreground hover:text-foreground transition-colors'
+                >
+                  About
+                </Link>
+              </nav>
+              <div className='mt-8 flex flex-col space-y-3'>
+                <Link
+                  className={buttonVariants({ variant: 'outline' })}
+                  href='/login'
+                >
+                  Login
+                </Link>
+                <Link
+                  className={buttonVariants({ variant: 'default' })}
+                  href='/register'
+                >
+                  Register
+                </Link>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
