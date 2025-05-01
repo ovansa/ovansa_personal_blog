@@ -1,7 +1,9 @@
 'use client';
-import { buttonVariants } from '@/components/ui/button';
-import Image from 'next/image';
+
 import React, { useState } from 'react';
+
+import Image from 'next/image';
+import { buttonVariants } from '@/components/ui/button';
 
 export const runtime = 'edge';
 
@@ -14,6 +16,16 @@ interface BlogType {
 }
 
 const blogs: BlogType[] = [
+  {
+    slug: 'automate-postman-test-data-generation',
+    title:
+      'Stop Manually Typing Test Data: Automate Your Postman API Tests Like a Pro',
+    description:
+      'Tired of manually changing data for each test run? Learn how to generate random test data in Postman and make API testing fun again!',
+    imageUrl:
+      'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+    content: ``,
+  },
   {
     slug: 'fullstack-app',
     title: 'How to Build a Fullstack App in 2023 and Beyond',
