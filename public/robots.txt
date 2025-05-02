@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://ovansa.com
+Host: https://ovansa.me
 
 # Sitemaps
-Sitemap: https://ovansa.com/sitemap.xml
+Sitemap: https://ovansa.me/sitemap.xml

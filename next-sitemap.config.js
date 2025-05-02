@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://ovansa.com',
+  siteUrl: 'https://ovansa.me',
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: 'weekly',
