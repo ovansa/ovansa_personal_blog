@@ -3,8 +3,6 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { Metadata } from 'next';
 
-export const runtime = 'edge';
-
 export const metadata: Metadata = {
   title: 'About - Muhammed Ibrahim | Software Test Engineer & Quality Advocate',
   description:
@@ -202,7 +200,10 @@ export default function About() {
         </section>
 
         {/* Professional Summary */}
-        <section className='py-12 md:py-16' aria-labelledby='summary-heading'>
+        <section
+          className='py-12 md:py-16'
+          aria-labelledby='summary-heading'
+        >
           <div className='max-w-3xl'>
             <h2
               id='summary-heading'
@@ -330,7 +331,10 @@ export default function About() {
         </section>
 
         {/* Skills & Expertise */}
-        <section className='py-12 md:py-16' aria-labelledby='skills-heading'>
+        <section
+          className='py-12 md:py-16'
+          aria-labelledby='skills-heading'
+        >
           <h2
             id='skills-heading'
             className='text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 inline-flex items-center'
@@ -463,7 +467,10 @@ export default function About() {
         </section>
 
         {/* Languages & Contact CTA */}
-        <section className='py-12 md:py-16' aria-labelledby='languages-heading'>
+        <section
+          className='py-12 md:py-16'
+          aria-labelledby='languages-heading'
+        >
           <div className='grid md:grid-cols-2 gap-8 md:gap-12'>
             <div>
               <h2

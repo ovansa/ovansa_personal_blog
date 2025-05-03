@@ -10,7 +10,7 @@ const SiteConfig = {
   author: {
     name: 'Muhammed Ibrahim (Ovansa)',
     url: 'https://ovansa.me/about',
-    github: 'https://www.github.com/ovansa', // If applicable
+    github: 'https://www.github.com/ovansa',
   },
   keywords: [
     'Ovansa',

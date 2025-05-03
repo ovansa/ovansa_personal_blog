@@ -7,8 +7,6 @@ import Link from 'next/link';
 import { Loader2 } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 
-export const runtime = 'edge';
-
 interface BlogType {
   id: string;
   slug: string;
