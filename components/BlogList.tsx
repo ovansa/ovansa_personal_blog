@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Loader2 } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
+import { formatDate } from '@/lib/datUtil';
 
 interface BlogType {
   id: string;
@@ -20,87 +21,35 @@ interface BlogType {
 }
 
 // Deduplicated and improved blog data
-const blogs: BlogType[] = [
-  {
-    id: '1',
-    slug: 'automate-postman-test-data-generation',
-    title:
-      'Stop Manually Typing Test Data: Automate Your Postman API Tests Like a Pro',
-    description:
-      'Tired of manually changing data for each test run? Learn how to generate random test data in Postman and make API testing fun again!',
-    imageUrl:
-      'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
-    content: ``,
-    publishedAt: '2025-04-15',
-    readingTime: '8 min read',
-    categories: ['API Testing', 'Postman', 'Automation'],
-  },
-  {
-    id: '2',
-    slug: 'fullstack-app',
-    title: 'How to Build a Fullstack App in 2023 and Beyond',
-    description:
-      'Learn how to create a scalable fullstack application using modern tools.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
-    content: ``,
-    publishedAt: '2025-03-22',
-    readingTime: '12 min read',
-    categories: ['Web Development', 'React', 'Node.js'],
-  },
-  {
-    id: '3',
-    slug: 'postman-tutorial',
-    title: 'Mastering Postman - A Complete Guide to API Testing',
-    description:
-      'Learn how to use Postman for API development, testing, and automation.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1642367340318-96fdbc5d30f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3',
-    content: '',
-    publishedAt: '2025-02-10',
-    readingTime: '15 min read',
-    categories: ['API Testing', 'Postman', 'Tutorial'],
-  },
-  {
-    id: '4',
-    slug: 'react-server-components',
-    title: 'Understanding React Server Components',
-    description:
-      'Everything you need to know about RSCs and how they change the game.',
-    imageUrl:
-      'https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3',
-    content: ``,
-    publishedAt: '2025-01-05',
-    readingTime: '10 min read',
-    categories: ['React', 'Server Components', 'Performance'],
-  },
-  {
-    id: '5',
-    slug: 'automated-testing-strategies',
-    title: 'Automated Testing Strategies for Modern Web Applications',
-    description:
-      'Learn effective strategies for implementing automated tests in your web applications.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3',
-    content: '',
-    publishedAt: '2024-12-12',
-    readingTime: '11 min read',
-    categories: ['Testing', 'Automation', 'Web Development'],
-  },
-  {
-    id: '6',
-    slug: 'nextjs-performance-optimization',
-    title: 'Next.js Performance Optimization Techniques',
-    description:
-      'Discover the most effective ways to optimize your Next.js application for speed and efficiency.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3',
-    content: '',
-    publishedAt: '2024-11-20',
-    readingTime: '9 min read',
-    categories: ['Next.js', 'Performance', 'Optimization'],
-  },
-];
+// const blogs: BlogType[] = [
+//   {
+//     id: '1',
+//     slug: 'automate-postman-test-data-generation',
+//     title:
+//       'Stop Manually Typing Test Data: Automate Your Postman API Tests Like a Pro',
+//     description:
+//       'Tired of manually changing data for each test run? Learn how to generate random test data in Postman and make API testing fun again!',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+//     content: ``,
+//     publishedAt: '2025-04-15',
+//     readingTime: '8 min read',
+//     categories: ['API Testing', 'Postman', 'Automation'],
+//   },
+//   {
+//     id: '2',
+//     slug: 'hidden-bias-testing-familiarity',
+//     title: 'The Hidden Bias in Testing: When Familiarity Clouds Judgment',
+//     description:
+//       'How working closely with developers can affect your objectivity as a software tester, and practical tactics to maintain your testing integrity.',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+//     content: ``,
+//     publishedAt: '2025-05-03',
+//     readingTime: '12 min read',
+//     categories: ['Web Development', 'React', 'Node.js'],
+//   },
+// ];
 
 const ITEMS_PER_PAGE = 6;
 
@@ -109,6 +58,7 @@ const BlogList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [blogs, setBlogs] = useState<BlogType[]>([]);
 
   // Simulate loading state
   useEffect(() => {
@@ -118,10 +68,26 @@ const BlogList = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await fetch('/api/blogs');
+        const data = await res.json();
+        setBlogs(data);
+      } catch (err) {
+        console.error('Failed to load blogs', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   // Extract all unique categories
-  const allCategories = Array.from(
-    new Set(blogs.flatMap((blog) => blog.categories || []))
-  );
+  // const allCategories = Array.from(
+  //   new Set(blogs.flatMap((blog) => blog.categories || []))
+  // );
 
   // Filter blogs based on search, category
   const filteredBlogs = blogs.filter((blog) => {
@@ -151,10 +117,10 @@ const BlogList = () => {
   };
 
   // Handle category selection
-  const handleCategorySelect = (category: string) => {
-    setSelectedCategory(category === selectedCategory ? null : category);
-    setCurrentPage(1); // Reset to first page when changing category
-  };
+  // const handleCategorySelect = (category: string) => {
+  //   setSelectedCategory(category === selectedCategory ? null : category);
+  //   setCurrentPage(1); // Reset to first page when changing category
+  // };
 
   // Reset all filters
   const resetFilters = () => {
@@ -199,7 +165,7 @@ const BlogList = () => {
           ) : null}
         </div>
 
-        {/* Category filters */}
+        {/* Category filters
         <div className='flex flex-wrap gap-2'>
           {allCategories.map((category) => (
             <button
@@ -214,7 +180,7 @@ const BlogList = () => {
               {category}
             </button>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {isLoading ? (
@@ -380,15 +346,5 @@ const BlogList = () => {
     </section>
   );
 };
-
-// Helper function to format dates
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  }).format(date);
-}
 
 export default BlogList;
