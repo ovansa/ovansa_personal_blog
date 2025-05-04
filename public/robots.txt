@@ -1,9 +1,4 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
-Host: https://ovansa.me
-
-# Sitemaps
 Sitemap: https://ovansa.me/sitemap.xml
