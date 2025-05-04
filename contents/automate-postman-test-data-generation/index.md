@@ -76,6 +76,10 @@ Take a look at the request payload - it has fields for email, fullName, and pass
 
 This is where the magic happens! Click on the "Pre-request Script" tab in your request.
 
+![Pre-request Script Tab](/images/blog/postman-tutorial/pre-request-tab.png)
+
+<!-- _Caption: "Click on the 'Pre-request Script' tab located here to add your data generation code"_ -->
+
 First, let's generate a random string using JavaScript's Math random function:
 
 ```javascript
