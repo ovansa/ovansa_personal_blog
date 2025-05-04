@@ -188,12 +188,12 @@ export default async function BlogPost(props: Props) {
       : DateTime.now();
 
     return (
-      <div className='bg-gray-50 dark:bg-gray-900 min-h-screen pb-16'>
+      <div className='bg-gray-50 dark:bg-gray-900 min-h-screen pb-8 md:pb-16'>
         {/* Header banner */}
         <div className='w-full bg-white dark:bg-gray-800 shadow-sm'>
-          <MaxWidthWrapper>
-            <div className='py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8'>
-              <div className='md:w-3/5 space-y-4'>
+          <MaxWidthWrapper className='px-4 sm:px-6 md:px-8'>
+            <div className='py-6 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8'>
+              <div className='w-full md:w-3/5 space-y-3 md:space-y-4'>
                 <div className='flex gap-2 flex-wrap'>
                   {data.categories?.map((category: string) => (
                     <span
@@ -205,12 +205,12 @@ export default async function BlogPost(props: Props) {
                   ))}
                 </div>
 
-                <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mt-0'>
+                <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mt-0'>
                   {data.title}
                 </h1>
 
                 {data.description && (
-                  <p className='text-lg text-gray-600 dark:text-gray-300 leading-relaxed'>
+                  <p className='text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed'>
                     {data.description}
                   </p>
                 )}
@@ -226,13 +226,13 @@ export default async function BlogPost(props: Props) {
                 </div>
               </div>
 
-              <div className='md:w-2/5 flex justify-center md:justify-end'>
-                <div className='relative w-full max-w-sm aspect-square rounded-xl overflow-hidden shadow-lg'>
+              <div className='w-full md:w-2/5 flex justify-center md:justify-end mt-6 md:mt-0'>
+                <div className='relative w-full max-w-xs sm:max-w-sm aspect-square rounded-xl overflow-hidden shadow-lg'>
                   <Image
                     src={headerImage}
                     alt={data.title || 'Blog post header image'}
                     fill
-                    sizes='(max-width: 768px) 100vw, 384px'
+                    sizes='(max-width: 640px) 100vw, (max-width: 768px) 384px, 384px'
                     priority
                     className='object-cover hover:scale-105 transition-transform duration-500'
                   />
@@ -243,17 +243,18 @@ export default async function BlogPost(props: Props) {
         </div>
 
         {/* Content section */}
-        <MaxWidthWrapper className='mt-12'>
-          <div className='flex flex-col lg:flex-row gap-16'>
-            <article className='lg:w-3/4 w-full prose dark:prose-invert max-w-none prose-headings:scroll-mt-20'>
-              <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8'>
+        <MaxWidthWrapper className='mt-6 md:mt-12 px-4 sm:px-6 md:px-8'>
+          <div className='flex flex-col lg:flex-row gap-8 lg:gap-16'>
+            <article className='w-full lg:w-3/4 prose dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-img:rounded-xl'>
+              <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 md:p-8'>
                 <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
               </div>
             </article>
 
-            <aside className='lg:w-1/4 w-full'>
+            {/* Table of Contents - Hidden on mobile, shown on larger screens */}
+            <aside className='hidden lg:block lg:w-1/4 w-full'>
               <div className='sticky top-24'>
-                <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6'>
+                <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 md:p-6'>
                   <h3 className='text-lg font-semibold mb-4'>On This Page</h3>
                   <OnThisPage
                     className='text-sm'
@@ -262,6 +263,21 @@ export default async function BlogPost(props: Props) {
                 </div>
               </div>
             </aside>
+
+            {/* Mobile Table of Contents (Collapsible) */}
+            <div className='lg:hidden w-full mb-6'>
+              <details className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4'>
+                <summary className='text-lg font-semibold cursor-pointer'>
+                  On This Page
+                </summary>
+                <div className='mt-4'>
+                  <OnThisPage
+                    className='text-sm'
+                    htmlContent={htmlContent}
+                  />
+                </div>
+              </details>
+            </div>
           </div>
         </MaxWidthWrapper>
       </div>
@@ -269,7 +285,7 @@ export default async function BlogPost(props: Props) {
   } catch (error) {
     console.error('Error processing markdown file:', error);
     return (
-      <div className='min-h-screen flex items-center justify-center'>
+      <div className='min-h-screen flex items-center justify-center px-4'>
         <div className='text-center'>
           <h1 className='text-2xl font-bold text-red-600 mb-4'>
             404 - Article Not Found

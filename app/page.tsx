@@ -170,31 +170,30 @@ export default function Home() {
             </div>
           </MaxWidthWrapper>
         </section>
-
         {/* Expertise Section */}
         <section
-          className='py-10 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800'
+          className='py-8 sm:py-10 md:py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800'
           id='expertise'
         >
           <MaxWidthWrapper>
-            <div className='text-center mb-16'>
-              <h2 className='text-3xl md:text-5xl font-bold mb-6'>
+            <div className='text-center mb-8 sm:mb-12 md:mb-16 px-4'>
+              <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6'>
                 Technical Expertise
               </h2>
-              <p className='text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto'>
+              <p className='text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto'>
                 With extensive experience across multiple industries, I deliver
                 high-quality software through specialized skills and proven
                 methodologies.
               </p>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6'>
               {/* API Testing */}
-              <div className='bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-blue-500'>
-                <div className='h-16 w-16 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 mx-auto'>
+              <div className='bg-white dark:bg-gray-800 p-5 sm:p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-blue-500'>
+                <div className='h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 sm:mb-6 mx-auto'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='h-9 w-9 text-blue-600 dark:text-blue-400'
+                    className='h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-blue-600 dark:text-blue-400'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -207,13 +206,13 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className='text-xl font-bold mb-3 text-center'>
+                <h3 className='text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center'>
                   API Testing & Automation
                 </h3>
-                <p className='text-gray-600 dark:text-gray-400 mb-5 text-center'>
+                <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-5 text-center'>
                   Efficient test data generation for reliable API test suites.
                 </p>
-                <ul className='text-sm text-gray-700 dark:text-gray-300 space-y-3'>
+                <ul className='text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 sm:space-y-3'>
                   <li className='flex items-start'>
                     <span className='text-blue-500 dark:text-blue-400 mr-2 mt-1 flex-shrink-0'>
                       →
@@ -249,11 +248,11 @@ export default function Home() {
               </div>
 
               {/* Backend Development */}
-              <div className='bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-pink-500'>
-                <div className='h-16 w-16 rounded-lg bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-6 mx-auto'>
+              <div className='bg-white dark:bg-gray-800 p-5 sm:p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-pink-500'>
+                <div className='h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-lg bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-4 sm:mb-6 mx-auto'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='h-9 w-9 text-pink-600 dark:text-pink-400'
+                    className='h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-pink-600 dark:text-pink-400'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -266,14 +265,14 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className='text-xl font-bold mb-3 text-center'>
+                <h3 className='text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center'>
                   Testable Backend Development
                 </h3>
-                <p className='text-gray-600 dark:text-gray-400 mb-5 text-center'>
+                <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-5 text-center'>
                   Architecting backend services with testing in mind from day
                   one across multiple languages and frameworks.
                 </p>
-                <ul className='text-sm text-gray-700 dark:text-gray-300 space-y-3'>
+                <ul className='text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 sm:space-y-3'>
                   <li className='flex items-start'>
                     <span className='text-pink-500 dark:text-pink-400 mr-2 mt-1 flex-shrink-0'>
                       →
@@ -304,11 +303,11 @@ export default function Home() {
               </div>
 
               {/* End-to-End Quality Assurance */}
-              <div className='bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-green-500'>
-                <div className='h-16 w-16 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6 mx-auto'>
+              <div className='bg-white dark:bg-gray-800 p-5 sm:p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-green-500'>
+                <div className='h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4 sm:mb-6 mx-auto'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='h-9 w-9 text-green-600 dark:text-green-400'
+                    className='h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-green-600 dark:text-green-400'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -321,14 +320,14 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className='text-xl font-bold mb-3 text-center'>
+                <h3 className='text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center'>
                   End-to-End Quality Assurance
                 </h3>
-                <p className='text-gray-600 dark:text-gray-400 mb-5 text-center'>
+                <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-5 text-center'>
                   Creating automated user journeys that validate real-world
                   scenarios across your entire application stack.
                 </p>
-                <ul className='text-sm text-gray-700 dark:text-gray-300 space-y-3'>
+                <ul className='text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 sm:space-y-3'>
                   <li className='flex items-start'>
                     <span className='text-green-500 dark:text-green-400 mr-2 mt-1 flex-shrink-0'>
                       →
@@ -357,11 +356,11 @@ export default function Home() {
               </div>
 
               {/* Testing Strategy */}
-              <div className='bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-purple-500'>
-                <div className='h-16 w-16 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6 mx-auto'>
+              <div className='bg-white dark:bg-gray-800 p-5 sm:p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-purple-500'>
+                <div className='h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4 sm:mb-6 mx-auto'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='h-9 w-9 text-purple-600 dark:text-purple-400'
+                    className='h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-purple-600 dark:text-purple-400'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -374,14 +373,14 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className='text-xl font-bold mb-3 text-center'>
+                <h3 className='text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center'>
                   Testing Strategy & Leadership
                 </h3>
-                <p className='text-gray-600 dark:text-gray-400 mb-5 text-center'>
+                <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-5 text-center'>
                   Finding the right balance between speed and thoroughness with
                   practical, proven testing approaches.
                 </p>
-                <ul className='text-sm text-gray-700 dark:text-gray-300 space-y-3'>
+                <ul className='text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 sm:space-y-3'>
                   <li className='flex items-start'>
                     <span className='text-purple-500 dark:text-purple-400 mr-2 mt-1 flex-shrink-0'>
                       →
