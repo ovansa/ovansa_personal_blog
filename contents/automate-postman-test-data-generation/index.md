@@ -77,9 +77,9 @@ Take a look at the request payload - it has fields for email, fullName, and pass
 This is where the magic happens! Click on the "Pre-request Script" tab in your request.
 
 ![Pre-request Script Tab](/images/blog/postman-tutorial/pre-request-tab.png)
-_Click on the 'Pre-request Script' tab to add your data generation code_
+_Navigate to the "Pre-request Script" tab (highlighted above) to add your custom JavaScript code that will generate random test data before each request is sent._
 
-First, let's generate a random string using JavaScript's Math random function:
+First, let's generate a random string using JavaScript's MAath random function:
 
 ```javascript
 const randomString = Math.random().toString(36).slice(2, 10);
@@ -103,7 +103,7 @@ console.log('Generated Password:', password);
 ```
 
 ![Postman Console](/images/blog/postman-tutorial/postman-console.png)
-_Caption: "After running your request, open the Postman console to see your generated values like this"_
+_View your generated test data in the Postman Console (Ctrl+Alt+C). This debugging feature lets you verify the values being created before they're used in your request._
 
 Now we need to save these generated values somewhere so our request can use them. Depending on your needs, you can save them as collection variables, environment variables, or global variables. I typically use collection or environment variables.
 
@@ -116,7 +116,7 @@ pm.collectionVariables.set('randomPassword', password);
 ```
 
 ![Collection Variable Section](/images/blog/postman-tutorial/collection-variable-section.png)
-_Caption: "You can view and manage your collection variables in the Variables tab of your collection"_
+_The Collection Variables section stores your generated values for reuse across multiple requests. Access this panel from the collection sidebar to inspect or manually edit your variables._
 
 Alternatively, if you prefer environment variables, use:
 
@@ -151,14 +151,14 @@ To:
 ```
 
 ![Request Comparison](/images/blog/postman-tutorial/request-comparison.png)
-_Caption: "Left: Static request body with hardcoded values | Right: Dynamic request body using variables"_
+_Transform static request bodies (left) into dynamic templates (right) by replacing hardcoded values with variable references. This simple change enables endless test variations without manual editing._
 
 ### Step 4: Send Your Request
 
 Hit that "Send" button and watch the magic happen! Every time you send the request, your pre-request script will generate new random values, so you'll be creating a unique user each time without having to type anything manually.
 
 ![Successful Response](/images/blog/postman-tutorial/successful-response.png)
-_Caption: "A successful response showing your new user was created with the random data"_
+_A successful API response confirms your dynamically generated data was accepted by the server. Note how each request creates a unique user with randomized credentials from your pre-request script._
 
 ### Step 5: Verify Your Results (Optional but Recommended)
 
