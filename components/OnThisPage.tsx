@@ -41,7 +41,7 @@ const OnThisPage = ({
   return (
     <div className={cn('hidden md:block', className)}>
       <div className='sticky top-20'>
-        <h2>On this Page</h2>
+        {/* <h2>On this Page</h2> */}
         <ul className='not-prose'>
           {links?.map((link) => (
             <li
