@@ -77,8 +77,7 @@ Take a look at the request payload - it has fields for email, fullName, and pass
 This is where the magic happens! Click on the "Pre-request Script" tab in your request.
 
 ![Pre-request Script Tab](/images/blog/postman-tutorial/pre-request-tab.png)
-
-<!-- _Caption: "Click on the 'Pre-request Script' tab located here to add your data generation code"_ -->
+_Caption: "Click on the 'Pre-request Script' tab located here to add your data generation code"_
 
 First, let's generate a random string using JavaScript's Math random function:
 
@@ -103,6 +102,9 @@ console.log('Generated Full Name:', fullName);
 console.log('Generated Password:', password);
 ```
 
+![Pre-request Script Tab](/images/blog/postman-tutorial/postman-console.png)
+_Caption: "After running your request, open the Postman console to see your generated values like this"_
+
 Now we need to save these generated values somewhere so our request can use them. Depending on your needs, you can save them as collection variables, environment variables, or global variables. I typically use collection or environment variables.
 
 For collection variables (my preference), use:
@@ -112,6 +114,9 @@ pm.collectionVariables.set('randomEmail', email);
 pm.collectionVariables.set('randomFullName', fullName);
 pm.collectionVariables.set('randomPassword', password);
 ```
+
+![Pre-request Script Tab](/images/blog/postman-tutorial/collection-variable-section.png)
+_Caption: "You can view and manage your collection variables in the Variables tab of your collection"_
 
 Alternatively, if you prefer environment variables, use:
 
