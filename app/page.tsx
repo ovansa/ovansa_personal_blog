@@ -73,7 +73,7 @@ export default function Home() {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
               <div className='space-y-6'>
                 <span className='inline-block px-3 py-1 text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full'>
-                  Software Test Engineer
+                  Software Tester
                 </span>
                 <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight'>
                   Elevate Your Software Quality{' '}
@@ -83,7 +83,7 @@ export default function Home() {
                 </h1>
                 <p className='text-lg md:text-xl'>
                   I&apos;m <strong>Muhammed Ibrahim (Ovansa)</strong>, a
-                  Software Test Engineer with over 7 years&apos; experience. I
+                  Software Tester with over 7 years&apos; experience. I
                   help teams build reliable APIs, automate testing processes,
                   and implement quality-driven development practices that save
                   time and reduce bugs.

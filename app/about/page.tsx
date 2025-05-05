@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     'API testing',
     'test automation',
     'Muhammed Ibrahim',
+    'software tester'
   ],
   openGraph: {
     title: 'About - Muhammed Ibrahim | Software Test Engineer',
