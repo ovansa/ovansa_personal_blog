@@ -76,7 +76,7 @@ Take a look at the request payload - it has fields for email, fullName, and pass
 
 This is where the magic happens! Click on the "Pre-request Script" tab in your request.
 
-![Pre-request Script Tab](/images/blog/postman-tutorial/pre-request-tab.png)
+![Pre-request Script Tab](https://d1odwqewagcdkp.cloudfront.net/pre-request-tab.png)
 _Navigate to the "Pre-request Script" tab (highlighted above) to add your custom JavaScript code that will generate random test data before each request is sent._
 
 First, let's generate a random string using JavaScript's MAath random function:
@@ -102,7 +102,7 @@ console.log('Generated Full Name:', fullName);
 console.log('Generated Password:', password);
 ```
 
-![Postman Console](/images/blog/postman-tutorial/postman-console.png)
+![Postman Console](https://d1odwqewagcdkp.cloudfront.net/postman-console.png)
 _View your generated test data in the Postman Console (Ctrl+Alt+C). This debugging feature lets you verify the values being created before they're used in your request._
 
 Now we need to save these generated values somewhere so our request can use them. Depending on your needs, you can save them as collection variables, environment variables, or global variables. I typically use collection or environment variables.
@@ -115,7 +115,7 @@ pm.collectionVariables.set('randomFullName', fullName);
 pm.collectionVariables.set('randomPassword', password);
 ```
 
-![Collection Variable Section](/images/blog/postman-tutorial/collection-variable-section.png)
+![Collection Variable Section](https://d1odwqewagcdkp.cloudfront.net/collection-variable-section.png)
 _The Collection Variables section stores your generated values for reuse across multiple requests. Access this panel from the collection sidebar to inspect or manually edit your variables._
 
 Alternatively, if you prefer environment variables, use:
@@ -150,14 +150,14 @@ To:
 }
 ```
 
-![Request Comparison](/images/blog/postman-tutorial/request-comparison.png)
+![Request Comparison](https://d1odwqewagcdkp.cloudfront.net/request-comparison.png)
 _Transform static request bodies (left) into dynamic templates (right) by replacing hardcoded values with variable references. This simple change enables endless test variations without manual editing._
 
 ### Step 4: Send Your Request
 
 Hit that "Send" button and watch the magic happen! Every time you send the request, your pre-request script will generate new random values, so you'll be creating a unique user each time without having to type anything manually.
 
-![Successful Response](/images/blog/postman-tutorial/successful-response.png)
+![Successful Response](https://d1odwqewagcdkp.cloudfront.net/successful-response.png)
 _A successful API response confirms your dynamically generated data was accepted by the server. Note how each request creates a unique user with randomized credentials from your pre-request script._
 
 ### Step 5: Verify Your Results (Optional but Recommended)
@@ -196,10 +196,10 @@ That's it! With this pre-request script approach, you've created a tool that gen
 
 This setup allows you to:
 
-* **Focus on critical thinking and test design** rather than repetitive data management
-* **Invest time strategically** – automation that pays off by supporting exploratory testing
-* **Run varied test scenarios** without the cognitive overhead of manual data coordination
-* **Create space for deeper investigation** when you discover interesting system behaviors
+- **Focus on critical thinking and test design** rather than repetitive data management
+- **Invest time strategically** – automation that pays off by supporting exploratory testing
+- **Run varied test scenarios** without the cognitive overhead of manual data coordination
+- **Create space for deeper investigation** when you discover interesting system behaviors
 
 Remember: The goal isn't "full automation" but thoughtful application of tools that extend your capabilities as a tester. Your context matters, and be ready to adapt this approach as you learn more about your system's behaviors and risks.
 
