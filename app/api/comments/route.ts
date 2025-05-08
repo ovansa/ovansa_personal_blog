@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/db'; // You'll need to set up your database connection
-// import { auth } from '@/lib/auth'; // Optional: for authenticated comments
+import db from '@/lib/db';
 
 // GET /api/comments?slug=your-article-slug
 export async function GET(request: NextRequest) {
@@ -57,10 +56,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Optional: Get the current user if using authentication
-    // const session = await auth();
-    // const userId = session?.user?.id;
-
     // Create the comment
     await db.comment.create({
       data: {
@@ -68,7 +63,6 @@ export async function POST(request: NextRequest) {
         name,
         email,
         content,
-        // userId: userId, // If using auth
         parentId: parentId || null,
       },
     });
