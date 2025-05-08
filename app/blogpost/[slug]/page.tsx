@@ -1,95 +1,3 @@
-// import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-// import { unified } from 'unified';
-// import remarkParse from 'remark-parse';
-// import remarkFrontmatter from 'remark-frontmatter';
-// import remarkRehype from 'remark-rehype';
-// import rehypeStringify from 'rehype-stringify';
-// import rehypeHighlight from 'rehype-highlight';
-// import matter from 'gray-matter';
-// import path from 'path';
-// import { promises as fs } from 'fs';
-// import OnThisPage from '@/components/OnThisPage';
-// import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-// import rehypeSlug from 'rehype-slug';
-// import { rehypePrettyCode } from 'rehype-pretty-code';
-// import { transformerCopyButton } from '@rehype-pretty/transformers';
-
-// type Props = {
-//   params: Promise<{
-//     slug: string;
-//   }>;
-// };
-
-// export async function generateStaticParams() {
-//   // Optional: You can scan your contents folder to generate static params
-//   return []; // fill this in later if needed
-// }
-
-// export async function generateMetadata(props: Props) {
-//   const params = await props.params;
-//   return {
-//     title: params.slug,
-//   };
-// }
-
-// export default async function BlogPost(props: Props) {
-//   const params = await props.params;
-//   const { slug } = params;
-
-//   const processor = unified()
-//     .use(remarkParse)
-//     .use(remarkFrontmatter)
-//     .use(remarkRehype)
-//     .use(rehypePrettyCode, {
-//       theme: 'material-theme-ocean',
-//       transformers: [
-//         transformerCopyButton({
-//           visibility: 'always',
-//           feedbackDuration: 3_000,
-//         }),
-//       ],
-//     })
-//     .use(rehypeHighlight)
-//     .use(rehypeStringify)
-//     .use(rehypeSlug)
-//     .use(rehypeAutolinkHeadings);
-
-//   try {
-//     const markdownDir = path.join(process.cwd(), 'contents');
-//     const filePath = path.join(markdownDir, `${slug}.md`);
-//     const fileContent = await fs.readFile(filePath, 'utf-8');
-
-//     const { data, content } = matter(fileContent);
-//     const htmlContent = (
-//       await processor.process(content || data.content)
-//     ).toString();
-
-//     return (
-//       <MaxWidthWrapper className='prose dark:prose-invert'>
-//         <div className='flex px-16'>
-//           <div className='pr-16'>
-//             <h1>{data.title}</h1>
-//             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-//           </div>
-//           <OnThisPage
-//             className='text-sm w-[40%]'
-//             htmlContent={htmlContent}
-//           />
-//         </div>
-//       </MaxWidthWrapper>
-//     );
-//   } catch (error) {
-//     console.error('Error processing markdown file:', error);
-//     return (
-//       <MaxWidthWrapper>
-//         <h1 className='text-2xl font-bold text-red-600'>
-//           404 - Article Not Found
-//         </h1>
-//       </MaxWidthWrapper>
-//     );
-//   }
-// }
-
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -107,6 +15,8 @@ import { rehypePrettyCode } from 'rehype-pretty-code';
 import { transformerCopyButton } from '@rehype-pretty/transformers';
 import Image from 'next/image';
 import { DateTime } from 'luxon';
+import Comments from '@/components/Comments'; // Import the Comments component
+import { Card } from '@/components/ui/card'; // Import Card from shadcn/ui
 
 type Props = {
   params: Promise<{
@@ -245,22 +155,116 @@ export default async function BlogPost(props: Props) {
         {/* Content section */}
         <MaxWidthWrapper className='mt-6 md:mt-12 px-4 sm:px-6 md:px-8'>
           <div className='flex flex-col lg:flex-row gap-8 lg:gap-16'>
-            <article className='w-full lg:w-3/4 prose dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-img:rounded-xl'>
-              <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 md:p-8'>
-                <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-              </div>
-            </article>
+            <div className='w-full lg:w-3/4 space-y-8'>
+              {/* Article content */}
+              <article className='prose dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-img:rounded-xl'>
+                <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 md:p-8'>
+                  <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                </div>
+              </article>
+
+              {/* Comments section */}
+              <section className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 md:p-8'>
+                <Comments slug={slug} />
+              </section>
+            </div>
 
             {/* Table of Contents - Hidden on mobile, shown on larger screens */}
             <aside className='hidden lg:block lg:w-1/4 w-full'>
-              <div className='sticky top-24'>
-                <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 md:p-6'>
+              <div className='sticky top-24 space-y-6'>
+                <Card className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 md:p-6'>
                   <h3 className='text-lg font-semibold mb-4'>On This Page</h3>
                   <OnThisPage
                     className='text-sm'
                     htmlContent={htmlContent}
                   />
-                </div>
+                </Card>
+
+                {/* Share card */}
+                <Card className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 md:p-6'>
+                  <h3 className='text-lg font-semibold mb-4'>Share Article</h3>
+                  <div className='flex gap-2'>
+                    <button className='p-2 rounded-full bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-800/50 text-blue-600 dark:text-blue-300 transition-colors'>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='20'
+                        height='20'
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        stroke='currentColor'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      >
+                        <path d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z'></path>
+                      </svg>
+                    </button>
+                    <button className='p-2 rounded-full bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-800/50 text-blue-600 dark:text-blue-300 transition-colors'>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='20'
+                        height='20'
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        stroke='currentColor'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      >
+                        <path d='M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z'></path>
+                      </svg>
+                    </button>
+                    <button className='p-2 rounded-full bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-800/50 text-blue-600 dark:text-blue-300 transition-colors'>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='20'
+                        height='20'
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        stroke='currentColor'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      >
+                        <path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z'></path>
+                        <rect
+                          x='2'
+                          y='9'
+                          width='4'
+                          height='12'
+                        ></rect>
+                        <circle
+                          cx='4'
+                          cy='4'
+                          r='2'
+                        ></circle>
+                      </svg>
+                    </button>
+                    <button className='p-2 rounded-full bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-800/50 text-blue-600 dark:text-blue-300 transition-colors'>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='20'
+                        height='20'
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        stroke='currentColor'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      >
+                        <rect
+                          x='9'
+                          y='9'
+                          width='13'
+                          height='13'
+                          rx='2'
+                          ry='2'
+                        ></rect>
+                        <path d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'></path>
+                      </svg>
+                    </button>
+                  </div>
+                </Card>
               </div>
             </aside>
 
