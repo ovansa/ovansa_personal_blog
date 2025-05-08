@@ -1,95 +1,3 @@
-// import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-// import { unified } from 'unified';
-// import remarkParse from 'remark-parse';
-// import remarkFrontmatter from 'remark-frontmatter';
-// import remarkRehype from 'remark-rehype';
-// import rehypeStringify from 'rehype-stringify';
-// import rehypeHighlight from 'rehype-highlight';
-// import matter from 'gray-matter';
-// import path from 'path';
-// import { promises as fs } from 'fs';
-// import OnThisPage from '@/components/OnThisPage';
-// import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-// import rehypeSlug from 'rehype-slug';
-// import { rehypePrettyCode } from 'rehype-pretty-code';
-// import { transformerCopyButton } from '@rehype-pretty/transformers';
-
-// type Props = {
-//   params: Promise<{
-//     slug: string;
-//   }>;
-// };
-
-// export async function generateStaticParams() {
-//   // Optional: You can scan your contents folder to generate static params
-//   return []; // fill this in later if needed
-// }
-
-// export async function generateMetadata(props: Props) {
-//   const params = await props.params;
-//   return {
-//     title: params.slug,
-//   };
-// }
-
-// export default async function BlogPost(props: Props) {
-//   const params = await props.params;
-//   const { slug } = params;
-
-//   const processor = unified()
-//     .use(remarkParse)
-//     .use(remarkFrontmatter)
-//     .use(remarkRehype)
-//     .use(rehypePrettyCode, {
-//       theme: 'material-theme-ocean',
-//       transformers: [
-//         transformerCopyButton({
-//           visibility: 'always',
-//           feedbackDuration: 3_000,
-//         }),
-//       ],
-//     })
-//     .use(rehypeHighlight)
-//     .use(rehypeStringify)
-//     .use(rehypeSlug)
-//     .use(rehypeAutolinkHeadings);
-
-//   try {
-//     const markdownDir = path.join(process.cwd(), 'contents');
-//     const filePath = path.join(markdownDir, `${slug}.md`);
-//     const fileContent = await fs.readFile(filePath, 'utf-8');
-
-//     const { data, content } = matter(fileContent);
-//     const htmlContent = (
-//       await processor.process(content || data.content)
-//     ).toString();
-
-//     return (
-//       <MaxWidthWrapper className='prose dark:prose-invert'>
-//         <div className='flex px-16'>
-//           <div className='pr-16'>
-//             <h1>{data.title}</h1>
-//             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-//           </div>
-//           <OnThisPage
-//             className='text-sm w-[40%]'
-//             htmlContent={htmlContent}
-//           />
-//         </div>
-//       </MaxWidthWrapper>
-//     );
-//   } catch (error) {
-//     console.error('Error processing markdown file:', error);
-//     return (
-//       <MaxWidthWrapper>
-//         <h1 className='text-2xl font-bold text-red-600'>
-//           404 - Article Not Found
-//         </h1>
-//       </MaxWidthWrapper>
-//     );
-//   }
-// }
-
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -107,6 +15,9 @@ import { rehypePrettyCode } from 'rehype-pretty-code';
 import { transformerCopyButton } from '@rehype-pretty/transformers';
 import Image from 'next/image';
 import { DateTime } from 'luxon';
+import Comments from '@/components/Comments'; // Import the Comments component
+import { Card } from '@/components/ui/card'; // Import Card from shadcn/ui
+import ShareCard from '@/components/ShareCard';
 
 type Props = {
   params: Promise<{
@@ -245,22 +156,39 @@ export default async function BlogPost(props: Props) {
         {/* Content section */}
         <MaxWidthWrapper className='mt-6 md:mt-12 px-4 sm:px-6 md:px-8'>
           <div className='flex flex-col lg:flex-row gap-8 lg:gap-16'>
-            <article className='w-full lg:w-3/4 prose dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-img:rounded-xl'>
-              <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 md:p-8'>
-                <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-              </div>
-            </article>
+            <div className='w-full lg:w-3/4 space-y-8'>
+              {/* Article content */}
+              <article className='prose dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-img:rounded-xl'>
+                <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 md:p-8'>
+                  <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                </div>
+              </article>
+
+              {/* Comments section */}
+              <section className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 md:p-8'>
+                <Comments slug={slug} />
+              </section>
+            </div>
 
             {/* Table of Contents - Hidden on mobile, shown on larger screens */}
             <aside className='hidden lg:block lg:w-1/4 w-full'>
-              <div className='sticky top-24'>
-                <div className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 md:p-6'>
+              <div className='sticky top-24 space-y-6'>
+                <Card className='bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 md:p-6'>
                   <h3 className='text-lg font-semibold mb-4'>On This Page</h3>
                   <OnThisPage
                     className='text-sm'
                     htmlContent={htmlContent}
                   />
-                </div>
+                </Card>
+
+                {/* Share card */}
+                <ShareCard
+                  url={`${
+                    process.env.NEXT_PUBLIC_SITE_URL || 'https://ovansa.me'
+                  }/blogpost/${slug}`}
+                  title={data.title}
+                  description={data.description || ''}
+                />
               </div>
             </aside>
 

@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// User model (optional - if you want to add authentication)
+model User {
+  id        String    @id @default(cuid())
+  name      String?
+  email     String    @unique
+  image     String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  comments  Comment[]
+}
+
+// Comment model
+model Comment {
+  id          String  @id @default(cuid())
+  articleSlug String // Slug of the article the comment belongs to
+  content     String // Comment content
+  name        String // Commenter's name
+  email       String // Commenter's email (can be hidden from public)
+  avatarUrl   String? // Optional avatar URL
+  likes       Int     @default(0) // Number of likes
+
+  // If using authentication
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  // For nested comments/replies
+  parentId String?
+  parent   Comment?  @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies  Comment[] @relation("CommentReplies")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Indexes for faster queries
+  @@index([articleSlug])
+  @@index([userId])
+  @@index([parentId])
+}
+
+// Optional: Track likes separately for more advanced functionality
+model CommentLike {
+  id        String   @id @default(cuid())
+  commentId String
+  userId    String? // If using authentication
+  ipAddress String? // Alternative to userId for non-authenticated likes
+  createdAt DateTime @default(now())
+
+  @@unique([commentId, userId])
+  @@unique([commentId, ipAddress])
+  @@index([commentId])
+}
