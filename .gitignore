@@ -62,4 +62,4 @@ next-env.d.ts
 *.bak
 *.dump
 
-# lib/generated/
+lib/generated/
