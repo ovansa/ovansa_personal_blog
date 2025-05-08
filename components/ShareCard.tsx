@@ -12,7 +12,7 @@ interface ShareCardProps {
 const ShareCard: React.FC<ShareCardProps> = ({
   url = typeof window !== 'undefined' ? window.location.href : '',
   title = typeof window !== 'undefined' ? document.title : '',
-  description = '',
+  //   description = '',
 }) => {
   const [shareStatus, setShareStatus] = useState<string>('');
 
