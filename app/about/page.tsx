@@ -516,8 +516,8 @@ export default function About() {
 
           <div className='bg-white dark:bg-gray-800 rounded-lg shadow-md p-6'>
             <p className='text-lg mb-6'>
-              When I&apos;m not finding bugs or automating tests, you might find
-              me:
+              When I&apos;m not finding bugs or working on test-related tasks,
+              you might find me:
             </p>
 
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>

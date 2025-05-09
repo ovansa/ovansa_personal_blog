@@ -83,10 +83,10 @@ export default function Home() {
                 </h1>
                 <p className='text-lg md:text-xl'>
                   I&apos;m <strong>Muhammed Ibrahim (Ovansa)</strong>, a
-                  Software Tester with over 7 years&apos; experience. I
-                  help teams build reliable APIs, automate testing processes,
-                  and implement quality-driven development practices that save
-                  time and reduce bugs.
+                  Software Tester with over 7 years&apos; experience. I help
+                  teams build reliable APIs, automate testing processes, and
+                  implement quality-driven development practices that save time
+                  and reduce bugs.
                 </p>
                 <div className='flex flex-wrap gap-4'>
                   <Link
@@ -422,20 +422,18 @@ export default function Home() {
                 How I Can Help You
               </h2>
               <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
-                I offer specialized services to help teams improve their testing
-                practices and deliver higher quality software.
+                I offer specialized services to help teams deliver higher
+                quality software and improve their testing practices.
               </p>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 gap-16'>
-              {/* Consulting */}
+              {/* API Development */}
               <div className='bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow'>
-                <h3 className='text-2xl font-bold mb-4'>
-                  Testing Consultation
-                </h3>
+                <h3 className='text-2xl font-bold mb-4'>API Development</h3>
                 <p className='text-gray-600 dark:text-gray-400 mb-6'>
-                  Need expert eyes on your testing strategy or automation setup?
-                  I&apos;ll help you:
+                  Need custom API solutions for your business or project? I
+                  build:
                 </p>
                 <ul className='space-y-3 mb-6'>
                   <li className='flex items-start'>
@@ -444,8 +442,7 @@ export default function Home() {
                       className='text-green-500 mt-1 mr-2 flex-shrink-0'
                     />
                     <span>
-                      Design scalable test architectures that grow with your
-                      product
+                      RESTful APIs with secure authentication and authorization
                     </span>
                   </li>
                   <li className='flex items-start'>
@@ -454,7 +451,7 @@ export default function Home() {
                       className='text-green-500 mt-1 mr-2 flex-shrink-0'
                     />
                     <span>
-                      Optimize test suites to reduce flakiness and maintenance
+                      Performance-optimized data endpoints and services
                     </span>
                   </li>
                   <li className='flex items-start'>
@@ -462,7 +459,10 @@ export default function Home() {
                       size={20}
                       className='text-green-500 mt-1 mr-2 flex-shrink-0'
                     />
-                    <span>Implement CI/CD-friendly automation strategies</span>
+                    <span>
+                      Integration solutions with third-party services and
+                      systems
+                    </span>
                   </li>
                   <li className='flex items-start'>
                     <FaCheckCircle
@@ -470,22 +470,22 @@ export default function Home() {
                       className='text-green-500 mt-1 mr-2 flex-shrink-0'
                     />
                     <span>
-                      Embed quality practices into your development workflow
+                      Well-documented APIs with comprehensive testing coverage
                     </span>
                   </li>
                 </ul>
-                <Link
-                  href='/consulting'
+                {/* <Link
+                  href='/api-development'
                   className={
                     buttonVariants({ variant: 'default' }) +
                     ' inline-block w-full md:w-auto'
                   }
                 >
-                  Learn more about consulting
-                </Link>
+                  Learn more about API development
+                </Link> */}
               </div>
 
-              {/* Tutoring */}
+              {/* Technical Mentoring */}
               <div className='bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow'>
                 <h3 className='text-2xl font-bold mb-4'>Technical Mentoring</h3>
                 <p className='text-gray-600 dark:text-gray-400 mb-6'>
@@ -526,10 +526,10 @@ export default function Home() {
                       size={20}
                       className='text-green-500 mt-1 mr-2 flex-shrink-0'
                     />
-                    <span>QA interview preparation and career advancement</span>
+                    <span>Test automation architecture and best practices</span>
                   </li>
                 </ul>
-                <Link
+                {/* <Link
                   href='/tutoring'
                   className={
                     buttonVariants({ variant: 'default' }) +
@@ -537,7 +537,7 @@ export default function Home() {
                   }
                 >
                   Learn more about mentoring
-                </Link>
+                </Link> */}
               </div>
             </div>
           </MaxWidthWrapper>
