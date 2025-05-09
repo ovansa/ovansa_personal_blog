@@ -60,7 +60,10 @@ const NavBar = () => {
             <SheetTrigger>
               <HamburgerMenuIcon className='size-6' />
             </SheetTrigger>
-            <SheetContent side='right' className='w-64 p-6'>
+            <SheetContent
+              side='right'
+              className='w-64 p-6'
+            >
               <SheetHeader>
                 <div className='text-lg font-semibold'>Menu</div>
               </SheetHeader>
