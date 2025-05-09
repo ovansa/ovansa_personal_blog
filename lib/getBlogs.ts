@@ -21,7 +21,7 @@ export const getBlogs = (): BlogType[] => {
     .readdirSync(contentDir)
     .filter((name) => fs.statSync(path.join(contentDir, name)).isDirectory());
 
-  return directories.map((slug, index) => {
+  const blogs = directories.map((slug, index) => {
     const filePath = path.join(contentDir, slug, 'index.md');
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
@@ -37,5 +37,11 @@ export const getBlogs = (): BlogType[] => {
       categories: data.categories || [],
       content,
     };
+  });
+
+  return blogs.sort((a, b) => {
+    return (
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
   });
 };
