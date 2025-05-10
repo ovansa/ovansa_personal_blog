@@ -263,7 +263,8 @@ export default function Comments({ slug }: CommentsProps) {
                 <p className='whitespace-pre-line'>{comment.content}</p>
               </CardContent>
               <CardFooter className='pt-0 flex gap-4'>
-                <Button
+                {/* <Button
+                  data-ovid='likeButton'
                   variant='ghost'
                   size='sm'
                   className='text-gray-500 hover:text-blue-600'
@@ -271,8 +272,9 @@ export default function Comments({ slug }: CommentsProps) {
                 >
                   <ThumbsUp className='h-4 w-4 mr-1' />
                   {comment.likes > 0 && <span>{comment.likes}</span>}
-                </Button>
+                </Button> */}
                 <Button
+                  data-ovid='replyButton'
                   variant='ghost'
                   size='sm'
                   className='text-gray-500 hover:text-blue-600'
@@ -281,13 +283,14 @@ export default function Comments({ slug }: CommentsProps) {
                   <Reply className='h-4 w-4 mr-1' />
                   Reply
                 </Button>
-                <Button
+                {/* <Button
+                  data-ovid='replyButton'
                   variant='ghost'
                   size='sm'
                   className='text-gray-500 hover:text-red-600 ml-auto'
                 >
                   <Flag className='h-4 w-4' />
-                </Button>
+                </Button> */}
               </CardFooter>
 
               {/* Replies */}

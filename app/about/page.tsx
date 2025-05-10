@@ -266,16 +266,17 @@ export default function About() {
                       Jan 2023 – May 2024
                     </p>
                     <p className='mb-4'>
-                      Established end-to-end testing standards for NestJS
-                      microservices while mentoring junior team members on
-                      modern testing approaches.
+                      Developed and executed detailed test plans for both new
+                      features and bug fixes, ensuring thorough validation and
+                      reliability of the software.
                     </p>
                     <p className='text-blue-600 dark:text-blue-400 font-medium'>
                       Key Achievement:
                     </p>
                     <p className='italic'>
-                      Created a comprehensive testing framework that became the
-                      standard across multiple product teams.
+                      Established and defined standards for end-to-end tests for
+                      services in the NestJS project, specifically for the
+                      affiliates feature.
                     </p>
                   </div>
                 </div>
@@ -293,9 +294,10 @@ export default function About() {
                       Apr 2021 – Jan 2023
                     </p>
                     <p className='mb-4'>
-                      Doubled integration test coverage for Node.js and GraphQL
-                      projects while implementing performance testing to
-                      optimize server resources.
+                      Upon joining the team, increased integration test coverage
+                      (API tests) by over 100% using Jest on Node.js, GraphQL,
+                      and MongoDB projects, showcasing a proactive approach to
+                      enhancing product stability.
                     </p>
                     <p className='text-blue-600 dark:text-blue-400 font-medium'>
                       Key Achievement:
@@ -303,6 +305,12 @@ export default function About() {
                     <p className='italic'>
                       Built end-to-end Cypress tests that became critical
                       quality gates in the CI/CD pipeline.
+                    </p>
+                    <p className='italic'>
+                      Led the implementation of a Role-Based Access Control
+                      (RBAC) permission system on the backend, delivering a
+                      client-centric solution that empowered users to create
+                      custom roles with tailored permissions on the app
                     </p>
                   </div>
                 </div>
@@ -352,24 +360,24 @@ export default function About() {
               </h3>
               <p className='text-muted-foreground mb-4'>
                 My primary specialty and passion. I transform manual API testing
-                into automated, repeatable processes.
+                into automated, repeatable processes across multiple API types.
               </p>
               <div className='space-y-2'>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-blue-500 mr-2'></span>
-                  <span>Postman Advanced Scripting</span>
+                  <span>API Types: REST, GraphQL, SOAP</span>
                 </div>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-blue-500 mr-2'></span>
-                  <span>Jest for API Integration</span>
+                  <span>JS/TS: Jest, Postman, Cypress, Playwright</span>
                 </div>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-blue-500 mr-2'></span>
-                  <span>RestAssured Framework</span>
+                  <span>Java: JUnit, Mockito, RestAssured</span>
                 </div>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-blue-500 mr-2'></span>
-                  <span>GraphQL Testing</span>
+                  <span>Contract & Performance Testing</span>
                 </div>
               </div>
             </div>
@@ -380,25 +388,25 @@ export default function About() {
                 End-to-End Testing
               </h3>
               <p className='text-muted-foreground mb-4'>
-                Building maintainable automated test suites that validate
-                complete user journeys.
+                Using automation frameworks to validate complete user journeys
+                and verify business flows function correctly.
               </p>
               <div className='space-y-2'>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-green-500 mr-2'></span>
-                  <span>Cypress Test Architecture</span>
+                  <span>Testing with Cypress & Playwright Frameworks</span>
                 </div>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-green-500 mr-2'></span>
-                  <span>Playwright Multi-browser</span>
+                  <span>Test Architecture for Maintainable Automation</span>
                 </div>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-green-500 mr-2'></span>
-                  <span>CI/CD Pipeline Integration</span>
+                  <span>Automated Visual & Accessibility Testing</span>
                 </div>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-green-500 mr-2'></span>
-                  <span>Page Object Modeling</span>
+                  <span>Test Execution in CI/CD Pipelines</span>
                 </div>
               </div>
             </div>
@@ -409,25 +417,32 @@ export default function About() {
                 Performance & Security
               </h3>
               <p className='text-muted-foreground mb-4'>
-                Ensuring applications perform under load and remain secure
-                against threats.
+                Implementing targeted tests that uncover business-critical
+                performance and security risks that impact user experience and
+                data protection.
               </p>
               <div className='space-y-2'>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-purple-500 mr-2'></span>
-                  <span>k6 Load Testing</span>
+                  <span>k6 Testing to Identify Scalability Bottlenecks</span>
                 </div>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-purple-500 mr-2'></span>
-                  <span>JMeter Performance Tests</span>
+                  <span>
+                    JMeter Tests for User-Impacting Performance Issues
+                  </span>
                 </div>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-purple-500 mr-2'></span>
-                  <span>API Security Testing</span>
+                  <span>
+                    API Security Testing for Data Protection Compliance
+                  </span>
                 </div>
                 <div className='flex items-center'>
                   <span className='h-2 w-2 rounded-full bg-purple-500 mr-2'></span>
-                  <span>OWASP Testing Guidelines</span>
+                  <span>
+                    OWASP Tests to Prevent Business-Critical Vulnerabilities
+                  </span>
                 </div>
               </div>
             </div>
