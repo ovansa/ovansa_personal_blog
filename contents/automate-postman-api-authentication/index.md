@@ -3,7 +3,7 @@ title: 'Automate API Authentication in Postman Using Pre-request Scripts'
 slug: 'automate-postman-api-authentication'
 description: 'Tired of manually copying tokens between requests? Learn how to automate API authentication in Postman using pre-request scripts and send requests faster.'
 publishedAt: '05/12/2025'
-imageUrl: 'https://images.unsplash.com/photo-1602468432285-0fe26e8352ac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+imageUrl: 'https://images.pexels.com/photos/2882630/pexels-photo-2882630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 readingTime: '7 min read'
 categories:
   - API Testing
@@ -208,6 +208,23 @@ if (!currentToken) {
   pm.collectionVariables.set('token', token);
 }
 ```
+
+## Ready-to-Use Example Collection
+
+To help you get started quickly, I've created a complete Postman collection with the authentication logic already implemented. This collection includes:
+
+- The login request
+- The create todo request with pre-request script for authentication
+- Environment variables set up correctly
+
+### How to use the example collection
+
+1. Download the collection: [Todo App with Authentication Automation](https://d1odwqewagcdkp.cloudfront.net/Postman/todo-auth.postman_collection.json).
+2. Import into Postman by clicking "Import" in Postman and selecting the downloaded file.
+3. Create a new environment with your login credentials (or use the included defaults).
+4. Send the create todo request and watch the automatic authentication in action.
+
+The collection serves as a working reference that you can study and adapt for your own API testing needs.
 
 ## Conclusion
 
