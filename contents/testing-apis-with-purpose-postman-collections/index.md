@@ -57,7 +57,7 @@ tags:
     'continuous-testing',
   ]
 publishedAt: '06/16/2025'
-imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXBpJTIwdGVzdGluZ3xlbnwwfHwwfHx8MA%3D%3D'
+imageUrl: 'https://images.unsplash.com/photo-1518349619113-03114f06ac3a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 ---
 
 ### The Digital Junk Drawer Problem
@@ -114,7 +114,7 @@ The key is moving beyond basic checks ("Does this return 200?") to asking better
 
 While I use Postman in my examples, this organizational approach works with any API client - Insomnia, Bruno, Thunder Client, or even simple curl scripts. The structure and naming conventions are tool-agnostic; what matters is the thinking behind how you organize your scenarios.
 
-### My Structure: Categories → Endpoints → Scenarios
+### My Structure: Categories > Endpoints > Scenarios
 
 Here's how I organize every API collection now, using a payment API as an example:
 
