@@ -85,18 +85,18 @@ The result? A collection that told me nothing about how the API actually behaves
 
 Here's what changed everything for me: I realized that when exploring APIs, I naturally develop mental checklists of scenarios I want to test. For a `POST /payment` endpoint, my checklist might look like:
 
-- ✅ Can create payment with valid data
-- ✅ Rejects missing required fields
-- ✅ Handles invalid data types appropriately
-- ✅ Requires authentication
-- ✅ Validates payment amounts (no negatives, no zero)
-- ✅ Handles duplicate payment IDs
-- ✅ Returns proper error messages
-- ✅ Prevents unauthorized access to other users' payments
-- ✅ Validates input size limits (no massive payloads)
-- ✅ Sanitizes input data (SQL injection, XSS attempts)
-- ✅ Implements proper rate limiting
-- ✅ Doesn't expose sensitive data in error responses
+- Can create payment with valid data
+- Rejects missing required fields
+- Handles invalid data types appropriately
+- Requires authentication
+- Validates payment amounts (no negatives, no zero)
+- Handles duplicate payment IDs
+- Returns proper error messages
+- Prevents unauthorized access to other users' payments
+- Validates input size limits (no massive payloads)
+- Sanitizes input data (SQL injection, XSS attempts)
+- Implements proper rate limiting
+- Doesn't expose sensitive data in error responses
 
 Some people call these test cases, others call them scenarios - doesn't matter what you call them. What matters is that **these checklists should drive how you structure your Postman collection**.
 
