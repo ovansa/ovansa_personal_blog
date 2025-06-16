@@ -1,5 +1,5 @@
 ---
-title: 'Testing APIs with Purpose: How I Structure Postman Collections That Actually Make Sense'
+title: 'Testing APIs with Purpose: How to Structure Postman Collections That Actually Make Sense'
 slug: 'testing-apis-with-purpose-postman-collections'
 description: 'Transform chaotic API testing into organized, purposeful collections that tell a story about your API behavior and help you find issues that actually matter.'
 readingTime: '8 min read'
@@ -60,13 +60,11 @@ publishedAt: '06/16/2025'
 imageUrl: 'https://images.unsplash.com/photo-1518349619113-03114f06ac3a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 ---
 
-### The Digital Junk Drawer Problem
-
 I used to have Postman collections that looked like digital junk drawers - random requests scattered everywhere, cryptic names like "Test 1" and "Payment thing," and no clear sense of what I was actually testing or why. Sound familiar?
 
 After years of testing APIs, learning from colleagues who had smart approaches, digging through Postman documentation, and plenty of trial and error, I've developed a structure that transformed how I approach API testing. It's not just about organization; it's about testing with intent and creating collections that tell a story about your API's behavior.
 
-### The Problem with Most API Testing
+### The Problem I've Seen with API Testing
 
 Let's be honest: most of us start API testing by firing random requests at endpoints and checking if we get a 200 status code. But that's like checking if your car starts without testing if the brakes work.
 
