@@ -62,9 +62,9 @@ imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=
 
 ### The Digital Junk Drawer Problem
 
-I used to have Postman collections that looked like digital junk drawers—random requests scattered everywhere, cryptic names like "Test 1" and "Payment thing," and no clear sense of what I was actually testing or why. Sound familiar?
+I used to have Postman collections that looked like digital junk drawers - random requests scattered everywhere, cryptic names like "Test 1" and "Payment thing," and no clear sense of what I was actually testing or why. Sound familiar?
 
-After years of testing APIs, learning from colleagues who had smart approaches, digging through Postman documentation, and plenty of trial and error, I've developed a structure that transformed how I approach API testing. It's not just about organization—it's about testing with intent and creating collections that tell a story about your API's behavior.
+After years of testing APIs, learning from colleagues who had smart approaches, digging through Postman documentation, and plenty of trial and error, I've developed a structure that transformed how I approach API testing. It's not just about organization; it's about testing with intent and creating collections that tell a story about your API's behavior.
 
 ### The Problem with Most API Testing
 
@@ -98,7 +98,7 @@ Here's what changed everything for me: I realized that when exploring APIs, I na
 - ✅ Implements proper rate limiting
 - ✅ Doesn't expose sensitive data in error responses
 
-Some people call these test cases, others call them scenarios—doesn't matter what you call them. What matters is that **these checklists should drive how you structure your Postman collection**.
+Some people call these test cases, others call them scenarios - doesn't matter what you call them. What matters is that **these checklists should drive how you structure your Postman collection**.
 
 Instead of random requests, each item on your checklist becomes a purposeful request in your collection. This is the bridge between exploratory testing and organized collections.
 
@@ -110,9 +110,9 @@ This method works whether you're:
 - **A developer** validating your own endpoints during development
 - **Anyone** who needs to understand API behavior beyond "does it work?"
 
-The key is shifting from _verification testing_ ("Does this return 200?") to _exploration testing_ ("How does this behave when users actually use it?").
+The key is moving beyond basic checks ("Does this return 200?") to asking better questions ("What happens when a user does X? How does this fail? What edge cases exist?").
 
-While I use Postman in my examples, this organizational approach works with any API client—Insomnia, Bruno, Thunder Client, or even simple curl scripts. The structure and naming conventions are tool-agnostic; what matters is the thinking behind how you organize your scenarios.
+While I use Postman in my examples, this organizational approach works with any API client - Insomnia, Bruno, Thunder Client, or even simple curl scripts. The structure and naming conventions are tool-agnostic; what matters is the thinking behind how you organize your scenarios.
 
 ### My Structure: Categories → Endpoints → Scenarios
 
@@ -176,7 +176,7 @@ Payment API Tests
 When someone uses your payment API, they don't just call `POST /payment` in isolation. They authenticate first, create a payment, maybe fetch it later, possibly delete it. My structure reflects these realistic workflows.
 
 **It Forces You to Think About Edge Cases**:
-Having separate requests for "Should reject negative amounts" and "Should handle duplicate IDs" means you're not just testing the happy path—you're exploring how the API behaves when things go wrong.
+Having separate requests for "Should reject negative amounts" and "Should handle duplicate IDs" means you're not just testing the happy path - you're exploring how the API behaves when things go wrong.
 
 **It Creates Living Documentation**:
 Anyone can look at my collection and immediately understand:
@@ -218,7 +218,7 @@ Don't try to create the perfect structure immediately. Start with:
 I set up authentication tokens in pre-request scripts so I don't have to manually update them in every request. But I only add complexity when it serves the testing purpose.
 
 **Each Request Should Stand Alone**:
-While I chain some requests (like login → create payment), each request should be runnable independently. This makes debugging much easier.
+While I chain some requests (like login > create payment), each request should be runnable independently. This makes debugging much easier.
 
 **Write Tests That Tell a Story**:
 My test scripts don't just check status codes. They verify:
@@ -227,7 +227,9 @@ My test scripts don't just check status codes. They verify:
 pm.test('Should create payment with valid data', function () {
 	pm.response.to.have.status(201);
 	pm.expect(pm.response.json().payment_id).to.exist;
-	pm.expect(pm.response.json().amount).to.equal(pm.globals.get('test_amount'));
+	pm.expect(pm.response.json().amount).to.equal(
+		pm.environment.get('test_amount')
+	);
 	pm.expect(pm.response.json().status).to.equal('pending');
 });
 ```
@@ -245,7 +247,7 @@ This structure has given me benefits I didn't expect:
 
 The best part of this structure? When I think "What happens if a user tries to create a payment with a negative amount?", I can immediately:
 
-1. Go to `Payments → POST /payment`
+1. Go to `Payments > POST /payment`
 2. Create a new request: "Should reject negative payment amounts with 400"
 3. Build and test the scenario
 
@@ -253,7 +255,7 @@ No hunting through messy folders or trying to remember what "Test 2" was suppose
 
 ### The Bottom Line
 
-Good API testing isn't about having the most requests—it's about having the right requests that help you understand how your API behaves in real-world scenarios.
+Good API testing isn't about having the most requests - it's about having the right requests that help you understand how your API behaves in real-world scenarios.
 
 This structure has transformed my collections from chaotic request dumps into organized, purposeful testing suites that actually help me find issues that matter and communicate findings clearly.
 
