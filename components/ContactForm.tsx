@@ -1,21 +1,21 @@
 // app/contact/contact-form.tsx
 'use client';
 
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import {
+  AlertCircle,
+  CheckCircle,
   Mail,
   MapPin,
   MessageSquare,
   Phone,
   Send,
-  CheckCircle,
-  AlertCircle,
 } from 'lucide-react';
 
 import Link from 'next/link';
-import React from 'react';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import React from 'react';
 import { buttonVariants } from '@/components/ui/button';
-import { Alert, AlertDescription } from '@/components/ui/alert';
 
 const ContactForm = () => {
   const [formStatus, setFormStatus] = React.useState({
@@ -23,12 +23,6 @@ const ContactForm = () => {
     submitting: false,
     error: false,
   });
-
-  // interface FormStatus {
-  //     submitted: boolean;
-  //     submitting: boolean;
-  //     error: boolean;
-  // }
 
   const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>
@@ -239,10 +233,7 @@ const ContactForm = () => {
                 </Alert>
               ) : null}
 
-              <form
-                className='space-y-4 md:space-y-6'
-                onSubmit={handleSubmit}
-              >
+              <form className='space-y-4 md:space-y-6' onSubmit={handleSubmit}>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6'>
                   <div>
                     <label
