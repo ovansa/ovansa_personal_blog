@@ -1,7 +1,7 @@
 ---
 title: "Let's Talk About When to Automate Testing Checklists"
 slug: 'when-to-automate-testing-checklists-right-time'
-description: 'Discover why "when should I automate?" is the wrong question and learn a better approach to thinking about test automation timing that focuses on value over arbitrary timelines.'
+description: "The test automation timing question that keeps coming up - and why it's missing the point entirely."
 publishedAt: '07/06/2025'
 imageUrl: 'https://images.unsplash.com/photo-1559842135-8d5e4214ae77?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 readingTime: '8 min read'
@@ -10,15 +10,32 @@ categories:
   - Software Testing
   - QA Strategy
   - Testing Best Practices
+  - Quality Assurance
+  - DevOps
+  - Agile Testing
+  - Testing Tools
 tags:
   - test automation timing
   - automation strategy
   - testing methodology
   - qa process
   - software testing best practices
+  - when to automate tests
+  - test automation decisions
+  - manual vs automated testing
+  - testing workflow
+  - automation tools
+  - cypress testing
+  - postman automation
+  - api testing
+  - testing framework
+  - ci cd testing
+  - agile testing practices
+  - exploratory testing
+  - test case automation
+  - testing efficiency
+  - qa automation strategy
 ---
-
-# Let's Talk About When to Automate Testing Checklists
 
 This question shows up in almost every interview I've done:
 "When do you think is the right time to automate your tests?"
