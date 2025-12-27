@@ -47,7 +47,21 @@ For someone new to the codebase, API tests are one of the fastest ways to unders
 A lot of people are scared to touch existing endpoints, especially in older systems. Tests reduce that fear. You can make changes knowing that the important behaviours are still covered.
 
 **They force you to think about failure cases**  
-Things like "what happens if the title is missing?" or "what if the user isn't authenticated?" often get missed when moving fast. Tests make sure those cases are handled deliberately.
+Things like “what happens if the title is missing?”, “what if the user isn’t authenticated?”, or “should this user even be allowed to do this?” often get missed when moving fast.
+
+This also includes access control and role-based restrictions - who can create, update, delete, or change the state of a resource. Writing tests forces these decisions to be explicit and ensures they remain enforced as the system evolves.
+
+**Easier setup of realistic test data**
+
+One underrated benefit of in-code API tests is controlled test data setup. You can create users, tasks, and states that mirror real-world scenarios - and clean them up after.
+
+This makes it much easier to reproduce tricky bugs:
+
+- A task in a specific state
+- A user with limited permissions
+- Edge cases that only happen with certain data combinations
+
+When bugs show up, having these scenarios already modeled in tests often makes them much easier to understand and fix.
 
 ## The Usual Objections (And Why I Still Push for Tests)
 
@@ -63,9 +77,11 @@ This doesn't mean testers shouldn't automate parts of their checks when it makes
 
 ## The Real Cost vs. Benefit
 
-Adding these tests to the task API took about 2 extra days upfront. But in the past year on similar projects, they've caught at least a dozen bugs before they reached QA, saved hours of debugging time, and let me refactor confidently when requirements changed.
+There are some upfront costs to writing API tests. For the task API, it added a bit of extra time during development to think through scenarios, handle authentication in tests, and set up realistic test data.
 
-The break-even point, in my experience, is usually 6-8 weeks on an active codebase. After that, you're net positive - fewer production incidents, faster feature delivery, and lower onboarding costs for new team members.
+Based on my experience on similar projects, this upfront effort usually pays for itself fairly quickly. I’ve often seen these tests catch issues before they reached QA and make refactoring much less stressful when requirements changed. While I don’t have hard metrics to prove an exact break-even point, the practical benefit becomes obvious once the codebase is actively changing and multiple people are touching the same endpoints.
+
+Rather than thinking in terms of precise timelines, I see API tests as a way to trade a small, known cost upfront for fewer surprises later.
 
 ## Where This Fits
 
