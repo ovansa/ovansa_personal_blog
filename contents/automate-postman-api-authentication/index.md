@@ -10,7 +10,7 @@ categories:
   - Postman
   - Test Automation
   - JavaScript
-  - QA Best Practices
+  - Testing Best Practices
 tags:
   - postman authentication automation
   - api token automation

@@ -8,9 +8,9 @@ readingTime: '8 min read'
 categories:
   - Test Automation
   - Software Testing
-  - QA Strategy
+  - Testing Strategy
   - Testing Best Practices
-  - Quality Assurance
+  - Software Testing
   - DevOps
   - Agile Testing
   - Testing Tools

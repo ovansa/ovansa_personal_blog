@@ -28,9 +28,9 @@ Before now, I liked using Postman for my API exploratory tests, automating API f
 
 ### Understanding API Exploratory Testing
 
-For context, exploratory testing - in the context of APIs - involves interacting with endpoints while simultaneously learning about system behavior, designing tests, and spotting issues. It often happens before writing automated checklists or deeper tests, and plays a critical role in understanding a product's quality and reliability.
+For context, exploratory testing - in the context of APIs - involves interacting with endpoints while simultaneously learning about system behavior, designing tests, and spotting issues. It often happens before writing automated checklists or deeper tests, and plays a critical role in understanding a product's reliability.
 
-Having the right tool for this process can significantly impact development efficiency and API test automation quality.
+Having the right tool for this process can significantly impact development efficiency and API test automation reliability.
 
 ## Postman Limitations for API Testing Workflows
 

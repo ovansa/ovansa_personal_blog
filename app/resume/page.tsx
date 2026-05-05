@@ -6,10 +6,10 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About - Muhammed Ibrahim | Software Test Engineer',
   description:
-    'Muhammed Ibrahim - Software Test Engineer with 6+ years of experience in API testing, automation, and quality assurance.',
+    'Muhammed Ibrahim - Software Test Engineer with 7+ years of experience in API testing, automation, and software testing.',
   keywords: [
     'software test engineer',
-    'quality assurance',
+    'software testing',
     'API testing',
     'test automation',
     'Muhammed Ibrahim',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About - Muhammed Ibrahim | Software Test Engineer',
     description:
-      'Software Test Engineer with 6+ years of experience in API testing, automation, and quality assurance.',
+      'Software Test Engineer with 7+ years of experience in API testing, automation, and software testing.',
     url: '/about',
     type: 'profile',
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About - Muhammed Ibrahim | Software Test Engineer',
     description:
-      'Software Test Engineer with 6+ years of experience in API testing, automation, and quality assurance.',
+      'Software Test Engineer with 7+ years of experience in API testing, automation, and software testing.',
     images: ['/images/about-cover.jpg'],
   },
 };
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 const experiences = [
   {
     id: 1,
-    role: 'QA Engineer',
+    role: 'Software Test Engineer',
     company: 'Interswitch',
     period: 'Sep 2024 – Present',
     location: 'Lagos, Nigeria',
@@ -61,7 +61,7 @@ const experiences = [
     responsibilities: [
       'Established and defined standards for end-to-end tests for services in the NestJS project, specifically for the affiliates feature.',
       'Collaborated with product owners and developers to ensure comprehensive understanding of intended features and functionality.',
-      'Provided guidance and mentorship to junior SDETs and QA engineers on testing tools, processes, and troubleshooting strategies.',
+      'Provided guidance and mentorship to junior SDETs and software testers on testing tools, processes, and troubleshooting strategies.',
     ],
   },
   {
@@ -85,7 +85,6 @@ const experiences = [
     responsibilities: [
       'Played a key role in testing early versions of the Eyowo payment app, across Android, iOS, web, and USSD platforms, processing over 1 billion naira in transactions within months.',
       'Led a team of testers for UseForms, ensuring reliability of a data collection app used to gather over 500K+ data points for organizations like MTN, NBC, and NPower.',
-      "Received Software Tester of the Year and CEO's Outstanding Performance Award in 2019.",
     ],
   },
 ];
@@ -135,20 +134,6 @@ const certifications = [
   },
 ];
 
-// Awards
-const awards = [
-  {
-    name: "CEO's Outstanding Performance Award",
-    company: 'Softcom Ltd.',
-    year: '2019',
-  },
-  {
-    name: 'Software Tester of the Year',
-    company: 'Softcom Ltd.',
-    year: '2019',
-  },
-];
-
 export default function Resume() {
   return (
     <main className='bg-background text-foreground'>
@@ -169,7 +154,7 @@ export default function Resume() {
                 href='/contact'
                 className='px-4 py-2 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors text-sm'
               >
-                Contact Me
+                Share Context
               </a>
               <a
                 href='/blog'
@@ -220,12 +205,12 @@ export default function Resume() {
             Professional Summary
           </h2>
           <p className='text-muted-foreground'>
-            Proactive Software Test Engineer with 6+ years of experience in
+            Proactive Software Test Engineer with 7+ years of experience in
             enhancing product stability and efficiency through strategic testing
             and automation. Skilled in backend infrastructure, test coverage,
             and troubleshooting, with a proven ability to mentor junior SDETs
-            and QAs. Passionate about delivering quality software through
-            collaboration and continuous improvement.
+            and software testers. Passionate about reliable software delivery
+            through collaboration and continuous improvement.
           </p>
         </section>
 
@@ -366,45 +351,19 @@ export default function Resume() {
           </div>
         </section>
 
-        {/* Education & Certifications in 2 columns */}
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-16'>
-          {/* Education Section */}
-          <section>
-            <h2 className='text-2xl font-bold mb-4 pb-2 border-b border-border'>
-              Education
-            </h2>
-            <div className='border border-border rounded-md p-4'>
-              <h3 className='text-lg font-bold'>BSc Computer Science</h3>
-              <p className='text-muted-foreground'>University of Ilorin</p>
-              <p className='text-sm text-muted-foreground mt-2'>
-                Nov 2010 – Jul 2014
-              </p>
-            </div>
-          </section>
-
-          {/* Awards Section */}
-          <section>
-            <h2 className='text-2xl font-bold mb-4 pb-2 border-b border-border'>
-              Awards
-            </h2>
-            <ul className='space-y-4'>
-              {awards.map((award, index) => (
-                <li
-                  key={index}
-                  className='flex gap-3'
-                >
-                  <span className='text-primary'>🏆</span>
-                  <div>
-                    <p className='font-medium'>{award.name}</p>
-                    <p className='text-sm text-muted-foreground'>
-                      {award.company} ({award.year})
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
+        {/* Education Section */}
+        <section className='mb-16'>
+          <h2 className='text-2xl font-bold mb-4 pb-2 border-b border-border'>
+            Education
+          </h2>
+          <div className='border border-border rounded-md p-4'>
+            <h3 className='text-lg font-bold'>BSc Computer Science</h3>
+            <p className='text-muted-foreground'>University of Ilorin</p>
+            <p className='text-sm text-muted-foreground mt-2'>
+              Nov 2010 – Jul 2014
+            </p>
+          </div>
+        </section>
 
         {/* Certifications Section */}
         <section className='mb-16'>
@@ -439,16 +398,19 @@ export default function Resume() {
 
         {/* Contact CTA */}
         <section className='mt-16'>
-          <div className='bg-primary/5 rounded-lg p-6 sm:p-8 text-center'>
-            <h3 className='text-xl font-bold mb-2'>Ready to work together?</h3>
+          <div className='bg-primary/5 rounded-md p-6 sm:p-8 text-center'>
+            <h3 className='text-xl font-bold mb-2'>
+              For API automation and software testing conversations
+            </h3>
             <p className='text-muted-foreground mb-4'>
-              I&apos;m available for consulting and test automation projects
+              Reach out with the product context, risk areas, and current test
+              setup.
             </p>
             <a
               href='/contact'
               className='inline-block px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors'
             >
-              Contact Me
+              Share Context
             </a>
           </div>
         </section>
@@ -464,7 +426,7 @@ export default function Resume() {
             name: 'Muhammed Ibrahim',
             jobTitle: 'Software Test Engineer',
             description:
-              "A proactive Test Engineer with 6+ years' experience in API testing, automation, and mentoring.",
+              "A proactive Test Engineer with 7+ years' experience in API testing, automation, and mentoring.",
             alumniOf: {
               '@type': 'CollegeOrUniversity',
               name: 'University of Ilorin',
@@ -472,7 +434,7 @@ export default function Resume() {
             knowsAbout: [
               'Software Testing',
               'API Automation',
-              'Quality Assurance',
+              'Software Testing',
               'Test Frameworks',
             ],
             workLocation: {

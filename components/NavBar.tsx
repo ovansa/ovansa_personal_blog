@@ -34,23 +34,11 @@ const NavBar = () => {
             <Link href='/about'>About</Link>
           </li>
           <li>
+            <Link href='/resume'>Resume</Link>
+          </li>
+          <li>
             <Link href='/contact'>Contact</Link>
           </li>
-          {/* <li className='buttons px-4 space-x-2'>
-            <Link
-              className={buttonVariants({ variant: 'outline' })}
-              href='/login'
-            >
-              Login
-            </Link>
-
-            <Link
-              className={buttonVariants({ variant: 'outline' })}
-              href='/register'
-            >
-              Register
-            </Link>
-          </li> */}
         </ul>
 
         {/* Mobile Nav */}
@@ -86,19 +74,25 @@ const NavBar = () => {
                 >
                   About
                 </Link>
+                <Link
+                  href='/resume'
+                  className='text-muted-foreground hover:text-foreground transition-colors'
+                >
+                  Resume
+                </Link>
+                <Link
+                  href='/contact'
+                  className='text-muted-foreground hover:text-foreground transition-colors'
+                >
+                  Contact
+                </Link>
               </nav>
               <div className='mt-8 flex flex-col space-y-3'>
                 <Link
-                  className={buttonVariants({ variant: 'outline' })}
-                  href='/login'
-                >
-                  Login
-                </Link>
-                <Link
                   className={buttonVariants({ variant: 'default' })}
-                  href='/register'
+                  href='/contact'
                 >
-                  Register
+                  Contact
                 </Link>
               </div>
             </SheetContent>

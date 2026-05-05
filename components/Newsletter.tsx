@@ -16,7 +16,7 @@ function Newsletter() {
               </h2>
               <p className='text-gray-600 dark:text-gray-400'>
                 Subscribe to receive practical testing tips, tutorial updates,
-                and advanced QA strategies — delivered straight to your inbox.
+                and advanced testing strategies — delivered straight to your inbox.
               </p>
             </div>
             <form className='space-y-4'>

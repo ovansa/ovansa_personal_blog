@@ -1,4 +1,5 @@
 import {
+  FaArrowRight,
   FaCheckCircle,
   FaEnvelope,
   FaGithub,
@@ -14,11 +15,11 @@ import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title:
-    'Muhammed Ibrahim (Ovansa) | Software Test Engineer & API Automation Expert',
+    'Muhammed Ibrahim (Ovansa) | Software Test Engineer & API Automation Specialist',
   description:
-    'Muhammed Ibrahim (Ovansa) - Software Test Engineer with 6+ years of experience in API testing, test automation, and QA best practices. Specializing in high-quality software delivery, CI/CD integration, and quality assurance mentorship.',
+    'Muhammed Ibrahim (Ovansa) is a Software Test Engineer with 7+ years of experience in API testing, test automation, CI test gates, performance testing, and testing leadership.',
   keywords:
-    'Software Test Engineer, QA Engineer, API Testing, Test Automation, Postman, Jest, Cypress, CI/CD, Quality Assurance, Muhammed Ibrahim, Ovansa',
+    'Software Test Engineer, API Testing, Test Automation, Postman, Jest, Cypress, Playwright, k6, CI/CD, Muhammed Ibrahim, Ovansa',
   alternates: {
     canonical: SiteConfig.siteUrl,
   },
@@ -27,36 +28,124 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SiteConfig.siteUrl,
     title:
-      'Muhammed Ibrahim (Ovansa) | Software Test Engineer & API Automation Expert',
+      'Muhammed Ibrahim (Ovansa) | Software Test Engineer & API Automation Specialist',
     description:
-      'Learn API testing, test automation and QA best practices from Muhammed Ibrahim (Ovansa), a Software Test Engineer with 6+ years of experience in building high-quality software.',
+      'API testing, test automation, CI test gates, and practical testing leadership from a Software Test Engineer with 7+ years of experience.',
     siteName: 'Muhammed Ibrahim - Software Test Engineer',
   },
   twitter: {
     card: 'summary_large_image',
     title:
-      'Muhammed Ibrahim (Ovansa) | Software Test Engineer & API Automation Expert',
+      'Muhammed Ibrahim (Ovansa) | Software Test Engineer & API Automation Specialist',
     description:
-      'Learn API testing, test automation and QA best practices from Muhammed Ibrahim (Ovansa), a Software Test Engineer with 6+ years of experience in building high-quality software.',
+      'API testing, test automation, CI test gates, and practical testing leadership from a Software Test Engineer with 7+ years of experience.',
     creator: '@ovansa',
   },
 };
 
-const CheckIcon = () => (
-  <svg
-    width='20'
-    height='20'
-    viewBox='0 0 24 24'
-    fill='none'
-    stroke='currentColor'
-    strokeWidth='2'
-    strokeLinecap='round'
-    strokeLinejoin='round'
-    className='text-green-500'
-  >
-    <polyline points='20 6 9 17 4 12' />
-  </svg>
-);
+const outcomes = [
+  {
+    value: '200%',
+    label: 'regression testing time reduction at Interswitch',
+  },
+  {
+    value: '100%+',
+    label: 'API integration test coverage increase at Accelerator App',
+  },
+  {
+    value: '500K+',
+    label: 'data points supported through UseForms testing work',
+  },
+  {
+    value: '7+',
+    label: 'years across payments, SaaS, backend, and test automation',
+  },
+];
+
+const services = [
+  {
+    title: 'API Test Automation',
+    description:
+      'Design reliable Postman, Jest, RestAssured, and contract-style API checks that run in CI and catch regressions before release.',
+    bullets: [
+      'REST, GraphQL, and SOAP testing strategy',
+      'Reusable collections, fixtures, and environment setup',
+      'Bitbucket, GitHub Actions, and pipeline test gates',
+    ],
+  },
+  {
+    title: 'Backend Software Testing',
+    description:
+      'Work with engineering teams to make services easier to test, debug, and evolve across Node.js, NestJS, Spring Boot, and Go stacks.',
+    bullets: [
+      'Testable service boundaries and data setup',
+      'Integration, regression, and RBAC test coverage',
+      'PostgreSQL, MongoDB, Redis, and API observability context',
+    ],
+  },
+  {
+    title: 'E2E & Performance Testing',
+    description:
+      'Protect critical user journeys and high-risk flows with practical Cypress, Playwright, k6, and JMeter coverage.',
+    bullets: [
+      'Business-critical workflow automation',
+      'Performance smoke checks and bottleneck discovery',
+      'Maintainable suites that teams can own after handover',
+    ],
+  },
+];
+
+const proofPoints = [
+  'Automated payment endpoint tests in Postman and Bitbucket pipelines for Interswitch.',
+  'Defined E2E testing standards for NestJS services at Red Acre Ltd.',
+  'Built Cypress test gates and expanded Jest API coverage on Node.js, GraphQL, and MongoDB systems.',
+  'Tested payment, mobile, web, USSD, and data collection products used across Nigerian markets.',
+];
+
+const experienceSignals = [
+  {
+    title: 'Payment API automation',
+    context: 'Interswitch',
+    result:
+      'Automated payment endpoint checks with Postman scripts in Bitbucket pipelines, reducing regression testing time by 200%.',
+  },
+  {
+    title: 'Backend API coverage',
+    context: 'Accelerator App',
+    result:
+      'Increased integration test coverage by over 100% across Node.js, GraphQL, and MongoDB services using Jest.',
+  },
+  {
+    title: 'E2E test standards',
+    context: 'Red Acre Ltd.',
+    result:
+      'Defined maintainable end-to-end testing standards for NestJS services, especially around the affiliates feature.',
+  },
+  {
+    title: 'Performance testing',
+    context: 'Accelerator App',
+    result:
+      'Ran k6 performance tests to surface bottlenecks and support stability under changing traffic conditions.',
+  },
+];
+
+const skills = [
+  'Postman',
+  'Jest',
+  'Cypress',
+  'Playwright',
+  'RestAssured',
+  'k6',
+  'JMeter',
+  'Node.js',
+  'NestJS',
+  'GraphQL',
+  'MongoDB',
+  'PostgreSQL',
+  'Bitbucket Pipelines',
+  'GitHub Actions',
+  'AWS',
+];
 
 export default function Home() {
   return (
@@ -64,518 +153,267 @@ export default function Home() {
       <HomePageSchema />
       <WebsiteSchema />
       <main className='bg-background text-foreground'>
-        {/* Hero */}
-        <section
-          className='pt-15 pb-16 px-4 md:px-14'
-          id='hero'
-        >
+        <section className='border-b bg-muted/30 px-4 py-16 sm:px-6 lg:px-8'>
           <MaxWidthWrapper>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
-              <div className='space-y-6'>
-                <span className='inline-block px-3 py-1 text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full'>
-                  Software Tester
-                </span>
-                <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight'>
-                  Elevate Your Software Quality{' '}
-                  <span className='text-blue-600 dark:text-blue-400'>
-                    Testing Strategy
-                  </span>
-                </h1>
-                <p className='text-lg md:text-xl'>
-                  I&apos;m <strong>Muhammed Ibrahim (Ovansa)</strong>, a
-                  Software Tester with over 7 years&apos; experience. I help
-                  teams build reliable APIs, automate testing processes, and
-                  implement quality-driven development practices that save time
-                  and reduce bugs.
+            <div className='grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center'>
+              <div className='max-w-3xl'>
+                <p className='mb-4 text-sm font-semibold uppercase text-muted-foreground'>
+                  Software Test Engineer | API Automation | Testing Strategy
                 </p>
-                <div className='flex flex-wrap gap-4'>
+                <h1 className='text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl'>
+                  Software testing for API-heavy products where reliability
+                  cannot be an afterthought.
+                </h1>
+                <p className='mt-6 text-lg leading-8 text-muted-foreground sm:text-xl'>
+                  I&apos;m <strong>Muhammed Ibrahim (Ovansa)</strong>, a
+                  Lagos-based Software Test Engineer with 7+ years of experience
+                  across payments, SaaS, backend services, and automation. My
+                  best work sits where testing meets engineering: API test
+                  strategy, CI test gates, backend testability, and pragmatic team
+                  mentorship.
+                </p>
+                <div className='mt-8 flex flex-wrap gap-3'>
                   <Link
-                    href='/about'
-                    className={buttonVariants({ size: 'lg' }) + ' inline-block'}
+                    href='/contact'
+                    className={buttonVariants({ size: 'lg' })}
                   >
-                    Learn more about me
+                    Discuss testing strategy
                   </Link>
                   <Link
-                    href='#expertise'
-                    className={
-                      buttonVariants({ variant: 'outline', size: 'lg' }) +
-                      ' inline-block'
-                    }
+                    href='/resume'
+                    className={buttonVariants({
+                      variant: 'outline',
+                      size: 'lg',
+                    })}
                   >
-                    Explore my expertise
+                    View resume
                   </Link>
+                  <a
+                    href='https://github.com/ovansa'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className={buttonVariants({
+                      variant: 'ghost',
+                      size: 'lg',
+                    })}
+                  >
+                    GitHub <FaArrowRight className='ml-2 size-3' />
+                  </a>
                 </div>
-                <div className='flex space-x-4 pt-2'>
+                <div className='mt-6 flex gap-4 text-muted-foreground'>
                   <a
                     href='https://github.com/ovansa'
                     target='_blank'
                     rel='noopener noreferrer'
                     aria-label='GitHub Profile'
-                    className='text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors'
+                    className='transition-colors hover:text-foreground'
                   >
-                    <FaGithub size={24} />
+                    <FaGithub size={22} />
                   </a>
                   <a
                     href='https://linkedin.com/in/ovansa'
                     target='_blank'
                     rel='noopener noreferrer'
                     aria-label='LinkedIn Profile'
-                    className='text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors'
+                    className='transition-colors hover:text-foreground'
                   >
-                    <FaLinkedin size={24} />
+                    <FaLinkedin size={22} />
                   </a>
                   <a
                     href='mailto:aminmuhammad18@gmail.com'
                     aria-label='Email Contact'
-                    className='text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors'
+                    className='transition-colors hover:text-foreground'
                   >
-                    <FaEnvelope size={24} />
+                    <FaEnvelope size={22} />
                   </a>
                 </div>
               </div>
 
-              <div className='relative w-full h-80 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-blue-900 rounded-lg shadow-lg overflow-hidden'>
-                <div className='absolute inset-0 flex flex-col items-center justify-center p-6 text-center'>
-                  <span className='text-3xl font-bold text-gray-800 dark:text-white mb-4'>
-                    Building Quality Into Every Line
-                  </span>
-                  <div className='space-y-2 text-left w-full max-w-max'>
-                    <div className='flex items-center gap-2'>
-                      <CheckIcon />
-                      <span className='text-gray-700 dark:text-gray-300'>
-                        Turning manual test checklists into automated pipelines
-                      </span>
+              <div className='rounded-md border bg-background p-6 shadow-sm'>
+                <p className='text-sm font-semibold uppercase text-muted-foreground'>
+                  Specialist Focus
+                </p>
+                <h2 className='mt-3 text-2xl font-bold'>
+                  API-heavy teams benefit most when testing is treated as
+                  engineering work, not a release ritual.
+                </h2>
+                <div className='mt-6 space-y-4'>
+                  {proofPoints.map((point) => (
+                    <div
+                      key={point}
+                      className='flex gap-3'
+                    >
+                      <FaCheckCircle className='mt-1 size-4 flex-none text-emerald-600' />
+                      <p className='text-sm leading-6 text-muted-foreground'>
+                        {point}
+                      </p>
                     </div>
-                    <div className='flex items-center gap-2'>
-                      <CheckIcon />
-                      <span className='text-gray-700 dark:text-gray-300'>
-                        Backend testing that catches issues before users do
-                      </span>
-                    </div>
-                    <div className='flex items-center gap-2'>
-                      <CheckIcon />
-                      <span className='text-gray-700 dark:text-gray-300'>
-                        Mentoring teams to build quality-first cultures
-                      </span>
-                    </div>
-                    <div className='flex items-center gap-2'>
-                      <CheckIcon />
-                      <span className='text-gray-700 dark:text-gray-300'>
-                        7+ years transforming testing practices
-                      </span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
           </MaxWidthWrapper>
         </section>
-        {/* Expertise Section */}
-        <section
-          className='py-8 sm:py-10 md:py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800'
-          id='expertise'
-        >
+
+        <section className='px-4 py-10 sm:px-6 lg:px-8'>
           <MaxWidthWrapper>
-            <div className='text-center mb-8 sm:mb-12 md:mb-16 px-4'>
-              <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6'>
-                Technical Expertise
-              </h2>
-              <p className='text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto'>
-                With extensive experience across multiple industries, I deliver
-                high-quality software through specialized skills and proven
-                methodologies.
-              </p>
-            </div>
-
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6'>
-              {/* API Testing */}
-              <div className='bg-white dark:bg-gray-800 p-5 sm:p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-blue-500'>
-                <div className='h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 sm:mb-6 mx-auto'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-blue-600 dark:text-blue-400'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'
-                    />
-                  </svg>
+            <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
+              {outcomes.map((outcome) => (
+                <div
+                  key={outcome.label}
+                  className='rounded-md border bg-card p-5'
+                >
+                  <p className='text-3xl font-bold'>{outcome.value}</p>
+                  <p className='mt-2 text-sm leading-6 text-muted-foreground'>
+                    {outcome.label}
+                  </p>
                 </div>
-                <h3 className='text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center'>
-                  API Testing & Automation
-                </h3>
-                <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-5 text-center'>
-                  Efficient test data generation for reliable API test suites.
-                </p>
-                <ul className='text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 sm:space-y-3'>
-                  <li className='flex items-start'>
-                    <span className='text-blue-500 dark:text-blue-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>
-                      Scalable API test collections with CI using Postman,
-                      Cypress, and RestAssured
-                    </span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-blue-500 dark:text-blue-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Efficient test data generation via scripts</span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-blue-500 dark:text-blue-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>
-                      CI-integrated quality gates for consistent test automation
-                    </span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-blue-500 dark:text-blue-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>
-                      Performance testing and optimization with k6 and JMeter
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Backend Development */}
-              <div className='bg-white dark:bg-gray-800 p-5 sm:p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-pink-500'>
-                <div className='h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-lg bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-4 sm:mb-6 mx-auto'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-pink-600 dark:text-pink-400'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4'
-                    />
-                  </svg>
-                </div>
-                <h3 className='text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center'>
-                  Testable Backend Development
-                </h3>
-                <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-5 text-center'>
-                  Architecting backend services with testing in mind from day
-                  one across multiple languages and frameworks.
-                </p>
-                <ul className='text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 sm:space-y-3'>
-                  <li className='flex items-start'>
-                    <span className='text-pink-500 dark:text-pink-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>
-                      Build Testable APIs in Node.js, Spring Boot, and Go
-                    </span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-pink-500 dark:text-pink-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Quality-first monoliths and microservices</span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-pink-500 dark:text-pink-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Structured test layers isolating business logic</span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-pink-500 dark:text-pink-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>PostgreSQL, MongoDB, and Supabase expertise</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* End-to-End Quality Assurance */}
-              <div className='bg-white dark:bg-gray-800 p-5 sm:p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-green-500'>
-                <div className='h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4 sm:mb-6 mx-auto'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-green-600 dark:text-green-400'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
-                    />
-                  </svg>
-                </div>
-                <h3 className='text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center'>
-                  End-to-End Quality Assurance
-                </h3>
-                <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-5 text-center'>
-                  Creating automated user journeys that validate real-world
-                  scenarios across your entire application stack.
-                </p>
-                <ul className='text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 sm:space-y-3'>
-                  <li className='flex items-start'>
-                    <span className='text-green-500 dark:text-green-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Cypress for critical business workflows</span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-green-500 dark:text-green-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Cross-platform testing with Playwright</span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-green-500 dark:text-green-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Automated regression in CI/CD pipelines</span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-green-500 dark:text-green-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Future-proof tests that evolve with your app</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Testing Strategy */}
-              <div className='bg-white dark:bg-gray-800 p-5 sm:p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-purple-500'>
-                <div className='h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4 sm:mb-6 mx-auto'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-purple-600 dark:text-purple-400'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'
-                    />
-                  </svg>
-                </div>
-                <h3 className='text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center'>
-                  Testing Strategy & Leadership
-                </h3>
-                <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-5 text-center'>
-                  Finding the right balance between speed and thoroughness with
-                  practical, proven testing approaches.
-                </p>
-                <ul className='text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-2 sm:space-y-3'>
-                  <li className='flex items-start'>
-                    <span className='text-purple-500 dark:text-purple-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Risk-based testing frameworks</span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-purple-500 dark:text-purple-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Streamlined processes to eliminate bottlenecks</span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-purple-500 dark:text-purple-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>Junior QA mentorship for technical growth</span>
-                  </li>
-                  <li className='flex items-start'>
-                    <span className='text-purple-500 dark:text-purple-400 mr-2 mt-1 flex-shrink-0'>
-                      →
-                    </span>
-                    <span>BBST principles applied to complex projects</span>
-                  </li>
-                </ul>
-              </div>
+              ))}
             </div>
           </MaxWidthWrapper>
         </section>
 
-        {/* Services */}
         <section
-          className='py-10'
+          className='px-4 py-16 sm:px-6 lg:px-8'
           id='services'
         >
           <MaxWidthWrapper>
-            <div className='text-center mb-12'>
-              <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-                How I Can Help You
-              </h2>
-              <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
-                I offer specialized services to help teams deliver higher
-                quality software and improve their testing practices.
+            <div className='max-w-2xl'>
+              <p className='text-sm font-semibold uppercase text-muted-foreground'>
+                What I Can Do
               </p>
+              <h2 className='mt-3 text-3xl font-bold tracking-normal sm:text-4xl'>
+                Practical software testing for teams that need fewer surprises
+                in production.
+              </h2>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-16'>
-              {/* API Development */}
-              <div className='bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow'>
-                <h3 className='text-2xl font-bold mb-4'>API Development</h3>
-                <p className='text-gray-600 dark:text-gray-400 mb-6'>
-                  Need custom API solutions for your business or project? I
-                  build:
-                </p>
-                <ul className='space-y-3 mb-6'>
-                  <li className='flex items-start'>
-                    <FaCheckCircle
-                      size={20}
-                      className='text-green-500 mt-1 mr-2 flex-shrink-0'
-                    />
-                    <span>
-                      RESTful APIs with secure authentication and authorization
-                    </span>
-                  </li>
-                  <li className='flex items-start'>
-                    <FaCheckCircle
-                      size={20}
-                      className='text-green-500 mt-1 mr-2 flex-shrink-0'
-                    />
-                    <span>
-                      Performance-optimized data endpoints and services
-                    </span>
-                  </li>
-                  <li className='flex items-start'>
-                    <FaCheckCircle
-                      size={20}
-                      className='text-green-500 mt-1 mr-2 flex-shrink-0'
-                    />
-                    <span>
-                      Integration solutions with third-party services and
-                      systems
-                    </span>
-                  </li>
-                  <li className='flex items-start'>
-                    <FaCheckCircle
-                      size={20}
-                      className='text-green-500 mt-1 mr-2 flex-shrink-0'
-                    />
-                    <span>
-                      Well-documented APIs with comprehensive testing coverage
-                    </span>
-                  </li>
-                </ul>
-                {/* <Link
-                  href='/api-development'
-                  className={
-                    buttonVariants({ variant: 'default' }) +
-                    ' inline-block w-full md:w-auto'
-                  }
+            <div className='mt-10 grid gap-6 lg:grid-cols-3'>
+              {services.map((service) => (
+                <article
+                  key={service.title}
+                  className='rounded-md border bg-card p-6'
                 >
-                  Learn more about API development
-                </Link> */}
-              </div>
+                  <h3 className='text-xl font-bold'>{service.title}</h3>
+                  <p className='mt-3 text-sm leading-6 text-muted-foreground'>
+                    {service.description}
+                  </p>
+                  <ul className='mt-5 space-y-3'>
+                    {service.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className='flex gap-3 text-sm text-muted-foreground'
+                      >
+                        <span
+                          className='mt-2 h-1.5 w-1.5 flex-none rounded-full bg-foreground'
+                          aria-hidden='true'
+                        />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </MaxWidthWrapper>
+        </section>
 
-              {/* Technical Mentoring */}
-              <div className='bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow'>
-                <h3 className='text-2xl font-bold mb-4'>Technical Mentoring</h3>
-                <p className='text-gray-600 dark:text-gray-400 mb-6'>
-                  Looking to level up your testing skills? I offer personalized
-                  coaching on:
+        <section className='border-y bg-muted/30 px-4 py-16 sm:px-6 lg:px-8'>
+          <MaxWidthWrapper>
+            <div className='grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start'>
+              <div>
+                <p className='text-sm font-semibold uppercase text-muted-foreground'>
+                  Experience Signals
                 </p>
-                <ul className='space-y-3 mb-6'>
-                  <li className='flex items-start'>
-                    <FaCheckCircle
-                      size={20}
-                      className='text-green-500 mt-1 mr-2 flex-shrink-0'
-                    />
-                    <span>
-                      API testing and automation frameworks (Postman, Jest,
-                      etc.)
-                    </span>
-                  </li>
-                  <li className='flex items-start'>
-                    <FaCheckCircle
-                      size={20}
-                      className='text-green-500 mt-1 mr-2 flex-shrink-0'
-                    />
-                    <span>
-                      End-to-end testing strategies with Cypress and Playwright
-                    </span>
-                  </li>
-                  <li className='flex items-start'>
-                    <FaCheckCircle
-                      size={20}
-                      className='text-green-500 mt-1 mr-2 flex-shrink-0'
-                    />
-                    <span>
-                      Debugging techniques for test failures and issues
-                    </span>
-                  </li>
-                  <li className='flex items-start'>
-                    <FaCheckCircle
-                      size={20}
-                      className='text-green-500 mt-1 mr-2 flex-shrink-0'
-                    />
-                    <span>Test automation architecture and best practices</span>
-                  </li>
-                </ul>
-                {/* <Link
-                  href='/tutoring'
-                  className={
-                    buttonVariants({ variant: 'default' }) +
-                    ' inline-block w-full md:w-auto'
-                  }
-                >
-                  Learn more about mentoring
-                </Link> */}
+                <h2 className='mt-3 text-3xl font-bold tracking-normal sm:text-4xl'>
+                  Evidence from real products, not portfolio theater.
+                </h2>
+                <p className='mt-4 text-muted-foreground'>
+                  The strongest proof here is shipped work: payment APIs,
+                  backend services, CI feedback loops, performance checks, and
+                  test practices that engineering teams can keep using.
+                </p>
+              </div>
+              <div className='grid gap-4 sm:grid-cols-2'>
+                {experienceSignals.map((signal) => (
+                  <article
+                    key={signal.title}
+                    className='rounded-md border bg-background p-5'
+                  >
+                    <p className='text-xs font-semibold uppercase text-muted-foreground'>
+                      {signal.context}
+                    </p>
+                    <h3 className='mt-2 text-lg font-bold'>{signal.title}</h3>
+                    <p className='mt-2 text-sm leading-6 text-muted-foreground'>
+                      {signal.result}
+                    </p>
+                  </article>
+                ))}
               </div>
             </div>
           </MaxWidthWrapper>
         </section>
 
-        {/* Newsletter */}
-        {/* Enable this once setup */}
-        {/* <Newsletter /> */}
-
-        {/* CTA Section */}
-        <section className='py-8 bg-gradient-to-r from-blue-600 to-indigo-700 text-white'>
+        <section className='px-4 py-16 sm:px-6 lg:px-8'>
           <MaxWidthWrapper>
-            <div className='text-center max-w-2xl mx-auto'>
-              <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-                Ready to improve your testing strategy?
-              </h2>
-              <p className='text-lg mb-8 text-blue-100'>
-                Let&apos;s work together to build more reliable software with
-                efficient, effective testing.
-              </p>
-              <div className='flex flex-wrap justify-center gap-4'>
+            <div className='grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start'>
+              <div>
+                <p className='text-sm font-semibold uppercase text-muted-foreground'>
+                  Tooling
+                </p>
+                <h2 className='mt-3 text-3xl font-bold tracking-normal sm:text-4xl'>
+                  Comfortable in the testing and backend toolchain.
+                </h2>
+                <p className='mt-4 text-muted-foreground'>
+                  I focus less on tool collecting and more on making tests
+                  trustworthy, maintainable, and useful to engineers.
+                </p>
+              </div>
+              <div className='flex flex-wrap gap-3'>
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className='rounded-md border bg-card px-3 py-2 text-sm font-medium'
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </MaxWidthWrapper>
+        </section>
+
+        <section className='bg-foreground px-4 py-16 text-background sm:px-6 lg:px-8'>
+          <MaxWidthWrapper>
+            <div className='grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center'>
+              <div>
+                <h2 className='text-3xl font-bold tracking-normal sm:text-4xl'>
+                  Testing should move at the pace of product delivery.
+                </h2>
+                <p className='mt-4 max-w-2xl text-background/75'>
+                  I work best with teams that want stronger release confidence:
+                  sharper API coverage, faster CI feedback, practical
+                  automation, and testing habits that survive after handoff.
+                </p>
+              </div>
+              <div className='flex flex-wrap gap-3'>
                 <Link
                   href='/contact'
-                  className={
-                    buttonVariants({ variant: 'secondary', size: 'lg' }) +
-                    ' inline-block'
-                  }
+                  className={buttonVariants({
+                    variant: 'secondary',
+                    size: 'lg',
+                  })}
                 >
-                  Get in touch
+                  Discuss a project
                 </Link>
                 <Link
                   href='/blog'
-                  className={
-                    buttonVariants({ variant: 'outline', size: 'lg' }) +
-                    ' inline-block bg-transparent border-white text-white hover:bg-white/10'
-                  }
+                  className={`${buttonVariants({
+                    variant: 'outline',
+                    size: 'lg',
+                  })} border-background/70 bg-transparent text-background hover:bg-background hover:text-foreground`}
                 >
-                  Read my articles
+                  Read my writing
                 </Link>
               </div>
             </div>

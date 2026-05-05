@@ -9,23 +9,23 @@ categories:
   - Software Testing
   - API Testing
   - Software Development
-  - Quality Assurance
+  - Software Testing
 tags:
   - API testing
   - test automation
   - Spring Boot
   - integration testing
   - test strategy
-  - code quality
+  - code reliability
   - developer testing
   - authentication testing
   - test-driven development
-  - QA best practices
+  - testing best practices
 ---
 
 <!-- # Why Writing API Tests in Code Matters -->
 
-Over the years, working with different project teams, I've heard many reasons why API tests don't get written in code. Some of them are understandable. Timelines are tight, and the pressure to ship APIs quickly is real. Some developers feel there's no point because there's a QA person or team that will test the APIs anyway. Others point out that authentication is external, so it's hard to get valid tokens in tests.
+Over the years, working with different project teams, I've heard many reasons why API tests don't get written in code. Some of them are understandable. Timelines are tight, and the pressure to ship APIs quickly is real. Some developers feel there's no point because there's a testing person or team that will test the APIs anyway. Others point out that authentication is external, so it's hard to get valid tokens in tests.
 
 I get all of that. These aren't imaginary problems.
 
@@ -68,18 +68,18 @@ When bugs show up, having these scenarios already modeled in tests often makes t
 In my testing career, I've heard these a lot:
 
 - "Timelines are too tight."
-- "QA will test it anyway."
+- "Testing will cover it anyway."
 - "Auth is external, testing is complicated."
 
-Sometimes these are valid constraints. But skipping tests doesn't remove the work - it just shifts it. QA ends up catching issues late, developers context-switch to fix bugs under pressure, and confidence in the system drops.
+Sometimes these are valid constraints. But skipping tests doesn't remove the work - it just shifts it. Testing ends up catching issues late, developers context-switch to fix bugs under pressure, and confidence in the system drops.
 
-This doesn't mean testers shouldn't automate parts of their checks when it makes sense - they should. But quality isn't owned by one role. Everyone carries part of the responsibility.
+This doesn't mean testers shouldn't automate parts of their checks when it makes sense - they should. But testing is not owned by one role. Everyone carries part of the responsibility.
 
 ## The Real Cost vs. Benefit
 
 There are some upfront costs to writing API tests. For the task API, it added a bit of extra time during development to think through scenarios, handle authentication in tests, and set up realistic test data.
 
-Based on my experience on similar projects, this upfront effort usually pays for itself fairly quickly. I’ve often seen these tests catch issues before they reached QA and make refactoring much less stressful when requirements changed. While I don’t have hard metrics to prove an exact break-even point, the practical benefit becomes obvious once the codebase is actively changing and multiple people are touching the same endpoints.
+Based on my experience on similar projects, this upfront effort usually pays for itself fairly quickly. I’ve often seen these tests catch issues before they reached testing and make refactoring much less stressful when requirements changed. While I don’t have hard metrics to prove an exact break-even point, the practical benefit becomes obvious once the codebase is actively changing and multiple people are touching the same endpoints.
 
 Rather than thinking in terms of precise timelines, I see API tests as a way to trade a small, known cost upfront for fewer surprises later.
 
@@ -241,4 +241,4 @@ Writing API tests in code isn't about slowing teams down. It's about giving team
 
 The task API I built uses tests to cover authentication, creation, validation, updates, and status changes - the parts that matter most. That same idea applies whether you're using Spring Boot, Node.js, or anything else.
 
-The reality is quality is a shared responsibility. Tests in code don't replace QA, and QA doesn't replace tests in code. When both exist, everyone's job gets easier - and systems become far less fragile.
+The reality is reliability is a shared responsibility. Tests in code do not replace thoughtful exploratory testing, and exploratory testing does not replace tests in code. When both exist, everyone's job gets easier - and systems become far less fragile.

@@ -8,12 +8,12 @@ readingTime: '5 min read'
 categories:
   - Software Testing
   - MVP Development
-  - QA Best Practices
+  - Testing Best Practices
   - Project Management
 tags:
   - missing requirements
   - minimum viable product
-  - quality assurance
+  - software testing
   - software testing
   - project challenges
 ---

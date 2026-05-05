@@ -6,7 +6,7 @@ readingTime: '5 min read'
 categories:
   [
     'Software Testing',
-    'Quality Assurance',
+    'Software Testing',
     'Development Process',
     'Team Dynamics',
     'Ethics in Tech',
@@ -15,7 +15,7 @@ tags:
   [
     'bias',
     'software-testing',
-    'quality-assurance',
+    'software-testing',
     'test-mindset',
     'developer-collaboration',
     'cognitive-bias',
@@ -58,6 +58,6 @@ Nothing cuts through familiarity bias like watching real users struggle with fea
 
 ### Balancing Relationships and Responsibility
 
-The trade of testing is not just technical - it's also very human. And we have to navigate relationships while maintaining our professional standards. The most respected testers I know have mastered this balance; they are team players who understand constraints, yet they remain unyielding advocates for quality.
+The trade of testing is not just technical - it's also very human. And we have to navigate relationships while maintaining our professional standards. The most respected testers I know have mastered this balance; they are team players who understand constraints, yet they remain unyielding advocates for reliable software.
 
 What tactic have you adopted to maintain your testing objectives while working closely with development teams?

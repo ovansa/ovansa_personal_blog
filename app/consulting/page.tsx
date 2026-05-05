@@ -17,9 +17,9 @@ import { buttonVariants } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'Software Testing Consulting Services | Muhammed Ibrahim (Ovansa)',
   description:
-    'Expert consulting services for test automation, API testing strategies, and QA process optimization by Muhammed Ibrahim, a Software Test Engineer with 6+ years of experience.',
+    'Software testing advisory for API testing, test automation, CI feedback, and pragmatic testing process improvement by Muhammed Ibrahim.',
   keywords:
-    'test automation consulting, API testing strategy, QA process improvement, software testing consultant, test architecture design, Muhammed Ibrahim, Ovansa',
+    'test automation consulting, API testing strategy, testing process improvement, software testing consultant, test architecture design, Muhammed Ibrahim, Ovansa',
   alternates: {
     canonical: `${SiteConfig.siteUrl}/consulting`,
   },
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     url: `${SiteConfig.siteUrl}/consulting`,
     title: 'Software Testing Consulting Services | Muhammed Ibrahim (Ovansa)',
     description:
-      "Expert consulting services for test automation, API testing strategies, and QA process optimization. Elevate your team's testing capabilities.",
+      'Software testing advisory for API testing, automation strategy, CI feedback, and practical testing process improvement.',
     siteName: 'Muhammed Ibrahim - Software Test Engineer',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Software Testing Consulting Services | Muhammed Ibrahim (Ovansa)',
     description:
-      "Expert consulting services for test automation, API testing strategies, and QA process optimization. Elevate your team's testing capabilities.",
+      'Software testing advisory for API testing, automation strategy, CI feedback, and practical testing process improvement.',
     creator: '@ovansa',
   },
 };
@@ -51,18 +51,18 @@ export default function Consulting() {
             <div className='space-y-6'>
               <div>
                 <span className='inline-block px-3 py-1 text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full mb-4'>
-                  Testing Consultation
+                  Software Testing Advisory
                 </span>
                 <h1 className='text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-4'>
-                  Elevate Your{' '}
+                  Strengthen Your{' '}
                   <span className='text-blue-600 dark:text-blue-400'>
-                    Testing Strategy
+                    Testing System
                   </span>
                 </h1>
                 <p className='text-lg md:text-xl text-gray-700 dark:text-gray-300'>
-                  Transform your testing approach with expert guidance from a
-                  Software Test Engineer with 6+ years of experience building
-                  high-quality software.
+                  Practical guidance for API-heavy teams that need reliable
+                  automation, faster CI feedback, and testing practices that
+                  engineers can maintain.
                 </p>
               </div>
               <div className='flex flex-wrap gap-4'>
@@ -70,7 +70,7 @@ export default function Consulting() {
                   href='#services'
                   className={buttonVariants({ size: 'lg' }) + ' inline-block'}
                 >
-                  Explore Services
+                  Review Scope
                 </Link>
                 <Link
                   href='/contact'
@@ -79,7 +79,7 @@ export default function Consulting() {
                     ' inline-block'
                   }
                 >
-                  Get in Touch
+                  Share Context
                 </Link>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function Consulting() {
               <div className='absolute inset-0 flex flex-col items-center justify-center p-6'>
                 <div className='text-center space-y-6'>
                   <h2 className='text-2xl font-bold text-gray-800 dark:text-white'>
-                    Is your testing approach falling short?
+                    Common Testing Bottlenecks
                   </h2>
                   <ul className='space-y-3 text-left'>
                     <li className='flex items-start'>
@@ -96,7 +96,7 @@ export default function Consulting() {
                         className='text-green-500 mt-1 mr-2 flex-shrink-0'
                       />
                       <span className='text-gray-700 dark:text-gray-300'>
-                        Missed bugs in production?
+                        Production defects from weak API coverage
                       </span>
                     </li>
                     <li className='flex items-start'>
@@ -105,7 +105,7 @@ export default function Consulting() {
                         className='text-green-500 mt-1 mr-2 flex-shrink-0'
                       />
                       <span className='text-gray-700 dark:text-gray-300'>
-                        Slow, flaky test suites?
+                        Slow or flaky regression suites
                       </span>
                     </li>
                     <li className='flex items-start'>
@@ -114,7 +114,7 @@ export default function Consulting() {
                         className='text-green-500 mt-1 mr-2 flex-shrink-0'
                       />
                       <span className='text-gray-700 dark:text-gray-300'>
-                        Difficulty scaling your test automation?
+                        Automation that is hard to maintain
                       </span>
                     </li>
                     <li className='flex items-start'>
@@ -123,7 +123,7 @@ export default function Consulting() {
                         className='text-green-500 mt-1 mr-2 flex-shrink-0'
                       />
                       <span className='text-gray-700 dark:text-gray-300'>
-                        Testing bottlenecks in your CI/CD pipeline?
+                        CI pipelines that do not give useful feedback
                       </span>
                     </li>
                   </ul>
@@ -139,12 +139,13 @@ export default function Consulting() {
         <MaxWidthWrapper>
           <div className='text-center mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              My Consulting Experience
+              Experience-Backed Advisory
             </h2>
             <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
-              With over 6 years of experience in software testing across
-              multiple industries, I&apos;ve helped teams overcome testing
-              challenges and deliver high-quality software.
+              My work is grounded in shipped products across fintech, SaaS,
+              backend services, and payment systems. The focus is practical:
+              reduce release risk, improve feedback loops, and make test suites
+              useful to engineering teams.
             </p>
           </div>
 
@@ -155,8 +156,8 @@ export default function Consulting() {
               </div>
               <h3 className='text-xl font-bold mb-2'>Team Assessment</h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                Helped teams identify gaps in their testing approach and
-                implemented solutions that increased test coverage by over 100%.
+                Reviewed test coverage, delivery flow, and team practices to
+                identify gaps that materially affect release confidence.
               </p>
             </div>
 
@@ -187,10 +188,8 @@ export default function Consulting() {
 
           <div className='bg-blue-50 dark:bg-gray-800/50 p-6 rounded-lg'>
             <blockquote className='text-lg italic text-gray-700 dark:text-gray-300 text-center'>
-              &quot;One of my strongest qualities is the ability to break
-              seemingly difficult problems down into small, actionable tasks. I
-              communicate effectively across the organization, from boardroom to
-              team room.&quot;
+              &quot;Good testing work turns unclear risk into specific, testable
+              decisions the team can act on.&quot;
             </blockquote>
           </div>
         </MaxWidthWrapper>
@@ -201,11 +200,11 @@ export default function Consulting() {
         <MaxWidthWrapper>
           <div className='text-center mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              Consulting Services
+              Advisory Areas
             </h2>
             <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
-              I offer specialized consulting services tailored to help your team
-              overcome testing challenges and deliver high-quality software.
+              Focused engagements for teams that want stronger API coverage,
+              clearer automation strategy, and better release feedback.
             </p>
           </div>
 
@@ -216,9 +215,9 @@ export default function Consulting() {
                 Test Automation Strategy
               </h3>
               <p className='text-gray-600 dark:text-gray-400 mb-6'>
-                Being successful with test automation requires more than just
-                tools. I can help you craft and implement a holistic test
-                automation strategy based on the Kipling method.
+                Successful test automation requires more than tool selection.
+                The work starts with clarifying risk, scope, ownership, timing,
+                and the feedback your team actually needs.
               </p>
 
               <div className='space-y-4 mb-6'>
@@ -288,7 +287,7 @@ export default function Consulting() {
                 href='/contact'
                 className='inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline'
               >
-                <span>Discuss your strategy needs</span>
+                <span>Discuss strategy scope</span>
                 <ArrowRight size={16} className='ml-1' />
               </Link>
             </div>
@@ -299,9 +298,9 @@ export default function Consulting() {
                 API Testing Optimization
               </h3>
               <p className='text-gray-600 dark:text-gray-400 mb-6'>
-                As an API testing specialist, I can help your team design and
-                implement efficient, maintainable API test suites that catch
-                issues early and integrate seamlessly with your CI/CD pipeline.
+                Design and improve maintainable API test suites that catch
+                meaningful regressions early and fit naturally into your CI/CD
+                pipeline.
               </p>
 
               <ul className='space-y-3 mb-6'>
@@ -312,7 +311,7 @@ export default function Consulting() {
                   />
                   <span className='text-gray-700 dark:text-gray-300'>
                     <strong>Test Architecture Design:</strong> Create scalable
-                    test architectures that grow with your API.
+                    test architecture that grows with your API.
                   </span>
                 </li>
                 <li className='flex items-start'>
@@ -322,7 +321,7 @@ export default function Consulting() {
                   />
                   <span className='text-gray-700 dark:text-gray-300'>
                     <strong>Tool Selection:</strong> Choose the right tools
-                    (Postman, Jest, etc.) for your specific needs.
+                    (Postman, Jest, RestAssured, etc.) for your system and team.
                   </span>
                 </li>
                 <li className='flex items-start'>
@@ -332,7 +331,7 @@ export default function Consulting() {
                   />
                   <span className='text-gray-700 dark:text-gray-300'>
                     <strong>CI/CD Integration:</strong> Seamlessly integrate API
-                    tests into your delivery pipeline.
+                    tests into your delivery pipeline with useful reporting.
                   </span>
                 </li>
                 <li className='flex items-start'>
@@ -370,9 +369,8 @@ export default function Consulting() {
             <div className='bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md'>
               <h3 className='text-2xl font-bold mb-4'>Team Coaching</h3>
               <p className='text-gray-600 dark:text-gray-400 mb-6'>
-                Help your team level up their testing skills through
-                personalized coaching sessions tailored to your specific
-                challenges and goals.
+                Build team capability through focused coaching on API testing,
+                automation design, debugging, and maintainable test ownership.
               </p>
 
               <ul className='space-y-3 mb-6'>
@@ -392,8 +390,8 @@ export default function Consulting() {
                     className='text-green-500 mt-1 mr-2 flex-shrink-0'
                   />
                   <span className='text-gray-700 dark:text-gray-300'>
-                    <strong>Tailored Training:</strong> Custom workshops focused
-                    on your team&apos;s specific needs.
+                    <strong>Targeted Training:</strong> Workshops focused on
+                    your team&apos;s systems and testing risks.
                   </span>
                 </li>
                 <li className='flex items-start'>
@@ -412,8 +410,8 @@ export default function Consulting() {
                     className='text-green-500 mt-1 mr-2 flex-shrink-0'
                   />
                   <span className='text-gray-700 dark:text-gray-300'>
-                    <strong>Mentorship:</strong> Ongoing support for junior
-                    SDETs and QAs.
+                    <strong>Mentorship:</strong> Practical support for junior
+                    SDETs and software testers.
                   </span>
                 </li>
               </ul>
@@ -422,7 +420,7 @@ export default function Consulting() {
                 href='/contact'
                 className='inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline'
               >
-                <span>Elevate your team&apos;s skills</span>
+                <span>Discuss team coaching</span>
                 <ArrowRight size={16} className='ml-1' />
               </Link>
             </div>
@@ -431,9 +429,9 @@ export default function Consulting() {
             <div className='bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md'>
               <h3 className='text-2xl font-bold mb-4'>Testing Process Audit</h3>
               <p className='text-gray-600 dark:text-gray-400 mb-6'>
-                Get an expert review of your current testing processes to
-                identify inefficiencies, gaps, and opportunities for
-                improvement.
+                Review your current testing process to identify gaps,
+                duplicated effort, weak feedback loops, and automation that no
+                longer earns its maintenance cost.
               </p>
 
               <ul className='space-y-3 mb-6'>
@@ -464,7 +462,7 @@ export default function Consulting() {
                   />
                   <span className='text-gray-700 dark:text-gray-300'>
                     <strong>Improvement Roadmap:</strong> Prioritized
-                    recommendations for enhancing quality.
+                    recommendations for improving testing feedback.
                   </span>
                 </li>
                 <li className='flex items-start'>
@@ -473,7 +471,7 @@ export default function Consulting() {
                     className='text-green-500 mt-1 mr-2 flex-shrink-0'
                   />
                   <span className='text-gray-700 dark:text-gray-300'>
-                    <strong>Metrics Evaluation:</strong> Assess your quality
+                    <strong>Metrics Evaluation:</strong> Assess your testing
                     metrics and measurement approach.
                   </span>
                 </li>
@@ -483,7 +481,7 @@ export default function Consulting() {
                 href='/contact'
                 className='inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:underline'
               >
-                <span>Request an audit</span>
+                <span>Discuss an audit</span>
                 <ArrowRight size={16} className='ml-1' />
               </Link>
             </div>
@@ -496,11 +494,11 @@ export default function Consulting() {
         <MaxWidthWrapper>
           <div className='text-center mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              My Consulting Process
+              Engagement Process
             </h2>
             <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
-              A clear, collaborative approach to help you achieve your testing
-              goals quickly and effectively.
+              A structured path from current-state review to practical
+              recommendations and implementation support.
             </p>
           </div>
 
@@ -513,7 +511,7 @@ export default function Consulting() {
               </div>
               <h3 className='text-xl font-bold mb-2'>Discovery</h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                Initial consultation to understand your challenges, goals, and
+                Understand the product, risk profile, release process, and
                 current testing approach.
               </p>
             </div>
@@ -526,8 +524,8 @@ export default function Consulting() {
               </div>
               <h3 className='text-xl font-bold mb-2'>Assessment</h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                Thorough analysis of your testing processes, tools, and team
-                capabilities.
+                Analyze test coverage, tools, CI feedback, data setup, and team
+                ownership.
               </p>
             </div>
 
@@ -539,8 +537,8 @@ export default function Consulting() {
               </div>
               <h3 className='text-xl font-bold mb-2'>Implementation</h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                Collaborative work to implement recommended solutions and
-                strategies.
+                Implement the highest-value changes with the team, keeping
+                maintainability in view.
               </p>
             </div>
 
@@ -552,70 +550,9 @@ export default function Consulting() {
               </div>
               <h3 className='text-xl font-bold mb-2'>Follow-up</h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                Ongoing support to ensure sustainable improvement and address
-                new challenges.
+                Handover, review adoption, and adjust based on real delivery
+                feedback.
               </p>
-            </div>
-          </div>
-        </MaxWidthWrapper>
-      </section>
-
-      {/* Testimonials */}
-      <section className='py-16 bg-gray-50 dark:bg-gray-900'>
-        <MaxWidthWrapper>
-          <div className='text-center mb-12'>
-            <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              Client Feedback
-            </h2>
-            <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
-              Hear from teams I&apos;ve helped to improve their testing
-              strategies.
-            </p>
-          </div>
-
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-            <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md'>
-              <div className='flex items-center mb-4'>
-                <div className='h-12 w-12 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-4'>
-                  <span className='font-bold text-blue-600 dark:text-blue-400'>
-                    PM
-                  </span>
-                </div>
-                <div>
-                  <h4 className='font-bold'>Project Manager</h4>
-                  <p className='text-sm text-gray-500 dark:text-gray-400'>
-                    Financial Services Company
-                  </p>
-                </div>
-              </div>
-              <blockquote className='text-gray-700 dark:text-gray-300 italic'>
-                &quot;Muhammed helped us transform our API testing approach. Our
-                regression suite now runs 3x faster and catches issues we were
-                missing before. His ability to understand both the technical and
-                business sides of testing was invaluable.&quot;
-              </blockquote>
-            </div>
-
-            <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md'>
-              <div className='flex items-center mb-4'>
-                <div className='h-12 w-12 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mr-4'>
-                  <span className='font-bold text-green-600 dark:text-green-400'>
-                    TD
-                  </span>
-                </div>
-                <div>
-                  <h4 className='font-bold'>Tech Lead</h4>
-                  <p className='text-sm text-gray-500 dark:text-gray-400'>
-                    E-commerce Platform
-                  </p>
-                </div>
-              </div>
-              <blockquote className='text-gray-700 dark:text-gray-300 italic'>
-                &quot;Our test automation was fragile and maintenance-heavy
-                until we worked with Muhammed. He redesigned our approach and
-                mentored our team, resulting in more reliable tests and
-                confident releases.&quot;
-              </blockquote>
             </div>
           </div>
         </MaxWidthWrapper>
@@ -626,10 +563,10 @@ export default function Consulting() {
         <MaxWidthWrapper>
           <div className='text-center mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              Frequently Asked Questions
+              Engagement Questions
             </h2>
             <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
-              Common questions about my consulting services.
+              Practical details for software testing advisory work.
             </p>
           </div>
 
@@ -639,10 +576,9 @@ export default function Consulting() {
                 How long does a typical consulting engagement last?
               </h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                It depends on your needs and goals. Some clients need a quick
-                assessment that takes just a few days, while others benefit from
-                ongoing support over several months. We&apos;ll define a clear
-                timeline based on your specific needs.
+                It depends on scope. A focused assessment can take a few days;
+                implementation support or team coaching may run over several
+                weeks. The timeline should match the risk and delivery goals.
               </p>
             </div>
 
@@ -651,10 +587,8 @@ export default function Consulting() {
                 Do you work with remote teams?
               </h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                Absolutely! I&apos;ve worked with distributed teams across
-                different time zones. I&apos;m comfortable with remote
-                collaboration tools and can adapt to your team&apos;s preferred
-                communication methods.
+                Yes. I work well with distributed teams when access, ownership,
+                meeting rhythm, and written handoffs are clear.
               </p>
             </div>
 
@@ -663,10 +597,9 @@ export default function Consulting() {
                 What industries have you worked with?
               </h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                I&apos;ve worked across various industries including fintech,
-                e-commerce, and SaaS platforms. The testing principles remain
-                consistent, though I adapt strategies to meet industry-specific
-                challenges and regulations.
+                Fintech, payments, SaaS, data collection, and backend product
+                teams. The principles stay consistent, but the risk model changes
+                by domain.
               </p>
             </div>
 
@@ -675,10 +608,9 @@ export default function Consulting() {
                 Can you help with specific testing tools?
               </h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                Yes! I have expertise in numerous testing tools including
-                Postman, Jest, Cypress, Playwright, and k6. I can help you
-                select the right tools for your needs and train your team on
-                their effective use.
+                Yes. I work with Postman, Jest, Cypress, Playwright, RestAssured,
+                k6, and related CI tooling. The tool choice should follow the
+                risk, team skill, and maintenance model.
               </p>
             </div>
           </div>
@@ -690,11 +622,11 @@ export default function Consulting() {
         <MaxWidthWrapper>
           <div className='text-center max-w-2xl mx-auto'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              Ready to transform your testing approach?
+              Bring clearer feedback into the release process.
             </h2>
             <p className='text-lg mb-8 text-blue-100'>
-              Let&apos;s discuss your testing challenges and build a solution
-              that works for your team.
+              Share the product context, current test stack, and highest-risk
+              flows. I&apos;ll respond with a practical next step.
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <Link
@@ -704,7 +636,7 @@ export default function Consulting() {
                   ' inline-block'
                 }
               >
-                Schedule a Consultation
+                Share Project Context
               </Link>
               <Link
                 href='#'
@@ -717,7 +649,7 @@ export default function Consulting() {
                   ' inline-block bg-transparent border-white text-white hover:bg-white/10'
                 }
               >
-                Email Me Directly
+                Email Directly
               </Link>
             </div>
           </div>
@@ -729,11 +661,11 @@ export default function Consulting() {
         <MaxWidthWrapper>
           <div className='text-center mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              Book a Session
+              Engagement Options
             </h2>
             <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'>
-              Ready to get started? Schedule a free 30-minute consultation to
-              discuss your testing challenges.
+              Choose the format that matches the work: scoping, strategy,
+              implementation support, or team coaching.
             </p>
           </div>
 
@@ -744,8 +676,8 @@ export default function Consulting() {
               </div>
               <h3 className='text-xl font-bold mb-2'>Discovery Call</h3>
               <p className='text-gray-600 dark:text-gray-400 mb-4'>
-                A free 30-minute call to discuss your testing challenges and see
-                if we&apos;re a good fit.
+                A focused call to understand the product, release risks, and
+                current testing bottlenecks.
               </p>
               <Link
                 href='https://calendly.com/muhammed-ibrahim/discovery'
@@ -755,7 +687,7 @@ export default function Consulting() {
                   buttonVariants({ variant: 'default', size: 'sm' }) + ' w-full'
                 }
               >
-                Schedule Call
+                Schedule Scope Call
               </Link>
             </div>
 
@@ -765,7 +697,7 @@ export default function Consulting() {
               </div>
               <h3 className='text-xl font-bold mb-2'>Strategy Session</h3>
               <p className='text-gray-600 dark:text-gray-400 mb-4'>
-                A 60-minute deep dive into your testing approach with actionable
+                A deeper review of your testing approach with actionable
                 recommendations.
               </p>
               <Link
@@ -776,7 +708,7 @@ export default function Consulting() {
                   buttonVariants({ variant: 'default', size: 'sm' }) + ' w-full'
                 }
               >
-                Book Session
+                Book Strategy Session
               </Link>
             </div>
 
@@ -786,8 +718,8 @@ export default function Consulting() {
               </div>
               <h3 className='text-xl font-bold mb-2'>Team Workshop</h3>
               <p className='text-gray-600 dark:text-gray-400 mb-4'>
-                Interactive workshop sessions customized for your team&apos;s
-                specific testing needs.
+                Focused workshop sessions based on your team&apos;s systems,
+                workflows, and test ownership gaps.
               </p>
               <Link
                 href='/contact'
@@ -795,15 +727,15 @@ export default function Consulting() {
                   buttonVariants({ variant: 'default', size: 'sm' }) + ' w-full'
                 }
               >
-                Request Info
+                Discuss Workshop
               </Link>
             </div>
           </div>
 
           <div className='mt-12 text-center'>
             <p className='text-gray-600 dark:text-gray-400 mb-4'>
-              Need a custom consulting package? Let&apos;s discuss your specific
-              requirements.
+              For custom advisory or implementation support, send the product
+              context and the testing problems worth solving.
             </p>
             <Link
               href='/contact'
@@ -811,7 +743,7 @@ export default function Consulting() {
                 buttonVariants({ variant: 'outline' }) + ' inline-block'
               }
             >
-              Contact Me
+              Share Context
             </Link>
           </div>
         </MaxWidthWrapper>
@@ -823,11 +755,11 @@ export default function Consulting() {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
             <div>
               <h2 className='text-2xl md:text-3xl font-bold mb-4'>
-                Stay Updated with Testing Insights
+                Testing Notes and Practical Lessons
               </h2>
               <p className='text-gray-600 dark:text-gray-400 mb-6'>
-                Join my newsletter to receive the latest testing tips, tools,
-                and best practices to help your team succeed.
+                Occasional writing on API testing, automation strategy, and
+                software testing practice.
               </p>
               <form className='space-y-4'>
                 <div className='flex flex-col sm:flex-row gap-3'>

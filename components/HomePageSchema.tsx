@@ -8,18 +8,18 @@ export default function HomePageSchema() {
     name: SiteConfig.author.name,
     alternateName: 'Ovansa',
     description:
-      'Software Test Engineer with over 6 years of experience in API testing and test automation',
+      'Software Test Engineer with over 7 years of experience in API testing and test automation',
     url: SiteConfig.siteUrl,
     sameAs: [
       //   `https://twitter.com/${SiteConfig.author.twitter.replace('@', '')}`,
-      `https://github.com/${SiteConfig.author.github}`,
+      SiteConfig.author.github,
       'https://linkedin.com/in/ovansa',
     ],
     jobTitle: 'Software Test Engineer',
     knowsAbout: [
       'API Testing',
       'Test Automation',
-      'QA Best Practices',
+      'Testing Best Practices',
       'Test-Driven Development',
     ],
     offers: [
