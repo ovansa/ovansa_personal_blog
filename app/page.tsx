@@ -161,16 +161,16 @@ export default function Home() {
                   Software Test Engineer | API Automation | Testing Strategy
                 </p>
                 <h1 className='text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl'>
-                  Software testing for API-heavy products where reliability
-                  cannot be an afterthought.
+                  I find important product risks early and make them visible
+                  enough to act on.
                 </h1>
                 <p className='mt-6 text-lg leading-8 text-muted-foreground sm:text-xl'>
                   I&apos;m <strong>Muhammed Ibrahim (Ovansa)</strong>, a
                   Lagos-based Software Test Engineer with 7+ years of experience
                   across payments, SaaS, backend services, and automation. My
-                  best work sits where testing meets engineering: API test
-                  strategy, CI test gates, backend testability, and pragmatic team
-                  mentorship.
+                  work is to find problems quickly, bring the right stakeholders
+                  into the risk, and help teams decide whether to fix, defer, or
+                  redesign.
                 </p>
                 <div className='mt-8 flex flex-wrap gap-3'>
                   <Link

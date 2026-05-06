@@ -38,24 +38,24 @@ const principles = [
     body: 'Requirements describe intent. Testing has to expose where the product can fail users, data, revenue, operations, or trust.',
   },
   {
+    title: 'Find important problems early',
+    body: 'The earlier a meaningful problem is seen clearly, the more options the team has for resolving it well.',
+  },
+  {
     title: 'Automation must earn its maintenance cost',
     body: 'A test suite is only valuable when it gives reliable feedback and stays understandable to the team that owns it.',
   },
   {
-    title: 'CI feedback should be fast and actionable',
-    body: 'A failing pipeline should help engineers decide what to inspect next, not leave them guessing through noisy reports.',
-  },
-  {
     title: 'Testing should improve engineering decisions',
-    body: 'Good testing brings product risk into design, implementation, review, and release conversations early enough to matter.',
+    body: 'Good testing brings product risk to the right stakeholders early enough to guide fix, defer, redesign, or release decisions.',
   },
 ];
 
 const workingStyle = [
-  'Clarify product risk before choosing tools or coverage targets.',
+  'Clarify product risk before choosing tools, coverage targets, or automation scope.',
+  'Make problems visible to the stakeholders who can resolve or act on them.',
   'Map tests to business-critical API flows and user journeys.',
   'Write automation that engineers can read, debug, and maintain.',
-  'Use reviews, pairing, and examples to raise team testing judgment.',
 ];
 
 const range = [
@@ -75,8 +75,7 @@ export default function About() {
             About
           </p>
           <h1 className='mt-3 text-4xl font-bold tracking-normal sm:text-5xl'>
-            I treat software reliability as engineering judgment, not a final
-            checklist.
+            I test to find important problems early and make the risk clear.
           </h1>
           <div className='mt-6 space-y-5 text-lg leading-8 text-muted-foreground'>
             <p>
@@ -85,10 +84,10 @@ export default function About() {
               payments, SaaS products, backend APIs, and automation-heavy teams.
             </p>
             <p>
-              My best work sits where testing and engineering meet: finding the
-              highest-risk flows, designing tests that give useful feedback,
-              improving CI confidence, and helping teams make better release
-              decisions.
+              My best work sits where testing, engineering, and product
+              decisions meet: find the problem quickly, explain why it matters,
+              bring awareness to the right stakeholders, and support the
+              decision that follows.
             </p>
           </div>
         </section>
@@ -126,9 +125,9 @@ export default function About() {
               How I Work With Teams
             </h2>
             <p className='mt-4 text-muted-foreground'>
-              The goal is not to create a testing island. The goal is to make
-              product risk visible enough that engineers, product managers, and
-              testers can make better tradeoffs together.
+              The goal is not to create a testing island. The goal is to turn
+              product risk into shared awareness so engineers, product managers,
+              and testers can make better tradeoffs together.
             </p>
           </div>
           <ul className='space-y-3'>

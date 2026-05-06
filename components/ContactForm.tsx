@@ -157,7 +157,7 @@ const ContactForm = () => {
                 <ul className='mt-4 space-y-3 text-sm text-muted-foreground'>
                   <li>Product domain and critical user/API flows</li>
                   <li>Current tools, pipelines, and test ownership</li>
-                  <li>Recent defects, slow feedback, or flaky tests</li>
+                  <li>Known problems, stakeholder impact, or open decisions</li>
                   <li>Timeline, constraints, and success criteria</li>
                 </ul>
               </div>

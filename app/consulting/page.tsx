@@ -622,11 +622,11 @@ export default function Consulting() {
         <MaxWidthWrapper>
           <div className='text-center max-w-2xl mx-auto'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              Bring clearer feedback into the release process.
+              Make product risk visible early enough to guide decisions.
             </h2>
             <p className='text-lg mb-8 text-blue-100'>
-              Share the product context, current test stack, and highest-risk
-              flows. I&apos;ll respond with a practical next step.
+              Share the product context, current test stack, stakeholders, and
+              highest-risk flows. I&apos;ll respond with a practical next step.
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <Link
