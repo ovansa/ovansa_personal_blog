@@ -74,7 +74,7 @@ export default function About() {
           <p className='text-sm font-semibold uppercase text-muted-foreground'>
             About
           </p>
-          <h1 className='mt-3 text-4xl font-bold tracking-normal sm:text-5xl'>
+          <h1 className='mt-3 text-4xl font-bold sm:text-5xl'>
             I test to find important problems early and make the risk clear.
           </h1>
           <div className='mt-6 space-y-5 text-lg leading-8 text-muted-foreground'>
@@ -97,7 +97,7 @@ export default function About() {
             <p className='text-sm font-semibold uppercase text-muted-foreground'>
               Principles
             </p>
-            <h2 className='mt-3 text-3xl font-bold tracking-normal'>
+            <h2 className='mt-3 text-3xl font-bold'>
               How I Think About Testing
             </h2>
           </div>
@@ -121,7 +121,7 @@ export default function About() {
             <p className='text-sm font-semibold uppercase text-muted-foreground'>
               Team Practice
             </p>
-            <h2 className='mt-3 text-3xl font-bold tracking-normal'>
+            <h2 className='mt-3 text-3xl font-bold'>
               How I Work With Teams
             </h2>
             <p className='mt-4 text-muted-foreground'>
@@ -148,7 +148,7 @@ export default function About() {
               <p className='text-sm font-semibold uppercase text-muted-foreground'>
                 Professional Range
               </p>
-              <h2 className='mt-3 text-3xl font-bold tracking-normal'>
+              <h2 className='mt-3 text-3xl font-bold'>
                 Where my experience is strongest.
               </h2>
             </div>

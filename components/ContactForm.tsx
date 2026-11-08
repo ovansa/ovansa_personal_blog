@@ -89,7 +89,7 @@ const ContactForm = () => {
             <p className='text-sm font-semibold uppercase text-muted-foreground'>
               Contact
             </p>
-            <h1 className='mt-3 text-4xl font-bold tracking-normal sm:text-5xl'>
+            <h1 className='mt-3 text-4xl font-bold sm:text-5xl'>
               Share the testing context worth solving.
             </h1>
             <p className='mt-5 text-lg leading-8 text-muted-foreground'>

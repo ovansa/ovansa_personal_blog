@@ -14,8 +14,8 @@ import { buttonVariants } from './ui/button';
 const NavBar = () => {
   return (
     <nav className='h-16 bg-background/50 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between z-50'>
-      <div className='max-w-[1400px] mx-auto w-full flex items-center justify-between'>
-        <div className='text-lg font-bold md:text-xl'>
+      <div className='mx-auto flex w-full max-w-[1200px] items-center justify-between'>
+        <div className='font-display text-lg font-bold md:text-xl'>
           <Link href={'/'}>Ovansa</Link>
         </div>
 

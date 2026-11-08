@@ -2,16 +2,17 @@ import './globals.css';
 
 import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Ubuntu } from 'next/font/google';
 import NavBar from '@/components/NavBar';
 import SiteConfig from '@/config/site';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { cn } from '@/lib/utils';
 
-const fontSans = Montserrat({
+const fontSans = Ubuntu({
   subsets: ['latin'],
-  variable: '--font-sans',
-  weight: ['400', '500', '700'],
+  variable: '--font-ubuntu',
+  weight: ['300', '400', '500', '700'],
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
@@ -74,13 +75,10 @@ export default function RootLayout({
     <html
       lang='en'
       suppressHydrationWarning
-      className='scroll-p-20 scroll-smooth'
+      className={cn('scroll-p-20 scroll-smooth', fontSans.variable)}
     >
       <body
-        className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          fontSans.variable
-        )}
+        className={cn('min-h-screen bg-background antialiased', fontSans.className)}
       >
         <ThemeProvider
           attribute='class'

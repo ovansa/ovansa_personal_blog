@@ -160,7 +160,7 @@ export default function Home() {
                 <p className='mb-4 text-sm font-semibold uppercase text-muted-foreground'>
                   Software Test Engineer | API Automation | Testing Strategy
                 </p>
-                <h1 className='text-4xl font-bold leading-tight tracking-normal sm:text-5xl lg:text-6xl'>
+                <h1 className='text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl'>
                   I find important product risks early and make them visible
                   enough to act on.
                 </h1>
@@ -263,7 +263,7 @@ export default function Home() {
                   key={outcome.label}
                   className='rounded-md border bg-card p-5'
                 >
-                  <p className='text-3xl font-bold'>{outcome.value}</p>
+                  <p className='font-display text-3xl font-bold'>{outcome.value}</p>
                   <p className='mt-2 text-sm leading-6 text-muted-foreground'>
                     {outcome.label}
                   </p>
@@ -282,7 +282,7 @@ export default function Home() {
               <p className='text-sm font-semibold uppercase text-muted-foreground'>
                 What I Can Do
               </p>
-              <h2 className='mt-3 text-3xl font-bold tracking-normal sm:text-4xl'>
+              <h2 className='mt-3 text-3xl font-bold sm:text-4xl'>
                 Practical software testing for teams that need fewer surprises
                 in production.
               </h2>
@@ -325,7 +325,7 @@ export default function Home() {
                 <p className='text-sm font-semibold uppercase text-muted-foreground'>
                   Experience Signals
                 </p>
-                <h2 className='mt-3 text-3xl font-bold tracking-normal sm:text-4xl'>
+                <h2 className='mt-3 text-3xl font-bold sm:text-4xl'>
                   Evidence from real products, not portfolio theater.
                 </h2>
                 <p className='mt-4 text-muted-foreground'>
@@ -361,7 +361,7 @@ export default function Home() {
                 <p className='text-sm font-semibold uppercase text-muted-foreground'>
                   Tooling
                 </p>
-                <h2 className='mt-3 text-3xl font-bold tracking-normal sm:text-4xl'>
+                <h2 className='mt-3 text-3xl font-bold sm:text-4xl'>
                   Comfortable in the testing and backend toolchain.
                 </h2>
                 <p className='mt-4 text-muted-foreground'>
@@ -387,7 +387,7 @@ export default function Home() {
           <MaxWidthWrapper>
             <div className='grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center'>
               <div>
-                <h2 className='text-3xl font-bold tracking-normal sm:text-4xl'>
+                <h2 className='text-3xl font-bold sm:text-4xl'>
                   Testing should move at the pace of product delivery.
                 </h2>
                 <p className='mt-4 max-w-2xl text-background/75'>
