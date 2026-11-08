@@ -25,6 +25,9 @@ const NavBar = () => {
             <Link href='/'>Home</Link>
           </li>
           <li>
+            <Link href='/#work'>Work</Link>
+          </li>
+          <li>
             <Link href='/blog'>Blog</Link>
           </li>
           {/* <li>
@@ -45,7 +48,7 @@ const NavBar = () => {
         <div className='flex gap-2 items-center md:hidden'>
           <ModeToggle />
           <Sheet>
-            <SheetTrigger>
+            <SheetTrigger aria-label='Open navigation menu'>
               <HamburgerMenuIcon className='size-6' />
             </SheetTrigger>
             <SheetContent
@@ -61,6 +64,9 @@ const NavBar = () => {
                   className='text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Home
+                </Link>
+                <Link href='/#work' className='text-muted-foreground hover:text-foreground transition-colors'>
+                  Work
                 </Link>
                 <Link
                   href='/blog'

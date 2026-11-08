@@ -169,8 +169,8 @@ export default function Consulting() {
                 Strategic Implementation
               </h3>
               <p className='text-gray-600 dark:text-gray-400'>
-                Implemented test automation strategies that reduced regression
-                testing time by 200% while increasing reliability.
+                Built and maintained Postman API regression tests for repeatable
+                validation of critical payment workflows.
               </p>
             </div>
 
@@ -804,7 +804,7 @@ export default function Consulting() {
                   </svg>
                 </Link>
                 <Link
-                  href='https://linkedin.com/in/muhammed-ibrahim'
+                  href='https://linkedin.com/in/ovansa'
                   target='_blank'
                   rel='noopener noreferrer'
                   className='h-10 w-10 rounded-full bg-blue-700 flex items-center justify-center text-white'

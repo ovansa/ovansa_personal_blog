@@ -1,5 +1,6 @@
 // components/HomePageSchema.tsx
 import SiteConfig from '@/config/site';
+import resume from '@/config/resume.json';
 
 export default function HomePageSchema() {
   const schema = {
@@ -7,34 +8,19 @@ export default function HomePageSchema() {
     '@type': 'Person',
     name: SiteConfig.author.name,
     alternateName: 'Ovansa',
-    description:
-      'Software Test Engineer with over 7 years of experience in API testing and test automation',
+    description: resume.summary,
     url: SiteConfig.siteUrl,
     sameAs: [
       //   `https://twitter.com/${SiteConfig.author.twitter.replace('@', '')}`,
       SiteConfig.author.github,
       'https://linkedin.com/in/ovansa',
     ],
-    jobTitle: 'Software Test Engineer',
+    jobTitle: resume.title,
     knowsAbout: [
       'API Testing',
       'Test Automation',
       'Testing Best Practices',
       'Test-Driven Development',
-    ],
-    offers: [
-      {
-        '@type': 'Offer',
-        name: 'Consulting',
-        description:
-          'Expert consulting on testing strategy and automation setup',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Tutoring',
-        description:
-          'One-on-one coaching on API testing and automation frameworks',
-      },
     ],
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -61,11 +47,6 @@ export function WebsiteSchema() {
     author: {
       '@type': 'Person',
       name: SiteConfig.author.name,
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SiteConfig.siteUrl}/search?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
     },
   };
 

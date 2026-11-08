@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'About - Muhammed Ibrahim | Software Test Engineer',
+  title: 'About - Muhammed Ibrahim | Senior QA Engineer',
   description:
     'How Muhammed Ibrahim thinks about API testing, test automation, CI feedback, and practical software testing.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'Ovansa',
   ],
   openGraph: {
-    title: 'About - Muhammed Ibrahim | Software Test Engineer',
+    title: 'About - Muhammed Ibrahim | Senior QA Engineer',
     description:
       "A concise view of Muhammed Ibrahim's software testing principles and working style.",
     url: '/about',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About - Muhammed Ibrahim | Software Test Engineer',
+    title: 'About - Muhammed Ibrahim | Senior QA Engineer',
     description:
       "A concise view of Muhammed Ibrahim's software testing principles and working style.",
   },
@@ -61,9 +61,9 @@ const workingStyle = [
 const range = [
   'Payment APIs and financial transaction flows',
   'SaaS products and backend services',
-  'Postman, Jest, Cypress, Playwright, RestAssured, k6, and JMeter',
-  'CI/CD test gates with Bitbucket Pipelines and GitHub Actions',
-  'MongoDB, PostgreSQL, Redis, GraphQL, REST, and SOAP contexts',
+  'Postman, Cypress, Playwright, Selenium, JUnit, and MockMvc',
+  'API automation and CI/CD with GitHub Actions',
+  'MongoDB, PostgreSQL, Redis, GraphQL, REST, and RBAC',
 ];
 
 export default function About() {
@@ -80,8 +80,8 @@ export default function About() {
           <div className='mt-6 space-y-5 text-lg leading-8 text-muted-foreground'>
             <p>
               I&apos;m <strong>Muhammed Ibrahim</strong>, also known as{' '}
-              <strong>Ovansa</strong>. I&apos;ve spent 7+ years working across
-              payments, SaaS products, backend APIs, and automation-heavy teams.
+              <strong>Ovansa</strong>. I&apos;ve spent 8+ years working across
+              payments, SaaS products, and backend services. I currently work as a Senior QA Engineer at Interswitch.
             </p>
             <p>
               My best work sits where testing, engineering, and product
@@ -125,9 +125,8 @@ export default function About() {
               How I Work With Teams
             </h2>
             <p className='mt-4 text-muted-foreground'>
-              The goal is not to create a testing island. The goal is to turn
-              product risk into shared awareness so engineers, product managers,
-              and testers can make better tradeoffs together.
+              I bring product risks to engineers, product managers, and testers
+              so we can assess the impact and decide what needs to change.
             </p>
           </div>
           <ul className='space-y-3'>
@@ -165,6 +164,21 @@ export default function About() {
           </div>
         </section>
 
+        <section className='mt-16'>
+          <h2 className='text-3xl font-bold'>Experience behind the approach</h2>
+          <p className='mt-4 max-w-3xl leading-7 text-muted-foreground'>
+            At Interswitch, I used AI to accelerate development of Playwright
+            automation for payment flows in the test environment, including
+            database assertions for fees, payment data movement, and settlement
+            records. Alongside failure investigation, this helps me find important
+            problems as early as possible and give developers, product teams,
+            and other stakeholders faster feedback so they can act.
+            At Accelerator App, I contributed to backend RBAC
+            implementation and tested authorization rules. At Red Acre, I led
+            backend testing and mentored junior engineers.
+          </p>
+        </section>
+
         <section className='mt-16 flex flex-wrap gap-3'>
           <Link
             href='/resume'
@@ -176,7 +190,7 @@ export default function About() {
             href='/contact'
             className={buttonVariants({ variant: 'outline', size: 'lg' })}
           >
-            Share Project Context
+            Contact Me About a Role
           </Link>
         </section>
       </MaxWidthWrapper>

@@ -4,9 +4,9 @@ import SiteConfig from '@/config/site';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Muhammed Ibrahim | Software Test Engineer',
+  title: 'Contact Muhammed Ibrahim | Senior QA Engineer',
   description:
-    'Share project context for API testing, test automation, CI test gates, and software testing advisory work.',
+    'Contact Muhammed Ibrahim about QA engineering roles, API automation, backend testing, or a testing project.',
   keywords:
     'software test engineer contact, software testing advisory, API testing specialist, test automation consultant',
   alternates: {

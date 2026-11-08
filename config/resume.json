@@ -1,0 +1,144 @@
+{
+  "name": "Muhammed Ibrahim",
+  "title": "Senior QA Engineer",
+  "focus": "Product Excellence | Engineering Productivity",
+  "location": "Lagos, Nigeria",
+  "email": "aminmuhammad18@gmail.com",
+  "phone": "+2348142941067",
+  "website": "https://ovansa.me",
+  "github": "https://github.com/ovansa",
+  "linkedin": "https://linkedin.com/in/ovansa",
+  "downloadPath": "/resume-muhammed-ibrahim.pdf",
+  "summary": "Senior QA Engineer with 8+ years finding product risks across web, mobile, APIs, backend services, databases, and end-to-end workflows. Combines exploratory testing, test strategy, automation, and failure investigation to improve product quality and give teams faster feedback. Experience includes Playwright payment automation, Node.js and GraphQL systems, RBAC implementation, and mentoring engineers.",
+  "experience": [
+    {
+      "id": "interswitch",
+      "role": "Senior QA Engineer",
+      "company": "Interswitch",
+      "period": "Sep 2024 - Present",
+      "location": "Nigeria",
+      "bullets": [
+        "Built Playwright automation for card and transfer payment flows in the test environment, enabling concurrent payment initiation and using AI to accelerate implementation.",
+        "Combined payment automation with database assertions for fees, data movement, and settlement records; cut regression test execution time by an estimated 90%, giving developers, product teams, and other stakeholders earlier feedback on payment issues.",
+        "Investigate transaction failures across APIs, business logic, and databases with backend engineers, providing reproducible findings and verifying fixes to help the team resolve issues sooner.",
+        "Maintain Postman API regression tests to expose payment workflow regressions early and provide repeatable feedback after system changes."
+      ]
+    },
+    {
+      "id": "red-acre",
+      "role": "Senior Software Development Engineer in Test",
+      "company": "Red Acre Ltd. (via Symphony Solutions)",
+      "period": "Jan 2023 - May 2024",
+      "location": "Malta",
+      "bullets": [
+        "Led backend testing for a NestJS microservices platform, covering critical services, integrations, and failure scenarios.",
+        "Investigated performance bottlenecks and product risks with engineers, and validated improvements.",
+        "Worked with developers and product owners to turn requirements into test approaches and close gaps around edge cases.",
+        "Mentored junior SDETs and QA engineers on troubleshooting and test design, and maintained shared automation standards."
+      ]
+    },
+    {
+      "id": "accelerator",
+      "role": "QA Engineer",
+      "company": "Accelerator App",
+      "period": "Apr 2021 - Apr 2024",
+      "location": "Portugal",
+      "bullets": [
+        "Contributed to backend RBAC implementation in Node.js and GraphQL, translating role and permission rules into executable logic with engineers and product stakeholders.",
+        "Built API integration tests for authorization rules, regression scenarios, and edge cases across GraphQL workflows backed by MongoDB.",
+        "Investigated backend failures across APIs, database interactions, and business logic."
+      ]
+    },
+    {
+      "id": "softcom",
+      "role": "Software Test Analyst",
+      "company": "Softcom Ltd.",
+      "period": "Mar 2018 - Apr 2021",
+      "location": "Lagos, Nigeria",
+      "bullets": [
+        "Tested early releases of Eyowo across Android, iOS, web, and USSD. The platform processed over NGN 1 billion in transactions within months of launch.",
+        "Led the testing team for UseForms, a data collection app used to gather over 500,000 data points for organisations including MTN, NBC, and NPower.",
+        "Applied risk-based, functional, and session-based testing to identify product risks early; documented actionable JIRA reports and communicated critical issues to stakeholders.",
+        "Received Software Tester of the Year and the CEO's Outstanding Performance Award (2019)."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Testing",
+      "items": [
+        "Payment workflows",
+        "API integration",
+        "Regression",
+        "Exploratory",
+        "Risk-based",
+        "Session-based",
+        "Bug investigation"
+      ]
+    },
+    {
+      "category": "Automation",
+      "items": [
+        "Postman",
+        "Cypress",
+        "Playwright",
+        "Selenium",
+        "JUnit",
+        "MockMvc"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        "JavaScript",
+        "TypeScript",
+        "Java",
+        "Node.js",
+        "GraphQL",
+        "REST",
+        "Microservices",
+        "RBAC"
+      ]
+    },
+    {
+      "category": "Data & delivery",
+      "items": [
+        "MongoDB",
+        "PostgreSQL",
+        "Redis",
+        "Git",
+        "GitHub Actions",
+        "CI/CD",
+        "AWS"
+      ]
+    }
+  ],
+  "project": {
+    "name": "Task API - In-Code API Testing",
+    "url": "https://github.com/ovansa/task-api",
+    "articleUrl": "/blogpost/api-tests-in-code",
+    "description": "Built a Spring Boot demonstration of API testing with JUnit and MockMvc, covering authentication, task creation, updates, and status changes.",
+    "detail": "Uses reusable fixtures and an H2 test profile, with assertions for response bodies and unauthenticated requests. Includes a README explaining how to run the suite."
+  },
+  "education": {
+    "degree": "BSc Computer Science",
+    "institution": "University of Ilorin",
+    "period": "Nov 2010 - Jul 2014"
+  },
+  "credentials": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "AWS",
+      "url": "https://www.credly.com/badges/23a5ec3f-4e92-4e3e-be6e-935b5cd078ba"
+    },
+    {
+      "name": "Black Box Software Testing: Foundations, Test Design, Bug Advocacy, Instructor's Course",
+      "issuer": "Association for Software Testing"
+    },
+    {
+      "name": "Rapid Software Testing Applied",
+      "issuer": "Satisfice Inc."
+    }
+  ],
+  "language": "English - fluent"
+}

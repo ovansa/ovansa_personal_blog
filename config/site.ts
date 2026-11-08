@@ -1,8 +1,8 @@
 const SiteConfig = {
-  title: 'Ovansa | Software Test Engineer & API Testing Expert',
+  title: 'Muhammed Ibrahim (Ovansa) | Senior QA Engineer',
   titleTemplate: '%s | Ovansa',
   description:
-    'API testing, test automation, and software testing services from Muhammed Ibrahim (Ovansa) - Software Test Engineer with 7+ years of experience',
+    'Muhammed Ibrahim (Ovansa), Senior QA Engineer with 8+ years in product risk, test strategy, exploratory testing, automation, and engineering productivity.',
   siteUrl: 'https://ovansa.me',
   siteName: 'Ovansa',
   siteLanguage: 'en',

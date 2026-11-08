@@ -1,352 +1,128 @@
 'use client';
 
-import {
-  AlertCircle,
-  Calendar,
-  CheckCircle,
-  Mail,
-  MapPin,
-  Send,
-} from 'lucide-react';
-
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import Link from 'next/link';
-import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import React from 'react';
+import { ChevronDown, Mail, MapPin } from 'lucide-react';
+import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { buttonVariants } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import resume from '@/config/resume.json';
 
-const emailAddress = 'aminmuhammad18@gmail.com';
+const topics = ['Employment opportunity', 'Testing project', 'Testing discussion', 'Other'];
 
-const testingNeeds = [
-  'API test automation',
-  'Testing strategy review',
-  'CI test feedback',
-  'Performance testing',
-  'Team coaching',
-  'Other',
-];
-
-const timelines = [
-  'This week',
-  '2-4 weeks',
-  '1-3 months',
-  'Exploratory',
-];
-
-const ContactForm = () => {
-  const [submitted, setSubmitted] = React.useState(false);
-  const [error, setError] = React.useState(false);
+export default function ContactForm() {
+  const [draftOpened, setDraftOpened] = React.useState(false);
+  const [topic, setTopic] = React.useState(topics[0]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(false);
-    setError(false);
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const name = String(formData.get('name') || '').trim();
-    const email = String(formData.get('email') || '').trim();
-    const organization = String(formData.get('organization') || '').trim();
-    const need = String(formData.get('need') || '').trim();
-    const stack = String(formData.get('stack') || '').trim();
-    const timeline = String(formData.get('timeline') || '').trim();
-    const message = String(formData.get('message') || '').trim();
-
-    const subject = encodeURIComponent(
-      `Testing project context${organization ? ` - ${organization}` : ''}`
-    );
-    const body = encodeURIComponent(
-      [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        organization ? `Organization/Product: ${organization}` : null,
-        need ? `Testing need: ${need}` : null,
-        stack ? `Current stack: ${stack}` : null,
-        timeline ? `Timeline: ${timeline}` : null,
-        '',
-        'Context:',
-        message,
-      ]
-        .filter(Boolean)
-        .join('\n')
-    );
-
-    if (!name || !email || !need || !message) {
-      setError(true);
-      return;
-    }
-
-    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-    form.reset();
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const organisation = String(data.get('organisation') || '').trim();
+    const selectedTopic = String(data.get('topic') || topics[0]);
+    const message = String(data.get('message') || '').trim();
+    if (!name || !email || !message) return;
+    const subject = encodeURIComponent(`${selectedTopic}${organisation ? ` - ${organisation}` : ''}`);
+    const body = encodeURIComponent([
+      `Name: ${name}`,
+      `Email: ${email}`,
+      organisation ? `Organisation: ${organisation}` : '',
+      '',
+      message,
+    ].join('\n'));
+    window.location.href = `mailto:${resume.email}?subject=${subject}&body=${body}`;
+    setDraftOpened(true);
   };
 
   return (
-    <main className='bg-background text-foreground'>
-      <section className='border-b bg-muted/30 px-4 py-16 sm:px-6 lg:px-8'>
-        <MaxWidthWrapper>
-          <div className='max-w-3xl'>
-            <p className='text-sm font-semibold uppercase text-muted-foreground'>
-              Contact
-            </p>
-            <h1 className='mt-3 text-4xl font-bold sm:text-5xl'>
-              Share the testing context worth solving.
-            </h1>
-            <p className='mt-5 text-lg leading-8 text-muted-foreground'>
-              The most useful first message includes the product, API surface,
-              current test stack, release risk, and the outcome you want from
-              the engagement.
-            </p>
-          </div>
-        </MaxWidthWrapper>
-      </section>
-
-      <section className='px-4 py-12 sm:px-6 lg:px-8'>
-        <MaxWidthWrapper>
-          <div className='grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start'>
-            <aside className='space-y-6'>
-              <div className='rounded-md border bg-card p-6'>
-                <h2 className='text-xl font-bold'>Direct Details</h2>
-                <div className='mt-5 space-y-5'>
-                  <div className='flex gap-3'>
-                    <Mail className='mt-1 size-5 text-muted-foreground' />
-                    <div>
-                      <p className='font-medium'>Email</p>
-                      <a
-                        href={`mailto:${emailAddress}`}
-                        className='text-sm text-primary hover:underline'
-                      >
-                        {emailAddress}
-                      </a>
-                    </div>
-                  </div>
-                  <div className='flex gap-3'>
-                    <MapPin className='mt-1 size-5 text-muted-foreground' />
-                    <div>
-                      <p className='font-medium'>Base</p>
-                      <p className='text-sm text-muted-foreground'>
-                        Lagos, Nigeria. Remote-friendly.
-                      </p>
-                    </div>
-                  </div>
-                  <div className='flex gap-3'>
-                    <Calendar className='mt-1 size-5 text-muted-foreground' />
-                    <div>
-                      <p className='font-medium'>Technical Call</p>
-                      <p className='text-sm text-muted-foreground'>
-                        Best when there is enough context to discuss API
-                        automation, CI feedback, or a testing process review.
-                      </p>
-                    </div>
-                  </div>
+    <div className='bg-background text-foreground'>
+      <MaxWidthWrapper className='py-12'>
+        <header className='max-w-3xl'>
+          <p className='text-sm font-semibold uppercase text-muted-foreground'>Contact</p>
+          <h1 className='mt-3 text-4xl font-bold sm:text-5xl'>Let&apos;s talk about a role or a project.</h1>
+          <p className='mt-5 text-lg leading-8 text-muted-foreground'>For employment opportunities, share the role, team, location or remote setup, and a job description. For a project, tell me about the product and the testing challenge.</p>
+        </header>
+        <div className='mt-10 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]'>
+          <aside className='space-y-6'>
+            <div className='rounded-md border bg-card p-6'>
+              <h2 className='text-xl font-bold'>Contact details</h2>
+              <div className='mt-5 flex gap-3'>
+                <Mail aria-hidden='true' className='mt-1 size-5 flex-none text-muted-foreground' />
+                <div className='min-w-0'>
+                  <p className='font-medium'>Email</p>
+                  <a href={`mailto:${resume.email}`} className='mt-1 inline-block break-all text-sm underline underline-offset-4'>{resume.email}</a>
                 </div>
-                <Link
-                  href='https://calendly.com/muhammed-ibrahim/discovery'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className={`${buttonVariants({
-                    variant: 'outline',
-                  })} mt-6 w-full justify-center`}
-                >
-                  Schedule Scope Call
-                </Link>
               </div>
-
-              <div className='rounded-md border bg-muted/30 p-6'>
-                <h2 className='text-xl font-bold'>Useful Context</h2>
-                <ul className='mt-4 space-y-3 text-sm text-muted-foreground'>
-                  <li>Product domain and critical user/API flows</li>
-                  <li>Current tools, pipelines, and test ownership</li>
-                  <li>Known problems, stakeholder impact, or open decisions</li>
-                  <li>Timeline, constraints, and success criteria</li>
-                </ul>
+              <div className='mt-5 flex gap-3'>
+                <MapPin aria-hidden='true' className='mt-1 size-5 flex-none text-muted-foreground' />
+                <div><p className='font-medium'>Based in</p><p className='mt-1 text-sm text-muted-foreground'>{resume.location}</p></div>
               </div>
-            </aside>
-
-            <section className='rounded-md border bg-card p-6 sm:p-8'>
-              <h2 className='text-2xl font-bold'>Send Project Context</h2>
-              <p className='mt-2 text-sm text-muted-foreground'>
-                This opens a prepared email from your mail client. It avoids a
-                fragile contact form and keeps the first exchange concrete.
-              </p>
-
-              {submitted ? (
-                <Alert className='mt-6 border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-900/20'>
-                  <CheckCircle className='h-4 w-4 text-green-600 dark:text-green-400' />
-                  <AlertDescription className='text-green-800 dark:text-green-300'>
-                    Your email draft should now be open. Review it, then send it
-                    from your mail client.
-                  </AlertDescription>
-                </Alert>
-              ) : null}
-
-              {error ? (
-                <Alert className='mt-6 border-red-200 bg-red-50 dark:border-red-800 dark:bg-red-900/20'>
-                  <AlertCircle className='h-4 w-4 text-red-600 dark:text-red-400' />
-                  <AlertDescription className='text-red-800 dark:text-red-300'>
-                    Please include your name, email, testing need, and message.
-                  </AlertDescription>
-                </Alert>
-              ) : null}
-
-              <form
-                className='mt-6 space-y-5'
-                onSubmit={handleSubmit}
-              >
-                <div className='grid gap-5 sm:grid-cols-2'>
-                  <div>
-                    <label
-                      htmlFor='name'
-                      className='block text-sm font-medium'
-                    >
-                      Name
-                    </label>
-                    <input
-                      id='name'
-                      name='name'
-                      type='text'
-                      required
-                      className='mt-2 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring'
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor='email'
-                      className='block text-sm font-medium'
-                    >
-                      Email
-                    </label>
-                    <input
-                      id='email'
-                      name='email'
-                      type='email'
-                      required
-                      className='mt-2 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring'
-                    />
-                  </div>
-                </div>
-
+              <a href={resume.linkedin} className='mt-6 inline-block text-sm underline underline-offset-4'>Connect on LinkedIn</a>
+            </div>
+            <a href={resume.downloadPath} download className={buttonVariants({ variant: 'outline' })}>Download resume (PDF)</a>
+          </aside>
+          <section className='rounded-md border bg-card p-6 sm:p-8' aria-labelledby='message-heading'>
+            <h2 id='message-heading' className='text-2xl font-bold'>Prepare an email</h2>
+            <p className='mt-2 text-sm leading-6 text-muted-foreground'>This form opens a draft in your email app. Review and send it there, or email me directly using the address above.</p>
+            {draftOpened && <p role='status' className='mt-5 rounded-md border bg-muted p-4 text-sm'>Your email app should now have a draft. Nothing has been sent yet. If it did not open, your message is still below so you can copy it into an email.</p>}
+            <form className='mt-6 space-y-5' onSubmit={handleSubmit}>
+              <div className='grid gap-5 sm:grid-cols-2'>
                 <div>
-                  <label
-                    htmlFor='organization'
-                    className='block text-sm font-medium'
-                  >
-                    Product or organization
-                  </label>
-                  <input
-                    id='organization'
-                    name='organization'
-                    type='text'
-                    className='mt-2 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring'
-                  />
+                  <label htmlFor='name' className='block text-sm font-medium'>Name</label>
+                  <input id='name' name='name' autoComplete='name' required className='mt-2 w-full rounded-md border bg-background px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-2' />
                 </div>
-
-                <div className='grid gap-5 sm:grid-cols-2'>
-                  <div>
-                    <label
-                      htmlFor='need'
-                      className='block text-sm font-medium'
+                <div>
+                  <label htmlFor='email' className='block text-sm font-medium'>Email</label>
+                  <input id='email' name='email' type='email' autoComplete='email' required className='mt-2 w-full rounded-md border bg-background px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-2' />
+                </div>
+              </div>
+              <div>
+                <label id='topic-label' className='block text-sm font-medium'>What would you like to discuss?</label>
+                <input type='hidden' name='topic' value={topic} />
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button
+                      type='button'
+                      aria-labelledby='topic-label topic-value'
+                      className='mt-2 flex w-full items-center justify-between rounded-md border bg-background px-3 py-2 text-left text-sm outline-none transition-colors hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
                     >
-                      Testing need
-                    </label>
-                    <select
-                      id='need'
-                      name='need'
-                      required
-                      defaultValue=''
-                      className='mt-2 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring'
-                    >
-                      <option
-                        value=''
-                        disabled
-                      >
-                        Select one
-                      </option>
-                      {testingNeeds.map((need) => (
-                        <option
-                          key={need}
-                          value={need}
-                        >
-                          {need}
-                        </option>
+                      <span id='topic-value'>{topic}</span>
+                      <ChevronDown aria-hidden='true' className='size-4 text-muted-foreground' />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    align='start'
+                    className='w-[var(--radix-dropdown-menu-trigger-width)]'
+                  >
+                    <DropdownMenuRadioGroup value={topic} onValueChange={setTopic}>
+                      {topics.map((option) => (
+                        <DropdownMenuRadioItem key={option} value={option}>
+                          {option}
+                        </DropdownMenuRadioItem>
                       ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor='timeline'
-                      className='block text-sm font-medium'
-                    >
-                      Timeline
-                    </label>
-                    <select
-                      id='timeline'
-                      name='timeline'
-                      defaultValue=''
-                      className='mt-2 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring'
-                    >
-                      <option value=''>Not sure yet</option>
-                      {timelines.map((timeline) => (
-                        <option
-                          key={timeline}
-                          value={timeline}
-                        >
-                          {timeline}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor='stack'
-                    className='block text-sm font-medium'
-                  >
-                    Current stack
-                  </label>
-                  <input
-                    id='stack'
-                    name='stack'
-                    type='text'
-                    placeholder='Postman, Jest, Cypress, Playwright, Bitbucket, etc.'
-                    className='mt-2 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring'
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor='message'
-                    className='block text-sm font-medium'
-                  >
-                    Context
-                  </label>
-                  <textarea
-                    id='message'
-                    name='message'
-                    rows={6}
-                    required
-                    placeholder='Describe the product, API surface, current testing gaps, release risks, or the decision you need to make.'
-                    className='mt-2 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring'
-                  />
-                </div>
-
-                <button
-                  type='submit'
-                  className={`${buttonVariants({
-                    size: 'lg',
-                  })} w-full`}
-                >
-                  <Send className='mr-2 size-4' />
-                  Prepare Email
-                </button>
-              </form>
-            </section>
-          </div>
-        </MaxWidthWrapper>
-      </section>
-    </main>
+                    </DropdownMenuRadioGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+              <div>
+                <label htmlFor='organisation' className='block text-sm font-medium'>Organisation (optional)</label>
+                <input id='organisation' name='organisation' autoComplete='organization' className='mt-2 w-full rounded-md border bg-background px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-2' />
+              </div>
+              <div>
+                <label htmlFor='message' className='block text-sm font-medium'>Message</label>
+                <textarea id='message' name='message' rows={6} required placeholder='Share the role or project, relevant links, and what you would like to discuss.' className='mt-2 w-full rounded-md border bg-background px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-2' />
+              </div>
+              <button type='submit' className={buttonVariants({ size: 'lg' })}>Open email draft</button>
+            </form>
+          </section>
+        </div>
+      </MaxWidthWrapper>
+    </div>
   );
-};
-
-export default ContactForm;
+}

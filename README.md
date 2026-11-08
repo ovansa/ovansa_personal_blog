@@ -34,3 +34,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Resume content and PDF
+
+`config/resume.json` is the shared source for the web resume and downloadable PDF.
+Keep employment dates, titles, and claims aligned with the latest verified resume.
+
+To regenerate the two-page PDF after editing the content:
+
+```bash
+python3 -m pip install reportlab
+python3 scripts/build_resume.py
+```
+
+The generator writes `output/pdf/resume-muhammed-ibrahim.pdf`, updates
+`Resume - Muhammed Ibrahim.pdf`, and copies the same file to
+`public/resume-muhammed-ibrahim.pdf` for the website's download links.
+Review both rendered pages before publishing a new version.

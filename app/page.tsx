@@ -1,150 +1,59 @@
-import {
-  FaArrowRight,
-  FaCheckCircle,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-} from 'react-icons/fa';
+import { FaArrowRight, FaGithub, FaLinkedin } from 'react-icons/fa';
 import HomePageSchema, { WebsiteSchema } from '@/components/HomePageSchema';
-
 import Link from 'next/link';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import SiteConfig from '@/config/site';
+import resume from '@/config/resume.json';
 import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title:
-    'Muhammed Ibrahim (Ovansa) | Software Test Engineer & API Automation Specialist',
-  description:
-    'Muhammed Ibrahim (Ovansa) is a Software Test Engineer with 7+ years of experience in API testing, test automation, CI test gates, performance testing, and testing leadership.',
-  keywords:
-    'Software Test Engineer, API Testing, Test Automation, Postman, Jest, Cypress, Playwright, k6, CI/CD, Muhammed Ibrahim, Ovansa',
-  alternates: {
-    canonical: SiteConfig.siteUrl,
-  },
+  title: 'Muhammed Ibrahim (Ovansa) | Senior QA Engineer',
+  description: SiteConfig.description,
+  alternates: { canonical: SiteConfig.siteUrl },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
     url: SiteConfig.siteUrl,
-    title:
-      'Muhammed Ibrahim (Ovansa) | Software Test Engineer & API Automation Specialist',
-    description:
-      'API testing, test automation, CI test gates, and practical testing leadership from a Software Test Engineer with 7+ years of experience.',
-    siteName: 'Muhammed Ibrahim - Software Test Engineer',
+    title: 'Muhammed Ibrahim (Ovansa) | Senior QA Engineer',
+    description: SiteConfig.description,
+    siteName: SiteConfig.siteName,
   },
   twitter: {
-    card: 'summary_large_image',
-    title:
-      'Muhammed Ibrahim (Ovansa) | Software Test Engineer & API Automation Specialist',
-    description:
-      'API testing, test automation, CI test gates, and practical testing leadership from a Software Test Engineer with 7+ years of experience.',
+    card: 'summary',
+    title: 'Muhammed Ibrahim (Ovansa) | Senior QA Engineer',
+    description: SiteConfig.description,
     creator: '@ovansa',
   },
 };
 
-const outcomes = [
-  {
-    value: '200%',
-    label: 'regression testing time reduction at Interswitch',
-  },
-  {
-    value: '100%+',
-    label: 'API integration test coverage increase at Accelerator App',
-  },
-  {
-    value: '500K+',
-    label: 'data points supported through UseForms testing work',
-  },
-  {
-    value: '7+',
-    label: 'years across payments, SaaS, backend, and test automation',
-  },
+const highlights = [
+  'Earlier problem detection and faster stakeholder feedback through payment automation at Interswitch.',
+  'Backend testing and mentoring for a NestJS microservices platform at Red Acre.',
+  'RBAC implementation and GraphQL authorization testing at Accelerator App.',
 ];
 
-const services = [
+const experience = [
   {
-    title: 'API Test Automation',
-    description:
-      'Design reliable Postman, Jest, RestAssured, and contract-style API checks that run in CI and catch regressions before release.',
-    bullets: [
-      'REST, GraphQL, and SOAP testing strategy',
-      'Reusable collections, fixtures, and environment setup',
-      'Bitbucket, GitHub Actions, and pipeline test gates',
-    ],
+    company: 'Interswitch',
+    title: 'Faster feedback on payment risks',
+    description: 'In the test environment, manual payment initiation and database checks took about seven minutes per payment, with regression checks spanning a day or more. I automated card and transfer flows with Playwright, enabling concurrent payment initiation, and used AI to accelerate automation development.',
+    contribution: 'Combined payment automation with database assertions for fees, data movement, and settlement records in the test environment. This reduced payment regression test execution time by an estimated 90% versus manual runs, giving developers, product teams, and other stakeholders earlier feedback on payment issues so they could act sooner.',
+    href: '/resume#interswitch',
   },
   {
-    title: 'Backend Software Testing',
-    description:
-      'Work with engineering teams to make services easier to test, debug, and evolve across Node.js, NestJS, Spring Boot, and Go stacks.',
-    bullets: [
-      'Testable service boundaries and data setup',
-      'Integration, regression, and RBAC test coverage',
-      'PostgreSQL, MongoDB, Redis, and API observability context',
-    ],
+    company: 'Accelerator App',
+    title: 'Backend authorization & RBAC',
+    description: 'I contributed to role-based access control in Node.js and GraphQL, translating permission rules into backend logic.',
+    contribution: 'Built API integration tests for authorization and regression scenarios across GraphQL workflows backed by MongoDB.',
+    href: '/resume#accelerator',
   },
   {
-    title: 'E2E & Performance Testing',
-    description:
-      'Protect critical user journeys and high-risk flows with practical Cypress, Playwright, k6, and JMeter coverage.',
-    bullets: [
-      'Business-critical workflow automation',
-      'Performance smoke checks and bottleneck discovery',
-      'Maintainable suites that teams can own after handover',
-    ],
+    company: 'Red Acre Ltd.',
+    title: 'Microservices testing & mentoring',
+    description: 'I led backend testing for a NestJS platform, covering service integrations, edge cases, and failure scenarios.',
+    contribution: 'Worked with engineers on performance investigations and mentored junior SDETs in troubleshooting and test design.',
+    href: '/resume#red-acre',
   },
-];
-
-const proofPoints = [
-  'Automated payment endpoint tests in Postman and Bitbucket pipelines for Interswitch.',
-  'Defined E2E testing standards for NestJS services at Red Acre Ltd.',
-  'Built Cypress test gates and expanded Jest API coverage on Node.js, GraphQL, and MongoDB systems.',
-  'Tested payment, mobile, web, USSD, and data collection products used across Nigerian markets.',
-];
-
-const experienceSignals = [
-  {
-    title: 'Payment API automation',
-    context: 'Interswitch',
-    result:
-      'Automated payment endpoint checks with Postman scripts in Bitbucket pipelines, reducing regression testing time by 200%.',
-  },
-  {
-    title: 'Backend API coverage',
-    context: 'Accelerator App',
-    result:
-      'Increased integration test coverage by over 100% across Node.js, GraphQL, and MongoDB services using Jest.',
-  },
-  {
-    title: 'E2E test standards',
-    context: 'Red Acre Ltd.',
-    result:
-      'Defined maintainable end-to-end testing standards for NestJS services, especially around the affiliates feature.',
-  },
-  {
-    title: 'Performance testing',
-    context: 'Accelerator App',
-    result:
-      'Ran k6 performance tests to surface bottlenecks and support stability under changing traffic conditions.',
-  },
-];
-
-const skills = [
-  'Postman',
-  'Jest',
-  'Cypress',
-  'Playwright',
-  'RestAssured',
-  'k6',
-  'JMeter',
-  'Node.js',
-  'NestJS',
-  'GraphQL',
-  'MongoDB',
-  'PostgreSQL',
-  'Bitbucket Pipelines',
-  'GitHub Actions',
-  'AWS',
 ];
 
 export default function Home() {
@@ -153,269 +62,119 @@ export default function Home() {
       <HomePageSchema />
       <WebsiteSchema />
       <main className='bg-background text-foreground'>
-        <section className='border-b bg-muted/30 px-4 py-16 sm:px-6 lg:px-8'>
+        <section className='border-b bg-muted/30 px-4 py-12 sm:px-6 lg:px-8'>
           <MaxWidthWrapper>
-            <div className='grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center'>
-              <div className='max-w-3xl'>
+            <div className='grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center'>
+              <div>
                 <p className='mb-4 text-sm font-semibold uppercase text-muted-foreground'>
-                  Software Test Engineer | API Automation | Testing Strategy
+                  {resume.title} · Product Excellence · Engineering Productivity
                 </p>
                 <h1 className='text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl'>
-                  I find important product risks early and make them visible
-                  enough to act on.
+                  I test payment systems and make product risk clear.
                 </h1>
-                <p className='mt-6 text-lg leading-8 text-muted-foreground sm:text-xl'>
-                  I&apos;m <strong>Muhammed Ibrahim (Ovansa)</strong>, a
-                  Lagos-based Software Test Engineer with 7+ years of experience
-                  across payments, SaaS, backend services, and automation. My
-                  work is to find problems quickly, bring the right stakeholders
-                  into the risk, and help teams decide whether to fix, defer, or
-                  redesign.
+                <p className='mt-6 max-w-2xl text-lg leading-8 text-muted-foreground'>
+                  I&apos;m <strong>Muhammed Ibrahim (Ovansa)</strong>, based in Lagos,
+                  Nigeria. I bring 8+ years of experience finding product risks
+                  across web, mobile, APIs, backend services, databases, and
+                  end-to-end workflows. I combine exploratory testing, test
+                  strategy, automation, and failure investigation to help teams
+                  make informed release decisions sooner.
                 </p>
                 <div className='mt-8 flex flex-wrap gap-3'>
-                  <Link
-                    href='/contact'
-                    className={buttonVariants({ size: 'lg' })}
-                  >
-                    Discuss testing strategy
-                  </Link>
-                  <Link
-                    href='/resume'
-                    className={buttonVariants({
-                      variant: 'outline',
-                      size: 'lg',
-                    })}
-                  >
-                    View resume
-                  </Link>
-                  <a
-                    href='https://github.com/ovansa'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className={buttonVariants({
-                      variant: 'ghost',
-                      size: 'lg',
-                    })}
-                  >
-                    GitHub <FaArrowRight className='ml-2 size-3' />
-                  </a>
+                  <a href={resume.downloadPath} download className={buttonVariants({ size: 'lg' })}>Download resume</a>
+                  <Link href='#work' className={buttonVariants({ variant: 'outline', size: 'lg' })}>View selected work</Link>
                 </div>
-                <div className='mt-6 flex gap-4 text-muted-foreground'>
-                  <a
-                    href='https://github.com/ovansa'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='GitHub Profile'
-                    className='transition-colors hover:text-foreground'
-                  >
-                    <FaGithub size={22} />
-                  </a>
-                  <a
-                    href='https://linkedin.com/in/ovansa'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='LinkedIn Profile'
-                    className='transition-colors hover:text-foreground'
-                  >
-                    <FaLinkedin size={22} />
-                  </a>
-                  <a
-                    href='mailto:aminmuhammad18@gmail.com'
-                    aria-label='Email Contact'
-                    className='transition-colors hover:text-foreground'
-                  >
-                    <FaEnvelope size={22} />
-                  </a>
+                <Link href='/contact' className='mt-5 inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4'>
+                  Contact me about a role <FaArrowRight aria-hidden='true' className='size-3' />
+                </Link>
+                <div className='mt-6 flex flex-wrap gap-5 text-sm text-muted-foreground'>
+                  <a href={resume.github} className='inline-flex items-center gap-2 hover:text-foreground'><FaGithub aria-hidden='true' /> GitHub</a>
+                  <a href={resume.linkedin} className='inline-flex items-center gap-2 hover:text-foreground'><FaLinkedin aria-hidden='true' /> LinkedIn</a>
                 </div>
               </div>
-
-              <div className='rounded-md border bg-background p-6 shadow-sm'>
-                <p className='text-sm font-semibold uppercase text-muted-foreground'>
-                  Specialist Focus
-                </p>
-                <h2 className='mt-3 text-2xl font-bold'>
-                  API-heavy teams benefit most when testing is treated as
-                  engineering work, not a release ritual.
-                </h2>
-                <div className='mt-6 space-y-4'>
-                  {proofPoints.map((point) => (
-                    <div
-                      key={point}
-                      className='flex gap-3'
-                    >
-                      <FaCheckCircle className='mt-1 size-4 flex-none text-emerald-600' />
-                      <p className='text-sm leading-6 text-muted-foreground'>
-                        {point}
-                      </p>
-                    </div>
+              <aside className='rounded-md border bg-background p-6 shadow-sm'>
+                <p className='text-sm font-semibold uppercase text-muted-foreground'>Selected contributions</p>
+                <h2 className='mt-3 text-2xl font-bold'>Testing, investigation, and engineering work.</h2>
+                <ul className='mt-6 space-y-5'>
+                  {highlights.map((point) => (
+                    <li key={point} className='flex gap-3'>
+                      <span
+                        aria-hidden='true'
+                        className='mt-2.5 size-1.5 flex-none rounded-full bg-muted-foreground'
+                      />
+                      <p className='text-sm leading-6 text-muted-foreground'>{point}</p>
+                    </li>
                   ))}
-                </div>
-              </div>
+                </ul>
+                <Link href='/resume' className='mt-6 inline-block text-sm font-medium underline underline-offset-4'>View full experience</Link>
+              </aside>
             </div>
           </MaxWidthWrapper>
         </section>
 
-        <section className='px-4 py-10 sm:px-6 lg:px-8'>
+        <section id='work' className='scroll-mt-20 px-4 py-10 sm:px-6 lg:px-8'>
           <MaxWidthWrapper>
-            <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
-              {outcomes.map((outcome) => (
-                <div
-                  key={outcome.label}
-                  className='rounded-md border bg-card p-5'
-                >
-                  <p className='font-display text-3xl font-bold'>{outcome.value}</p>
-                  <p className='mt-2 text-sm leading-6 text-muted-foreground'>
-                    {outcome.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </MaxWidthWrapper>
-        </section>
-
-        <section
-          className='px-4 py-16 sm:px-6 lg:px-8'
-          id='services'
-        >
-          <MaxWidthWrapper>
-            <div className='max-w-2xl'>
-              <p className='text-sm font-semibold uppercase text-muted-foreground'>
-                What I Can Do
-              </p>
-              <h2 className='mt-3 text-3xl font-bold sm:text-4xl'>
-                Practical software testing for teams that need fewer surprises
-                in production.
-              </h2>
-            </div>
-
-            <div className='mt-10 grid gap-6 lg:grid-cols-3'>
-              {services.map((service) => (
-                <article
-                  key={service.title}
-                  className='rounded-md border bg-card p-6'
-                >
-                  <h3 className='text-xl font-bold'>{service.title}</h3>
-                  <p className='mt-3 text-sm leading-6 text-muted-foreground'>
-                    {service.description}
-                  </p>
-                  <ul className='mt-5 space-y-3'>
-                    {service.bullets.map((bullet) => (
-                      <li
-                        key={bullet}
-                        className='flex gap-3 text-sm text-muted-foreground'
-                      >
-                        <span
-                          className='mt-2 h-1.5 w-1.5 flex-none rounded-full bg-foreground'
-                          aria-hidden='true'
-                        />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
+            <p className='text-sm font-semibold uppercase text-muted-foreground'>Experience details</p>
+            <h2 className='mt-3 text-3xl font-bold sm:text-4xl'>Work across payments, SaaS, and backend systems.</h2>
+            <div className='mt-8 grid gap-6 lg:grid-cols-3'>
+              {experience.map((item) => (
+                <article key={item.company} className='flex flex-col rounded-md border bg-card p-6'>
+                  <p className='text-sm font-semibold text-muted-foreground'>{item.company}</p>
+                  <h3 className='mt-3 text-xl font-bold'>{item.title}</h3>
+                  <p className='mt-4 text-sm leading-7 text-muted-foreground'>{item.description}</p>
+                  <p className='mb-5 mt-3 text-sm leading-7 text-muted-foreground'>{item.contribution}</p>
+                  <Link href={item.href} className='mt-auto text-sm font-medium underline underline-offset-4'>Read role details</Link>
                 </article>
               ))}
             </div>
           </MaxWidthWrapper>
         </section>
 
-        <section className='border-y bg-muted/30 px-4 py-16 sm:px-6 lg:px-8'>
+        <section className='border-y bg-muted/30 px-4 py-10 sm:px-6 lg:px-8'>
           <MaxWidthWrapper>
-            <div className='grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start'>
+            <div className='grid gap-8 lg:grid-cols-[0.8fr_1.2fr]'>
               <div>
-                <p className='text-sm font-semibold uppercase text-muted-foreground'>
-                  Experience Signals
-                </p>
-                <h2 className='mt-3 text-3xl font-bold sm:text-4xl'>
-                  Evidence from real products, not portfolio theater.
-                </h2>
-                <p className='mt-4 text-muted-foreground'>
-                  The strongest proof here is shipped work: payment APIs,
-                  backend services, CI feedback loops, performance checks, and
-                  test practices that engineering teams can keep using.
-                </p>
+                <p className='text-sm font-semibold uppercase text-muted-foreground'>Public project</p>
+                <h2 className='mt-3 text-3xl font-bold sm:text-4xl'>Explore the code and the tests.</h2>
+                <p className='mt-4 leading-7 text-muted-foreground'>A small, runnable example of how I approach API testing inside a backend codebase.</p>
               </div>
-              <div className='grid gap-4 sm:grid-cols-2'>
-                {experienceSignals.map((signal) => (
-                  <article
-                    key={signal.title}
-                    className='rounded-md border bg-background p-5'
-                  >
-                    <p className='text-xs font-semibold uppercase text-muted-foreground'>
-                      {signal.context}
-                    </p>
-                    <h3 className='mt-2 text-lg font-bold'>{signal.title}</h3>
-                    <p className='mt-2 text-sm leading-6 text-muted-foreground'>
-                      {signal.result}
-                    </p>
-                  </article>
-                ))}
-              </div>
+              <article className='rounded-md border bg-background p-6 sm:p-8'>
+                <p className='text-sm text-muted-foreground'>Java · Spring Boot · JUnit · MockMvc</p>
+                <h3 className='mt-3 text-2xl font-bold'>{resume.project.name}</h3>
+                <p className='mt-4 leading-7 text-muted-foreground'>{resume.project.description}</p>
+                <p className='mt-3 leading-7 text-muted-foreground'>{resume.project.detail}</p>
+                <div className='mt-6 flex flex-wrap gap-3'>
+                  <a href={resume.project.url} className={buttonVariants({})}>View code and tests</a>
+                  <Link href={resume.project.articleUrl} className={buttonVariants({ variant: 'outline' })}>Read the approach</Link>
+                </div>
+              </article>
             </div>
           </MaxWidthWrapper>
         </section>
 
-        <section className='px-4 py-16 sm:px-6 lg:px-8'>
+        <section className='px-4 py-10 sm:px-6 lg:px-8'>
           <MaxWidthWrapper>
-            <div className='grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start'>
+            <div className='max-w-3xl'>
               <div>
-                <p className='text-sm font-semibold uppercase text-muted-foreground'>
-                  Tooling
-                </p>
-                <h2 className='mt-3 text-3xl font-bold sm:text-4xl'>
-                  Comfortable in the testing and backend toolchain.
-                </h2>
-                <p className='mt-4 text-muted-foreground'>
-                  I focus less on tool collecting and more on making tests
-                  trustworthy, maintainable, and useful to engineers.
-                </p>
+                <p className='text-sm font-semibold uppercase text-muted-foreground'>Working approach</p>
+                <h2 className='mt-3 text-3xl font-bold'>Find the problem. Explain the impact.</h2>
+                <p className='mt-4 leading-7 text-muted-foreground'>I combine exploratory testing, automation, and backend investigation to make risks visible. I work with engineers and product stakeholders to understand failures and decide what needs attention before release.</p>
+                <Link href='/about' className='mt-5 inline-block text-sm font-medium underline underline-offset-4'>More about how I work</Link>
+                <Link href='/blog' className='ml-5 mt-5 inline-block text-sm font-medium underline underline-offset-4'>Read my testing articles</Link>
               </div>
-              <div className='flex flex-wrap gap-3'>
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className='rounded-md border bg-card px-3 py-2 text-sm font-medium'
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+
             </div>
           </MaxWidthWrapper>
         </section>
 
-        <section className='bg-foreground px-4 py-16 text-background sm:px-6 lg:px-8'>
+        <section className='bg-foreground px-4 py-10 text-background sm:px-6 lg:px-8'>
           <MaxWidthWrapper>
-            <div className='grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center'>
+            <div className='grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center'>
               <div>
-                <h2 className='text-3xl font-bold sm:text-4xl'>
-                  Testing should move at the pace of product delivery.
-                </h2>
-                <p className='mt-4 max-w-2xl text-background/75'>
-                  I work best with teams that want stronger release confidence:
-                  sharper API coverage, faster CI feedback, practical
-                  automation, and testing habits that survive after handoff.
-                </p>
+                <h2 className='text-3xl font-bold'>Let&apos;s discuss your team&apos;s testing needs.</h2>
+                <p className='mt-4 max-w-2xl leading-7 text-background/80'>For a role or a project, share the team, product, and responsibilities. My strongest areas are API automation, backend testing, and payment workflows.</p>
               </div>
-              <div className='flex flex-wrap gap-3'>
-                <Link
-                  href='/contact'
-                  className={buttonVariants({
-                    variant: 'secondary',
-                    size: 'lg',
-                  })}
-                >
-                  Discuss a project
-                </Link>
-                <Link
-                  href='/blog'
-                  className={`${buttonVariants({
-                    variant: 'outline',
-                    size: 'lg',
-                  })} border-background/70 bg-transparent text-background hover:bg-background hover:text-foreground`}
-                >
-                  Read my writing
-                </Link>
-              </div>
+              <Link href='/contact' className={buttonVariants({ variant: 'secondary', size: 'lg' })}>Get in touch</Link>
             </div>
           </MaxWidthWrapper>
         </section>
