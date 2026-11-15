@@ -3,12 +3,13 @@
 import Link from 'next/link';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { Metadata } from 'next';
+import SiteConfig from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'About - Muhammed Ibrahim | Senior QA Engineer',
+  title: 'About Muhammed Ibrahim',
   description:
-    'How Muhammed Ibrahim thinks about API testing, test automation, CI feedback, and practical software testing.',
+    'Learn how Senior QA Engineer Muhammed Ibrahim approaches product risk, exploratory testing, test strategy, automation, and cross-functional quality work.',
   keywords: [
     'software test engineer',
     'software testing',
@@ -17,18 +18,26 @@ export const metadata: Metadata = {
     'Muhammed Ibrahim',
     'Ovansa',
   ],
+  alternates: { canonical: `${SiteConfig.siteUrl}/about` },
   openGraph: {
-    title: 'About - Muhammed Ibrahim | Senior QA Engineer',
+    title: 'About Muhammed Ibrahim | Senior QA Engineer',
     description:
-      "A concise view of Muhammed Ibrahim's software testing principles and working style.",
+      "Muhammed Ibrahim's software testing principles, professional range, and approach to helping teams understand product risk.",
     url: '/about',
     type: 'profile',
+    images: [{
+      url: SiteConfig.ogImage,
+      width: 1200,
+      height: 630,
+      alt: 'Muhammed Ibrahim (Ovansa), Senior QA Engineer',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About - Muhammed Ibrahim | Senior QA Engineer',
+    title: 'About Muhammed Ibrahim | Senior QA Engineer',
     description:
-      "A concise view of Muhammed Ibrahim's software testing principles and working style.",
+      "Muhammed Ibrahim's software testing principles, professional range, and approach to helping teams understand product risk.",
+    images: [SiteConfig.ogImage],
   },
 };
 

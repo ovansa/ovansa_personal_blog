@@ -6,7 +6,7 @@ import resume from '@/config/resume.json';
 import SiteConfig from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Resume - Muhammed Ibrahim | Senior QA Engineer',
+  title: 'Resume',
   description: resume.summary,
   alternates: { canonical: `${SiteConfig.siteUrl}/resume` },
   openGraph: {
@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     description: resume.summary,
     url: '/resume',
     type: 'profile',
+    images: [SiteConfig.ogImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Muhammed Ibrahim | Senior QA Engineer Resume',
+    description: resume.summary,
+    images: [SiteConfig.ogImage],
   },
 };
 

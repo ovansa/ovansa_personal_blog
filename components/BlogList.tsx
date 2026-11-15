@@ -2,52 +2,19 @@
 
 import { buttonVariants } from '@/components/ui/button';
 import { formatDate } from '@/lib/datUtil';
-import { Loader2 } from 'lucide-react';
+import type { BlogType } from '@/lib/getBlogs';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-
-interface BlogType {
-	id: string;
-	slug: string;
-	content: string;
-	title: string;
-	description: string;
-	imageUrl?: string;
-	publishedAt: string;
-	readingTime?: string;
-	categories?: string[];
-}
+import React, { useState } from 'react';
 
 const ITEMS_PER_PAGE = 6;
 
-const BlogList = () => {
+const BlogList = ({ initialBlogs }: { initialBlogs: BlogType[] }) => {
 	const [search, setSearch] = useState('');
 	const [currentPage, setCurrentPage] = useState(1);
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-	const [isLoading, setIsLoading] = useState(true);
-	const [blogs, setBlogs] = useState<BlogType[]>([]);
 
-	useEffect(() => {
-		const fetchBlogs = async () => {
-			setIsLoading(true); // Start loading before fetching
-			try {
-				const res = await fetch('/api/blogs');
-				const data = await res.json();
-				setBlogs(data);
-				console.log(`Loading should done`);
-			} catch (err) {
-				console.error('Failed to load blogs', err);
-			} finally {
-				console.log(`Loading done`);
-				setIsLoading(false);
-			}
-		};
-
-		fetchBlogs();
-	}, []);
-
-	const filteredBlogs = blogs.filter((blog) => {
+	const filteredBlogs = initialBlogs.filter((blog) => {
 		const matchesSearch =
 			blog.title.toLowerCase().includes(search.toLowerCase()) ||
 			blog.description.toLowerCase().includes(search.toLowerCase());
@@ -108,11 +75,7 @@ const BlogList = () => {
 				</div>
 			</div>
 
-			{isLoading ? (
-				<div className='flex justify-center items-center py-12'>
-					<Loader2 className='h-8 w-8 animate-spin' />
-				</div>
-			) : filteredBlogs.length === 0 ? (
+			{filteredBlogs.length === 0 ? (
 				<div className='text-center py-12'>
 					<h3 className='text-xl font-medium mb-4'>No articles found</h3>
 					<p className='text-muted-foreground mb-6'>
@@ -134,7 +97,7 @@ const BlogList = () => {
 					</p>
 
 					<div className='grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-						{paginatedBlogs.map((blog) => (
+						{paginatedBlogs.map((blog, index) => (
 							<Link
 								key={blog.id}
 								href={`/blogpost/${blog.slug}`}
@@ -147,8 +110,8 @@ const BlogList = () => {
 											alt={blog.title}
 											sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 											fill
-											priority={startIndex === 0}
-											loading={startIndex === 0 ? 'eager' : 'lazy'}
+											priority={startIndex === 0 && index === 0}
+											loading={startIndex === 0 && index === 0 ? 'eager' : 'lazy'}
 											className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
 										/>
 									</div>

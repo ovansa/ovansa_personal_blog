@@ -13,7 +13,7 @@ import { buttonVariants } from './ui/button';
 
 const NavBar = () => {
   return (
-    <nav className='h-16 bg-background/50 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between z-50'>
+    <nav aria-label='Primary navigation' className='h-16 bg-background/50 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between z-50'>
       <div className='mx-auto flex w-full max-w-[1200px] items-center justify-between'>
         <div className='font-display text-lg font-bold md:text-xl'>
           <Link href={'/'}>Ovansa</Link>

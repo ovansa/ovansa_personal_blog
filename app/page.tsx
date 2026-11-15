@@ -8,7 +8,7 @@ import resume from '@/config/resume.json';
 import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Muhammed Ibrahim (Ovansa) | Senior QA Engineer',
+  title: { absolute: SiteConfig.title },
   description: SiteConfig.description,
   alternates: { canonical: SiteConfig.siteUrl },
   openGraph: {
@@ -17,12 +17,19 @@ export const metadata: Metadata = {
     title: 'Muhammed Ibrahim (Ovansa) | Senior QA Engineer',
     description: SiteConfig.description,
     siteName: SiteConfig.siteName,
+    images: [{
+      url: SiteConfig.ogImage,
+      width: 1200,
+      height: 630,
+      alt: 'Muhammed Ibrahim (Ovansa), Senior QA Engineer',
+    }],
   },
   twitter: {
-    card: 'summary',
-    title: 'Muhammed Ibrahim (Ovansa) | Senior QA Engineer',
+    card: 'summary_large_image',
+    title: SiteConfig.title,
     description: SiteConfig.description,
     creator: '@ovansa',
+    images: [SiteConfig.ogImage],
   },
 };
 
@@ -70,7 +77,7 @@ export default function Home() {
                   {resume.title} · Product Excellence · Engineering Productivity
                 </p>
                 <h1 className='text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl'>
-                  I test payment systems and make product risk clear.
+                  I find product risks early and help teams act with confidence.
                 </h1>
                 <p className='mt-6 max-w-2xl text-lg leading-8 text-muted-foreground'>
                   I&apos;m <strong>Muhammed Ibrahim (Ovansa)</strong>, based in Lagos,
@@ -88,8 +95,8 @@ export default function Home() {
                   Contact me about a role <FaArrowRight aria-hidden='true' className='size-3' />
                 </Link>
                 <div className='mt-6 flex flex-wrap gap-5 text-sm text-muted-foreground'>
-                  <a href={resume.github} className='inline-flex items-center gap-2 hover:text-foreground'><FaGithub aria-hidden='true' /> GitHub</a>
-                  <a href={resume.linkedin} className='inline-flex items-center gap-2 hover:text-foreground'><FaLinkedin aria-hidden='true' /> LinkedIn</a>
+                  <a href={resume.github} rel='me' className='inline-flex items-center gap-2 hover:text-foreground'><FaGithub aria-hidden='true' /> GitHub</a>
+                  <a href={resume.linkedin} rel='me' className='inline-flex items-center gap-2 hover:text-foreground'><FaLinkedin aria-hidden='true' /> LinkedIn</a>
                 </div>
               </div>
               <aside className='rounded-md border bg-background p-6 shadow-sm'>

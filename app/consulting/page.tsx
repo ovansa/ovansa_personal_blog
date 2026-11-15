@@ -15,7 +15,7 @@ import SiteConfig from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Software Testing Consulting Services | Muhammed Ibrahim (Ovansa)',
+  title: 'Software Testing Consulting',
   description:
     'Software testing advisory for API testing, test automation, CI feedback, and pragmatic testing process improvement by Muhammed Ibrahim.',
   keywords:
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     description:
       'Software testing advisory for API testing, automation strategy, CI feedback, and practical testing process improvement.',
     siteName: 'Muhammed Ibrahim - Software Test Engineer',
+    images: [SiteConfig.ogImage],
   },
   twitter: {
     card: 'summary_large_image',
@@ -38,6 +39,7 @@ export const metadata: Metadata = {
     description:
       'Software testing advisory for API testing, automation strategy, CI feedback, and practical testing process improvement.',
     creator: '@ovansa',
+    images: [SiteConfig.ogImage],
   },
 };
 

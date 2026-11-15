@@ -6,7 +6,6 @@ import matter from 'gray-matter';
 export interface BlogType {
   id: string;
   slug: string;
-  content: string;
   title: string;
   description: string;
   imageUrl?: string;
@@ -24,7 +23,7 @@ export const getBlogs = (): BlogType[] => {
   const blogs = directories.map((slug, index) => {
     const filePath = path.join(contentDir, slug, 'index.md');
     const fileContent = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContent);
+    const { data } = matter(fileContent);
 
     return {
       id: (index + 1).toString(),
@@ -34,8 +33,7 @@ export const getBlogs = (): BlogType[] => {
       imageUrl: data.imageUrl || '',
       publishedAt: data.publishedAt,
       readingTime: data.readingTime || '',
-      categories: data.categories || [],
-      content,
+      categories: Array.from(new Set<string>(data.categories || [])),
     };
   });
 

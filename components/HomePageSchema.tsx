@@ -6,6 +6,7 @@ export default function HomePageSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${SiteConfig.siteUrl}/#person`,
     name: SiteConfig.author.name,
     alternateName: 'Ovansa',
     description: resume.summary,
@@ -13,15 +14,29 @@ export default function HomePageSchema() {
     sameAs: [
       //   `https://twitter.com/${SiteConfig.author.twitter.replace('@', '')}`,
       SiteConfig.author.github,
-      'https://linkedin.com/in/ovansa',
+      SiteConfig.author.linkedin,
     ],
     jobTitle: resume.title,
     knowsAbout: [
-      'API Testing',
+      'Software Quality Engineering',
+      'Exploratory Testing',
+      'Test Strategy',
       'Test Automation',
-      'Testing Best Practices',
-      'Test-Driven Development',
+      'API Testing',
+      'Backend Testing',
+      'Mobile Testing',
+      'Product Risk',
     ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Lagos',
+      addressCountry: 'NG',
+    },
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Interswitch',
+      url: 'https://www.interswitchgroup.com/',
+    },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': SiteConfig.siteUrl,
@@ -41,13 +56,15 @@ export function WebsiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${SiteConfig.siteUrl}/#website`,
     name: SiteConfig.siteName,
     url: SiteConfig.siteUrl,
     description: SiteConfig.description,
     author: {
       '@type': 'Person',
-      name: SiteConfig.author.name,
+      '@id': `${SiteConfig.siteUrl}/#person`,
     },
+    inLanguage: SiteConfig.siteLanguage,
   };
 
   return (

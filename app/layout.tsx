@@ -30,6 +30,15 @@ export const metadata: Metadata = {
     },
   ],
   creator: SiteConfig.author.name,
+  publisher: SiteConfig.author.name,
+  category: 'technology',
+  classification: 'Software quality engineering portfolio and technical writing',
+  referrer: 'origin-when-cross-origin',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -53,6 +62,13 @@ export const metadata: Metadata = {
     ],
     shortcut: '/favicon.ico',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: SiteConfig.title,
+    description: SiteConfig.description,
+    creator: '@ovansa',
+    images: [SiteConfig.ogImage],
+  },
   robots: {
     index: true,
     follow: true,
@@ -63,9 +79,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  alternates: {
-    canonical: SiteConfig.siteUrl,
   },
 };
 
